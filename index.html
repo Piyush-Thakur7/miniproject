@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SignBridge — Real-Time Sign Language Vision AI Studio</title>
+  <title>SignBridge — Real-Time Sign Language Recognition</title>
   <link rel="stylesheet" href="/static/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- MediaPipe Hands for Real-Time 60 FPS Browser Tracking -->
@@ -18,14 +18,9 @@
       <a href="/" class="app-title">
         <span style="font-size: 1.35rem;">🤟</span>
         <span>Sign<span class="gradient-text">Bridge</span></span>
-        <span class="version-chip">Vision Studio v1.0</span>
       </a>
       
       <div class="header-controls">
-        <a href="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" download="SignBridge_Complete_Sign_Language_Guide.pdf" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
-          <i data-lucide="download" style="width: 14px;"></i> Download Official Book (PDF)
-        </a>
-
         <a href="#bookSection" class="btn btn-secondary btn-sm">
           <i data-lucide="book-open" style="width: 14px; color: var(--primary);"></i> Official Sign Language Book
         </a>
@@ -41,24 +36,24 @@
 
         <div style="display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-secondary); background: var(--bg-surface-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">
           <span class="pulse-dot"></span>
-          <span id="fpsDisplay" style="font-weight: 600;">Vision AI: 60 FPS</span>
+          <span id="fpsDisplay" style="font-weight: 600;">Ready (60 FPS)</span>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- PRIMARY MAIN PAGE: LIVE CAMERA VISION STUDIO -->
+  <!-- PRIMARY MAIN PAGE: LIVE CAMERA RECOGNITION STUDIO -->
   <main class="container">
     
     <!-- Hero Live Camera & Telemetry Grid -->
     <div class="grid-studio" style="margin-bottom: 1.5rem;">
       
-      <!-- Left Panel: High-Definition Camera Vision Stage -->
+      <!-- Left Panel: High-Definition Camera Stream Stage -->
       <div class="studio-panel">
         <div class="panel-header">
           <div class="panel-title">
             <i data-lucide="video" style="width: 16px; color: var(--primary);"></i>
-            Live Camera Vision Stream
+            Live Camera Stream
           </div>
           <div style="display: flex; gap: 0.4rem;">
             <button id="btnTogglePause" class="btn btn-secondary btn-sm" disabled>
@@ -75,9 +70,9 @@
             <div style="width: 60px; height: 60px; border-radius: var(--radius-md); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 0.85rem; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
               <i data-lucide="camera" style="width: 30px; height: 30px; color: #818cf8;"></i>
             </div>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">Camera Vision Ready</h3>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">Camera Inactive</h3>
             <p style="font-size: 0.84rem; color: #94a3b8; max-width: 290px; margin: 0.35rem 0 1.25rem; line-height: 1.45;">
-              Click start below to open camera feed and begin 60 FPS real-time sign recognition.
+              Click start below to open camera feed and begin real-time gesture recognition.
             </p>
             <button id="btnStartCamera" class="btn btn-primary" style="font-size: 0.92rem; padding: 0.65rem 1.35rem;">
               <i data-lucide="camera"></i> Start Camera & Recognize
@@ -89,7 +84,7 @@
         <div class="telemetry-row">
           <div>LATENCY: <strong id="latencyDisplay" style="color: var(--text-primary);">0 ms</strong></div>
           <div>STATUS: <strong id="handsCountDisplay" style="color: var(--primary);">0 Hands Tracked</strong></div>
-          <div>PIPELINE: <strong style="color: var(--emerald);">60 FPS Client AI</strong></div>
+          <div>PERFORMANCE: <strong style="color: var(--emerald);">60 FPS</strong></div>
         </div>
       </div>
 
@@ -237,7 +232,7 @@
       </div>
     </section>
 
-    <!-- SECTION: OFFICIAL SIGN LANGUAGE REFERENCE BOOK (Direct In-Browser Reader & Download) -->
+    <!-- SECTION: OFFICIAL SIGN LANGUAGE REFERENCE BOOK (Direct In-Browser Reader) -->
     <section id="bookSection" class="studio-panel" style="padding: 1.65rem;">
       
       <!-- Section Header -->
@@ -245,20 +240,16 @@
         <div>
           <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 0.55rem; margin: 0; letter-spacing: -0.02em;">
             <i data-lucide="book-open" style="color: var(--primary);"></i>
-            Official Sign Language Reference Book & Manual
+            Official Sign Language Reference Book
           </h2>
           <p style="font-size: 0.84rem; color: var(--text-secondary); margin: 0.25rem 0 0;">
-            The Standard Reference Book of Sign Language & Manual Communication (Academic Edition v1.0).
+            Standard Reference Handbook of Sign Language & Manual Communication (Academic Edition).
           </p>
         </div>
         
         <div style="display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap;">
-          <a href="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" download="SignBridge_Complete_Sign_Language_Guide.pdf" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
-            <i data-lucide="download" style="width: 14px;"></i> Download PDF Book
-          </a>
-
           <a href="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" target="_blank" class="btn btn-secondary btn-sm">
-            <i data-lucide="external-link" style="width: 14px;"></i> Open Full Screen PDF
+            <i data-lucide="external-link" style="width: 14px;"></i> Open Full Screen Book
           </a>
         </div>
       </div>
@@ -266,22 +257,13 @@
       <!-- Book Chapter Navigation Pills -->
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.15rem;">
         <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
-          📖 Ch 1: Five Linguistic Parameters
+          🔤 Ch 1: A–Z Anatomical Fingerspelling Plates
         </span>
         <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
-          🔤 Ch 2: A–Z Fingerspelling Gallery Plates
+          🌅 Ch 2: Daily Greetings & Healthcare Signs
         </span>
         <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
-          🌅 Ch 3: Daily Greetings & Time Cycles
-        </span>
-        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
-          🚨 Ch 4: Healthcare & Emergency Triage
-        </span>
-        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
-          📚 Ch 5: Complete 500-Word Lexicon
-        </span>
-        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
-          ⚙️ Ch 6: Vision AI & 2.0s Hold Gate
+          ⚙️ Ch 3: System Guidelines & 2.0s Hold Gate Protocol
         </span>
       </div>
 
@@ -290,10 +272,10 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; padding: 0.25rem 0.5rem;">
           <strong style="font-size: 0.88rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.4rem;">
             <i data-lucide="file-text" style="width: 16px; color: var(--emerald);"></i>
-            The Standard Reference Book of Sign Language & Manual Communication (PDF)
+            Official Sign Language Reference Handbook (PDF)
           </strong>
           <span style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--text-muted);">
-            216 KB &bull; Academic Open Reference Edition
+            Academic Open Reference Edition
           </span>
         </div>
         <iframe src="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" style="width: 100%; height: 650px; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle);" title="Official Sign Language Book"></iframe>
@@ -306,8 +288,8 @@
   <!-- Premium Footer -->
   <footer style="margin-top: 2.5rem; border-top: 1px solid var(--border-subtle); padding: 1.25rem 0; background: var(--bg-surface);">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.65rem; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">
-      <div>SignBridge AI &bull; Real-Time Sign Language Recognition Studio</div>
-      <div>Official Reference Book Included &bull; 60 FPS Client AI &bull; 2.0s Hold Gate</div>
+      <div>SignBridge &bull; Real-Time Sign Language Recognition Studio</div>
+      <div>Official Reference Book Included &bull; 2.0s Hold Gate</div>
     </div>
   </footer>
 
