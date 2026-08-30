@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignBridge — AI Sign Language Recognition & Real-Time Text Conversion</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <div class="brand-icon">🤟</div>
+      <span>Sign<span class="gradient-text">Bridge</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link active"><i data-lucide="home"></i> Home</a></li>
+      <li><a href="/live" class="nav-link"><i data-lucide="video"></i> Live Webcam</a></li>
+      <li><a href="/upload" class="nav-link"><i data-lucide="upload-cloud"></i> Upload Video</a></li>
+      <li><a href="/meeting" class="nav-link"><i data-lucide="users"></i> Meeting Mode</a></li>
+      <li><a href="/vocab" class="nav-link"><i data-lucide="book-open"></i> 500+ Dictionary</a></li>
+    </ul>
+    <div class="nav-status" id="systemHealthBadge">
+      <span class="pulse-dot"></span>
+      <span id="healthStatusText">Connecting AI Engine...</span>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">
+        <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+        Next-Gen Deep Learning Accessibility Suite
+      </div>
+      <h1 class="hero-title">
+        Bridging Silence with <br>
+        <span class="gradient-text">AI Sign Language Translation</span>
+      </h1>
+      <p class="hero-desc">
+        SignBridge leverages deep bidirectional recurrent neural networks (BiGRU) with temporal self-attention and 3D MediaPipe landmark tracking to convert 500+ sign language words and phrases into real-time text and speech.
+      </p>
+      <div class="hero-actions">
+        <a href="/live" class="btn btn-primary">
+          <i data-lucide="play-circle"></i> Start Live Translation
+        </a>
+        <a href="/upload" class="btn btn-secondary">
+          <i data-lucide="file-video"></i> Upload Sign Video
+        </a>
+        <a href="/meeting" class="btn btn-accent">
+          <i data-lucide="monitor"></i> Meeting Mode (Meet/Zoom)
+        </a>
+        <a href="/vocab" class="btn btn-secondary">
+          <i data-lucide="search"></i> Browse 500+ Signs
+        </a>
+      </div>
+    </section>
+
+    <!-- Key Metrics Ribbon -->
+    <section style="margin-bottom: 3.5rem;">
+      <div class="grid-4">
+        <div class="glass-card" style="text-align: center;">
+          <h3 style="font-size: 2.5rem; color: var(--primary);" id="metricVocab">500+</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">Predefined Sign Vocabulary</p>
+          <span class="badge badge-beginner" style="margin-top: 0.5rem;">19 Categories</span>
+        </div>
+        <div class="glass-card" style="text-align: center;">
+          <h3 style="font-size: 2.5rem; color: var(--accent-emerald);" id="metricLatency">&lt;15ms</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">Real-Time Inference Speed</p>
+          <span class="badge badge-beginner" style="margin-top: 0.5rem;">30 FPS Stream</span>
+        </div>
+        <div class="glass-card" style="text-align: center;">
+          <h3 style="font-size: 2.5rem; color: var(--accent-purple);" id="metricArch">BiGRU</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">Sequence Model + Attention</p>
+          <span class="badge badge-intermediate" style="margin-top: 0.5rem;">PyTorch Engine</span>
+        </div>
+        <div class="glass-card" style="text-align: center;">
+          <h3 style="font-size: 2.5rem; color: var(--accent-rose);">126-D</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">Scale-Invariant Keypoints</p>
+          <span class="badge badge-advanced" style="margin-top: 0.5rem;">MediaPipe Mesh</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Operational Modes -->
+    <section style="margin-bottom: 3.5rem;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="font-size: 2rem;">Engineered for <span class="gradient-text">Real-World Communication</span></h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Explore our three dedicated translation pipelines tailored for daily scenarios.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Live Webcam -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1.25rem;">
+              <i data-lucide="camera" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">1. Live Webcam Recognition</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Instant continuous sign language translation via webcam. Includes visual hand mesh skeleton tracking, temporal hysteresis debouncing, and automated sentence formation.
+            </p>
+          </div>
+          <a href="/live" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%;">
+            Launch Camera <i data-lucide="arrow-right" style="width: 16px;"></i>
+          </a>
+        </div>
+
+        <!-- Video Upload -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(52, 211, 153, 0.15); display: flex; align-items: center; justify-content: center; color: var(--accent-emerald); margin-bottom: 1.25rem;">
+              <i data-lucide="film" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">2. Uploaded Video Processing</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Batch file translation with frame sliding-window analysis. Generates timestamped sign segment timelines, confidence scores, and downloadable narrative transcripts.
+            </p>
+          </div>
+          <a href="/upload" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; width: 100%;">
+            Upload Video File <i data-lucide="arrow-right" style="width: 16px;"></i>
+          </a>
+        </div>
+
+        <!-- Meeting Mode -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(168, 85, 247, 0.15); display: flex; align-items: center; justify-content: center; color: var(--accent-purple); margin-bottom: 1.25rem;">
+              <i data-lucide="presentation" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">3. Online Meeting Assistant</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Companion mode built for Google Meet & Zoom calls. Displays real-time floating closed captions, auto-copies text to chat, and speaks aloud via browser text-to-speech.
+            </p>
+          </div>
+          <a href="/meeting" class="btn btn-accent btn-sm" style="margin-top: 1.5rem; width: 100%;">
+            Open Meeting Mode <i data-lucide="arrow-right" style="width: 16px;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & DFD Section -->
+    <section class="glass-card" style="margin-bottom: 3.5rem;">
+      <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">🏛️ System Architecture & Data Flow</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+        From raw camera frames to normalized 126-dimensional spatial vectors, PyTorch bidirectional sequence classification, and temporal debouncing:
+      </p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 700; color: var(--primary);">1. Ingestion</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Webcam / Upload Video</div>
+        </div>
+        <div style="display: flex; align-items: center; color: var(--text-muted);">➔</div>
+        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 700; color: var(--primary);">2. Landmark Extraction</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">MediaPipe 42 3D Points</div>
+        </div>
+        <div style="display: flex; align-items: center; color: var(--text-muted);">➔</div>
+        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 700; color: var(--primary);">3. Normalization</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Centering & Scale Invariance</div>
+        </div>
+        <div style="display: flex; align-items: center; color: var(--text-muted);">➔</div>
+        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 700; color: var(--accent-purple);">4. BiGRU Neural Model</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Temporal Attention (30 frames)</div>
+        </div>
+        <div style="display: flex; align-items: center; color: var(--text-muted);">➔</div>
+        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
+          <div style="font-weight: 700; color: var(--accent-emerald);">5. Temporal Debounce</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Unknown Sign & Sentence Assembler</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <strong>SignBridge AI System</strong> — Academic Mini-Project Submission
+      </div>
+      <div>
+        Built with FastAPI, PyTorch, MediaPipe, OpenCV & SQLite
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/js/api.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // Check backend health telemetry on load
+    async function loadTelemetry() {
+      const health = await SignBridgeAPI.getHealth();
+      const badge = document.getElementById("systemHealthBadge");
+      const text = document.getElementById("healthStatusText");
+
+      if (health.status === "healthy") {
+        text.innerText = `Engine: ${health.inference_engine.toUpperCase()} (${health.device.toUpperCase()}) | ${health.database_words} Signs`;
+      } else {
+        text.innerText = "System Initializing...";
+      }
+    }
+    loadTelemetry();
+  </script>
+</body>
+</html>

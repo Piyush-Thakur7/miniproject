@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Mode (Google Meet / Zoom Assistant) — SignBridge AI</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .meeting-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      height: calc(100vh - 160px);
+      min-height: 540px;
+    }
+    .meeting-participant {
+      background: #1e293b;
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .meeting-caption-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(12px);
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-full);
+      max-width: 90%;
+      text-align: center;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      z-index: 20;
+    }
+    .chat-bubble {
+      padding: 0.6rem 0.9rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .chat-bubble-me {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #e0f2fe;
+      margin-left: 1.5rem;
+    }
+    .chat-bubble-other {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      margin-right: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <div class="brand-icon">🤟</div>
+      <span>Sign<span class="gradient-text">Bridge</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link"><i data-lucide="home"></i> Home</a></li>
+      <li><a href="/live" class="nav-link"><i data-lucide="video"></i> Live Webcam</a></li>
+      <li><a href="/upload" class="nav-link"><i data-lucide="upload-cloud"></i> Upload Video</a></li>
+      <li><a href="/meeting" class="nav-link active"><i data-lucide="users"></i> Meeting Mode</a></li>
+      <li><a href="/vocab" class="nav-link"><i data-lucide="book-open"></i> 500+ Dictionary</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="pulse-dot"></span>
+      <span>Meeting Companion Active</span>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 1rem; padding-bottom: 1rem;">
+    
+    <div class="meeting-grid">
+      
+      <!-- Left Column: User Webcam & Gesture Detection Panel -->
+      <div class="glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.25rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <h2 style="font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="camera" style="width: 18px; color: var(--primary);"></i>
+            Your Gesture Input Stream
+          </h2>
+          <button id="btnMeetingCam" class="btn btn-primary btn-sm">
+            <i data-lucide="video"></i> Start Camera
+          </button>
+        </div>
+
+        <div class="video-wrapper" style="flex: 1; min-height: 240px;">
+          <video id="meetingWebcam" autoplay playsinline muted></video>
+          <canvas id="meetingCanvas"></canvas>
+          <div class="camera-placeholder" id="meetingCamPlaceholder">
+            <i data-lucide="camera-off" style="width: 42px; height: 42px;"></i>
+            <p style="font-size: 0.85rem;">Click Start Camera to begin meeting translation</p>
+          </div>
+        </div>
+
+        <!-- Detection Status Ribbon -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; font-size: 0.85rem;">
+          <div>Detected: <strong style="color: var(--primary);" id="meetingDetectedWord">NONE</strong> (<span id="meetingConfidence">0%</span>)</div>
+          <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; color: var(--text-secondary);">
+            <input type="checkbox" id="autoSpeechToggle" checked> Auto-TTS Voice
+          </label>
+        </div>
+
+        <!-- Assembled Sentence Bar -->
+        <div style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(0,0,0,0.4); border-radius: 8px; border: 1px solid var(--border-subtle);">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Live Buffer</div>
+          <p id="meetingSentence" style="font-size: 1rem; color: #fff; font-weight: 500; min-height: 1.5rem; margin-top: 0.25rem;">
+            Sign to speak...
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: Simulated Google Meet / Zoom Conference Workspace -->
+      <div class="glass-card" style="display: flex; flex-direction: column; height: 100%; padding: 1.25rem; position: relative;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent-emerald);"></div>
+            <strong style="font-size: 1rem;">Project Review Call (4 Participants)</strong>
+          </div>
+          <span class="badge badge-beginner">Google Meet / Zoom</span>
+        </div>
+
+        <!-- Simulated Meeting Call Grid -->
+        <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.5rem; border-radius: var(--radius-sm); overflow: hidden; position: relative; background: #020617; border: 1px solid var(--border-subtle); padding: 0.5rem;">
+          
+          <div class="meeting-participant">
+            <div style="width: 54px; height: 54px; border-radius: 50%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: #fff;">
+              JD
+            </div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;">Prof. Davis (Host)</span>
+          </div>
+
+          <div class="meeting-participant">
+            <div style="width: 54px; height: 54px; border-radius: 50%; background: #ec4899; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: #fff;">
+              SM
+            </div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;">Sarah Miller</span>
+          </div>
+
+          <div class="meeting-participant">
+            <div style="width: 54px; height: 54px; border-radius: 50%; background: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: #fff;">
+              AK
+            </div>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;">Alex Kumar</span>
+          </div>
+
+          <div class="meeting-participant" style="border: 2px solid var(--primary);">
+            <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">🤟</div>
+            <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600;">You (SignBridge AI)</span>
+          </div>
+
+          <!-- Floating Closed Caption Overlay -->
+          <div class="meeting-caption-overlay" id="captionOverlay">
+            <span style="color: var(--primary); font-size: 0.85rem; margin-right: 0.5rem;">[You Signing]:</span>
+            <span id="captionText">Waiting for sign gestures...</span>
+          </div>
+
+        </div>
+
+        <!-- Meeting Chat Feed -->
+        <div style="margin-top: 0.75rem; height: 130px; overflow-y: auto; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 0.5rem; border: 1px solid var(--border-subtle);" id="chatFeed">
+          <div class="chat-bubble chat-bubble-other">
+            <strong>Prof. Davis:</strong> Welcome everyone! Feel free to present your project updates.
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+          <input type="text" id="chatInput" placeholder="Type or sign a message..." style="flex: 1; padding: 0.5rem 0.85rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 6px; color: #fff; font-size: 0.85rem;">
+          <button id="btnSendChat" class="btn btn-primary btn-sm">
+            <i data-lucide="send" style="width: 14px;"></i> Send
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/meeting.js"></script>
+</body>
+</html>

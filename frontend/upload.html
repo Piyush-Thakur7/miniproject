@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video File Translation — SignBridge AI</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <div class="brand-icon">🤟</div>
+      <span>Sign<span class="gradient-text">Bridge</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link"><i data-lucide="home"></i> Home</a></li>
+      <li><a href="/live" class="nav-link"><i data-lucide="video"></i> Live Webcam</a></li>
+      <li><a href="/upload" class="nav-link active"><i data-lucide="upload-cloud"></i> Upload Video</a></li>
+      <li><a href="/meeting" class="nav-link"><i data-lucide="users"></i> Meeting Mode</a></li>
+      <li><a href="/vocab" class="nav-link"><i data-lucide="book-open"></i> 500+ Dictionary</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="pulse-dot"></span>
+      <span>Batch Pipeline Ready</span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.25rem;">Uploaded Video Recognition</h1>
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">
+        Upload a pre-recorded sign language video to extract frame sequences, detect keypoints, and generate complete timestamped transcripts.
+      </p>
+    </div>
+
+    <!-- Upload Area & Video Preview Grid -->
+    <div class="grid-2" style="align-items: start; margin-bottom: 2rem;">
+      
+      <!-- Left Column: Upload Dropzone -->
+      <div class="glass-card">
+        <div class="dropzone" id="videoDropzone">
+          <input type="file" id="videoFileInput" accept="video/mp4,video/webm,video/avi,video/quicktime" style="display: none;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--primary); margin: 0 auto 1.25rem;">
+            <i data-lucide="upload-cloud" style="width: 28px; height: 28px;"></i>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Drag & Drop Sign Video Here</h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.25rem;">
+            Supports MP4, WebM, AVI, MOV (Max 100MB)
+          </p>
+          <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('videoFileInput').click()">
+            <i data-lucide="folder"></i> Browse Files
+          </button>
+        </div>
+
+        <!-- Upload Progress Indicator -->
+        <div id="progressContainer" style="display: none; margin-top: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.4rem;">
+            <span id="progressStatusLabel">Processing Neural Pipeline...</span>
+            <span id="progressPercentage">0%</span>
+          </div>
+          <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Video Preview Player -->
+      <div class="glass-card">
+        <h3 style="font-size: 1.15rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+          <i data-lucide="play" style="width: 18px; color: var(--primary);"></i>
+          Video Playback
+        </h3>
+        <div class="video-wrapper">
+          <video id="previewVideoPlayer" controls playsinline style="display: none;"></video>
+          <div class="camera-placeholder" id="previewPlaceholder">
+            <i data-lucide="film" style="width: 48px; height: 48px; color: var(--text-muted);"></i>
+            <p>Upload a video to preview playback.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Results Section (Initially Hidden) -->
+    <section id="resultsSection" class="glass-card" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h2 style="font-size: 1.5rem;">Translation Transcript & Timeline</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Temporal sliding window analysis completed successfully.</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button id="btnSpeakTranscript" class="btn btn-secondary btn-sm">
+            <i data-lucide="volume-2" style="width: 14px;"></i> Speak
+          </button>
+          <button id="btnCopyTranscript" class="btn btn-secondary btn-sm">
+            <i data-lucide="copy" style="width: 14px;"></i> Copy
+          </button>
+          <button id="btnDownloadJson" class="btn btn-secondary btn-sm">
+            <i data-lucide="download" style="width: 14px;"></i> Download JSON
+          </button>
+        </div>
+      </div>
+
+      <!-- Metadata Pills -->
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <div class="glass-card" style="padding: 0.75rem 1.25rem; flex: 1; min-width: 140px; text-align: center;">
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Duration</span>
+          <p style="font-size: 1.25rem; font-weight: 700; color: var(--primary);" id="metaDuration">0.0s</p>
+        </div>
+        <div class="glass-card" style="padding: 0.75rem 1.25rem; flex: 1; min-width: 140px; text-align: center;">
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Total Frames</span>
+          <p style="font-size: 1.25rem; font-weight: 700; color: var(--accent-emerald);" id="metaFrames">0</p>
+        </div>
+        <div class="glass-card" style="padding: 0.75rem 1.25rem; flex: 1; min-width: 140px; text-align: center;">
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Inference Time</span>
+          <p style="font-size: 1.25rem; font-weight: 700; color: var(--accent-purple);" id="metaLatency">0 ms</p>
+        </div>
+        <div class="glass-card" style="padding: 0.75rem 1.25rem; flex: 1; min-width: 140px; text-align: center;">
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Signs Detected</span>
+          <p style="font-size: 1.25rem; font-weight: 700; color: var(--accent-amber);" id="metaSignsCount">0</p>
+        </div>
+      </div>
+
+      <!-- Synthesized Full Text -->
+      <div class="sentence-container" style="margin-bottom: 2rem;">
+        <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">
+          Full Assembled Narrative
+        </span>
+        <p class="sentence-text" id="fullTranscriptText" style="margin-top: 0.5rem;">
+          Transcript loading...
+        </p>
+      </div>
+
+      <!-- Timestamped Segments Table -->
+      <div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">Chronological Sign Segments</h3>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border-subtle); color: var(--text-muted);">
+                <th style="padding: 0.75rem 1rem;">Timestamp</th>
+                <th style="padding: 0.75rem 1rem;">Recognized Sign</th>
+                <th style="padding: 0.75rem 1rem;">Model Confidence</th>
+                <th style="padding: 0.75rem 1rem;">Status</th>
+              </tr>
+            </thead>
+            <tbody id="segmentsTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/upload.js"></script>
+</body>
+</html>

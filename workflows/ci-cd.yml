@@ -1,0 +1,139 @@
+name: SignBridge CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  # ==============================================================================
+  # Job 1: Lint & Code Syntax Quality Audit
+  # ==============================================================================
+  lint:
+    name: Code Quality & Syntax Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Linting Tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 black
+
+      - name: Run Syntax & Lint Checks
+        run: |
+          # Stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Exit-zero treats all errors as warnings
+          flake8 . --count --exit-zero --max-complexity=15 --max-line-length=127 --statistics
+
+  # ==============================================================================
+  # Job 2: Automated Unit & Integration Testing Suite
+  # ==============================================================================
+  test:
+    name: Pytest Unit & Integration Tests (Python ${{ matrix.python-version }})
+    needs: lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      - name: Install System Dependencies for OpenCV / MediaPipe
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgl1-mesa-glx libglib2.0-0 ffmpeg
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Seed 500+ Vocabulary SQLite Database
+        run: |
+          python -m backend.database.seed_vocabulary
+
+      - name: Execute Pytest Test Suite
+        run: |
+          pytest -v --disable-warnings tests/
+
+  # ==============================================================================
+  # Job 3: Deep Learning Sequence Model & Benchmark Validation
+  # ==============================================================================
+  model-validation:
+    name: Neural Model & 500-Class Benchmark Audit
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install System & Python Dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y libgl1-mesa-glx libglib2.0-0
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Seed SQLite Database
+        run: |
+          python -m backend.database.seed_vocabulary
+
+      - name: Execute Model Training & Benchmark Evaluation
+        run: |
+          python -m training.train
+          python -m training.evaluate
+
+      - name: Archive Model & Evaluation Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-checkpoints-and-metrics
+          path: |
+            models/sign_model_weights.pth
+            data/evaluation_metrics.json
+            data/vocabulary.db
+
+  # ==============================================================================
+  # Job 4: Container Build & Deployment Packaging Check
+  # ==============================================================================
+  build-container:
+    name: Docker Containerization Build Test
+    needs: [test, model-validation]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: actions/setup-buildx-action@v3
+
+      - name: Build Docker Container
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: signbridge-ai:latest

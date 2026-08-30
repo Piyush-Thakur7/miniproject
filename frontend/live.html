@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Sign Language Recognition — SignBridge AI</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <div class="brand-icon">🤟</div>
+      <span>Sign<span class="gradient-text">Bridge</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link"><i data-lucide="home"></i> Home</a></li>
+      <li><a href="/live" class="nav-link active"><i data-lucide="video"></i> Live Webcam</a></li>
+      <li><a href="/upload" class="nav-link"><i data-lucide="upload-cloud"></i> Upload Video</a></li>
+      <li><a href="/meeting" class="nav-link"><i data-lucide="users"></i> Meeting Mode</a></li>
+      <li><a href="/vocab" class="nav-link"><i data-lucide="book-open"></i> 500+ Dictionary</a></li>
+    </ul>
+    <div class="nav-status" id="wsStatus">
+      <span class="pulse-dot"></span>
+      <span id="wsStatusText">WebSocket: Ready</span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h1 style="font-size: 2.25rem;">Live Real-Time Recognition</h1>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+          Perform sign language gestures in front of your camera for continuous real-time neural translation.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btnStartCamera" class="btn btn-primary">
+          <i data-lucide="camera"></i> Start Webcam
+        </button>
+        <button id="btnTogglePause" class="btn btn-secondary" disabled>
+          <i data-lucide="pause"></i> Pause Stream
+        </button>
+      </div>
+    </div>
+
+    <!-- Dual Column Recognition Studio -->
+    <div class="grid-2" style="align-items: start;">
+      
+      <!-- Left Column: Video & Mesh Canvas -->
+      <div class="glass-card" style="padding: 1.25rem;">
+        <div class="video-wrapper" id="videoContainer">
+          <video id="webcamVideo" autoplay playsinline muted></video>
+          <canvas id="overlayCanvas"></canvas>
+          <div class="camera-placeholder" id="cameraPlaceholder">
+            <i data-lucide="camera-off" style="width: 48px; height: 48px; color: var(--text-muted);"></i>
+            <p>Webcam is currently inactive.</p>
+            <button onclick="document.getElementById('btnStartCamera').click()" class="btn btn-primary btn-sm">
+              Enable Camera
+            </button>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="activity" style="width: 14px; height: 14px;"></i>
+            <span>Latency: <strong id="latencyDisplay">0 ms</strong></span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="hand" style="width: 14px; height: 14px;"></i>
+            <span>Hands: <strong id="handsCountDisplay">0 detected</strong></span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="cpu" style="width: 14px; height: 14px;"></i>
+            <span>FPS: <strong id="fpsDisplay">30</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Live Prediction HUD & Sentence Builder -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        
+        <!-- Live Prediction Card -->
+        <div class="prediction-box">
+          <span style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;">
+            Currently Detected Sign
+          </span>
+          <div class="recognized-sign" id="detectedSignDisplay">
+            WAITING...
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; width: 100%; max-width: 320px; justify-content: center;">
+            <span style="font-size: 0.9rem; font-weight: 700;" id="confidenceLabel">0%</span>
+            <div class="confidence-bar-bg" style="flex: 1;">
+              <div class="confidence-bar-fill" id="confidenceBar" style="width: 0%;"></div>
+            </div>
+            <span class="badge badge-beginner" id="statusBadge">Idle</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;" id="statusMessage">
+            Position hands within camera frame.
+          </p>
+        </div>
+
+        <!-- Real-time Sentence Builder -->
+        <div class="glass-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <h3 style="font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="message-square" style="width: 18px; color: var(--primary);"></i>
+              Translated Sentence
+            </h3>
+            <div style="display: flex; gap: 0.5rem;">
+              <button id="btnSpeak" class="btn btn-secondary btn-sm" title="Read Aloud with TTS">
+                <i data-lucide="volume-2" style="width: 14px;"></i> Speak
+              </button>
+              <button id="btnCopy" class="btn btn-secondary btn-sm" title="Copy to Clipboard">
+                <i data-lucide="copy" style="width: 14px;"></i> Copy
+              </button>
+              <button id="btnClear" class="btn btn-secondary btn-sm" title="Clear Text">
+                <i data-lucide="trash-2" style="width: 14px;"></i> Clear
+              </button>
+            </div>
+          </div>
+          <div class="sentence-container">
+            <p class="sentence-text" id="sentenceDisplay">
+              Your translated conversation will appear here...
+            </p>
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+              <span>Temporal Debounce: Active</span>
+              <span id="wordCountDisplay">0 words</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top-3 Alternative Probability Candidates -->
+        <div class="glass-card" style="padding: 1.25rem;">
+          <h4 style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">
+            Candidate Probabilities (BiGRU Distribution)
+          </h4>
+          <div id="candidatesList" style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="color: var(--text-muted); font-size: 0.85rem;">No predictions yet.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/live.js"></script>
+</body>
+</html>

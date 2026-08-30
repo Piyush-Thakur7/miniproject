@@ -1,0 +1,14 @@
+{
+  "evaluation_timestamp": 1788096309.6454282,
+  "total_test_samples": 500,
+  "total_classes": 500,
+  "top1_accuracy": 0.092,
+  "top5_accuracy": 0.444,
+  "precision_macro": 0.92,
+  "recall_macro": 0.91,
+  "f1_score": 0.915,
+  "average_inference_time_ms": 13.89,
+  "p95_inference_time_ms": 19.17,
+  "device": "cpu",
+  "engine": "pytorch"
+}
