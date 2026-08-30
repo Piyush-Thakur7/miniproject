@@ -23,11 +23,11 @@
       
       <div class="header-controls">
         <a href="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" download="SignBridge_Complete_Sign_Language_Guide.pdf" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
-          <i data-lucide="file-text" style="width: 14px;"></i> Download PDF Guide
+          <i data-lucide="download" style="width: 14px;"></i> Download Official Book (PDF)
         </a>
 
-        <a href="#dictionarySection" class="btn btn-secondary btn-sm" onclick="openAndScrollToDictionary()">
-          <i data-lucide="book-open" style="width: 14px; color: var(--primary);"></i> 500+ Sign Dictionary
+        <a href="#bookSection" class="btn btn-secondary btn-sm">
+          <i data-lucide="book-open" style="width: 14px; color: var(--primary);"></i> Official Sign Language Book
         </a>
 
         <div style="display: flex; align-items: center; gap: 0.45rem; background: var(--bg-surface-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle); font-size: 0.78rem;">
@@ -41,7 +41,7 @@
 
         <div style="display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-secondary); background: var(--bg-surface-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">
           <span class="pulse-dot"></span>
-          <span id="fpsDisplay" style="font-weight: 600;">Engine Ready</span>
+          <span id="fpsDisplay" style="font-weight: 600;">Vision AI: 60 FPS</span>
         </div>
       </div>
     </div>
@@ -75,9 +75,9 @@
             <div style="width: 60px; height: 60px; border-radius: var(--radius-md); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 0.85rem; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
               <i data-lucide="camera" style="width: 30px; height: 30px; color: #818cf8;"></i>
             </div>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">Camera Vision Inactive</h3>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">Camera Vision Ready</h3>
             <p style="font-size: 0.84rem; color: #94a3b8; max-width: 290px; margin: 0.35rem 0 1.25rem; line-height: 1.45;">
-              Click start below to open camera feed and begin 60 FPS gesture recognition.
+              Click start below to open camera feed and begin 60 FPS real-time sign recognition.
             </p>
             <button id="btnStartCamera" class="btn btn-primary" style="font-size: 0.92rem; padding: 0.65rem 1.35rem;">
               <i data-lucide="camera"></i> Start Camera & Recognize
@@ -89,7 +89,7 @@
         <div class="telemetry-row">
           <div>LATENCY: <strong id="latencyDisplay" style="color: var(--text-primary);">0 ms</strong></div>
           <div>STATUS: <strong id="handsCountDisplay" style="color: var(--primary);">0 Hands Tracked</strong></div>
-          <div>ENGINE: <strong style="color: var(--emerald);">60 FPS Client AI</strong></div>
+          <div>PIPELINE: <strong style="color: var(--emerald);">60 FPS Client AI</strong></div>
         </div>
       </div>
 
@@ -101,7 +101,7 @@
           <div class="panel-header">
             <div class="panel-title">
               <i data-lucide="activity" style="width: 16px; color: var(--primary);"></i>
-              Recognized Gesture (Hold 2s to Commit)
+              Recognized Sign (Hold 2s to Commit)
             </div>
             <span class="badge badge-beginner" id="statusBadge">Idle</span>
           </div>
@@ -121,7 +121,7 @@
           <!-- 2-Second Hold-to-Commit Progress Gate -->
           <div class="hold-meter-container">
             <div class="hold-meter-header">
-              <span>⏱️ Hold 2.0s to Insert Text</span>
+              <span>⏱️ Hold 2.0s Steady to Commit</span>
               <span id="holdTimerLabel" style="color: var(--primary);">0.0s / 2.0s</span>
             </div>
             <div class="hold-meter-bar">
@@ -130,7 +130,7 @@
           </div>
 
           <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;" id="statusMessage">
-            Position hand steadily in camera frame and hold for 2 seconds to commit text.
+            Position hand steadily in camera frame and hold for 2 seconds to commit word.
           </p>
         </div>
 
@@ -182,16 +182,16 @@
 
     </div>
 
-    <!-- Quick Sign Cheat Sheet (Instant Reference) -->
+    <!-- Quick Sign Cheat Sheet (Instant Testing Reference) -->
     <section class="studio-panel" style="margin-bottom: 1.5rem;">
       <div class="panel-header">
         <div class="panel-title">
           <i data-lucide="sparkles" style="width: 16px; color: var(--primary);"></i>
           Quick Sign Testing Cheat Sheet
         </div>
-        <button onclick="openAndScrollToDictionary()" class="btn btn-secondary btn-sm">
-          Browse 500+ Dictionary & PDF <i data-lucide="arrow-down" style="width: 12px;"></i>
-        </button>
+        <a href="#bookSection" class="btn btn-secondary btn-sm">
+          Read Official Sign Book Below <i data-lucide="arrow-down" style="width: 12px;"></i>
+        </a>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem;">
@@ -237,82 +237,68 @@
       </div>
     </section>
 
-    <!-- SECTION: 500+ SIGN LANGUAGE DICTIONARY & EMBEDDED PDF HANDBOOK -->
-    <section id="dictionarySection" class="studio-panel" style="padding: 1.5rem;">
+    <!-- SECTION: OFFICIAL SIGN LANGUAGE REFERENCE BOOK (Direct In-Browser Reader & Download) -->
+    <section id="bookSection" class="studio-panel" style="padding: 1.65rem;">
       
-      <!-- Section Header with PDF Download & Toggle Buttons -->
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.85rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.15rem;">
+      <!-- Section Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.85rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.15rem; margin-bottom: 1.25rem;">
         <div>
-          <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 0.55rem; margin: 0; letter-spacing: -0.02em;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 0.55rem; margin: 0; letter-spacing: -0.02em;">
             <i data-lucide="book-open" style="color: var(--primary);"></i>
-            Official Sign Language Reference Guide & Manual
+            Official Sign Language Reference Book & Manual
           </h2>
           <p style="font-size: 0.84rem; color: var(--text-secondary); margin: 0.25rem 0 0;">
-            Download the official guidebook PDF or explore 500+ structured signs with exact hand formations and motions.
+            The Standard Reference Book of Sign Language & Manual Communication (Academic Edition v1.0).
           </p>
         </div>
         
-        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap;">
           <a href="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" download="SignBridge_Complete_Sign_Language_Guide.pdf" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
-            <i data-lucide="download" style="width: 14px;"></i> Download PDF Guide
+            <i data-lucide="download" style="width: 14px;"></i> Download PDF Book
           </a>
 
-          <button id="togglePdfViewerBtn" onclick="togglePdfViewer()" class="btn btn-secondary btn-sm">
-            <i data-lucide="file-text" style="width: 14px;"></i> <span id="pdfViewerBtnText">View PDF in Browser</span>
-          </button>
-
-          <button id="toggleDictionaryBtn" class="btn btn-secondary btn-sm">
-            <i data-lucide="chevron-down" style="width: 14px;"></i> 500+ Interactive Cards
-          </button>
+          <a href="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" target="_blank" class="btn btn-secondary btn-sm">
+            <i data-lucide="external-link" style="width: 14px;"></i> Open Full Screen PDF
+          </a>
         </div>
       </div>
 
-      <!-- In-Browser Embedded PDF Viewer -->
-      <div id="embeddedPdfViewerContainer" style="display: none; margin-top: 1.25rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-medium); padding: 0.75rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+      <!-- Book Chapter Navigation Pills -->
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.15rem;">
+        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
+          📖 Ch 1: Five Linguistic Parameters
+        </span>
+        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
+          🔤 Ch 2: A–Z Fingerspelling Gallery Plates
+        </span>
+        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
+          🌅 Ch 3: Daily Greetings & Time Cycles
+        </span>
+        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
+          🚨 Ch 4: Healthcare & Emergency Triage
+        </span>
+        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
+          📚 Ch 5: Complete 500-Word Lexicon
+        </span>
+        <span style="font-size: 0.75rem; font-weight: 700; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); color: var(--text-secondary);">
+          ⚙️ Ch 6: Vision AI & 2.0s Hold Gate
+        </span>
+      </div>
+
+      <!-- Embedded Interactive PDF Reader Frame -->
+      <div style="background: var(--bg-surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-medium); padding: 0.75rem; box-shadow: var(--shadow-subtle);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; padding: 0.25rem 0.5rem;">
           <strong style="font-size: 0.88rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.4rem;">
             <i data-lucide="file-text" style="width: 16px; color: var(--emerald);"></i>
-            SignBridge_Complete_Sign_Language_Guide.pdf (Official Manual)
+            The Standard Reference Book of Sign Language & Manual Communication (PDF)
           </strong>
-          <a href="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" target="_blank" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
-            Open Full Window <i data-lucide="external-link" style="width: 12px;"></i>
-          </a>
+          <span style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--text-muted);">
+            216 KB &bull; Academic Open Reference Edition
+          </span>
         </div>
-        <iframe src="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" style="width: 100%; height: 550px; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle);" title="Sign Language PDF Guide"></iframe>
+        <iframe src="/docs/SignBridge_Complete_Sign_Language_Guide.pdf" style="width: 100%; height: 650px; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle);" title="Official Sign Language Book"></iframe>
       </div>
 
-      <!-- Collapsible Dictionary Content Area -->
-      <div id="dictionaryContent" style="display: none; margin-top: 1.25rem;">
-        
-        <!-- Search & Filter Controls -->
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
-          <div style="flex: 1; min-width: 250px; position: relative;">
-            <input type="text" id="searchInput" placeholder="Search 500+ signs (e.g. Hello, Doctor, Help, Water, Yes, Letter A)..." 
-              style="width: 100%; padding: 0.65rem 0.95rem 0.65rem 2.3rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.88rem; outline: none; transition: border-color 0.15s ease;">
-            <i data-lucide="search" style="position: absolute; left: 11px; top: 12px; width: 15px; color: var(--text-muted);"></i>
-          </div>
-
-          <select id="difficultyFilter" style="padding: 0.65rem 0.95rem; background: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.84rem; font-weight: 600; cursor: pointer;">
-            <option value="all">All Difficulties</option>
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
-          </select>
-        </div>
-
-        <!-- 19 Category Filter Pills -->
-        <div id="categoryPillsContainer" style="display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.65rem; margin-bottom: 1.25rem; -webkit-overflow-scrolling: touch;">
-          <button class="category-pill active" data-category="all">All Signs (500)</button>
-        </div>
-
-        <!-- 500+ Sign Cards Grid -->
-        <div class="lexicon-grid" id="vocabGrid">
-          <div style="color: var(--text-muted); grid-column: 1 / -1; text-align: center; padding: 3rem; font-family: var(--font-mono);">
-            Loading 500+ signs and visual gesture diagrams...
-          </div>
-        </div>
-
-      </div>
     </section>
 
   </main>
@@ -321,48 +307,14 @@
   <footer style="margin-top: 2.5rem; border-top: 1px solid var(--border-subtle); padding: 1.25rem 0; background: var(--bg-surface);">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.65rem; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">
       <div>SignBridge AI &bull; Real-Time Sign Language Recognition Studio</div>
-      <div>Official PDF Manual Included &bull; 60 FPS Client AI &bull; 2.0s Hold Gate</div>
+      <div>Official Reference Book Included &bull; 60 FPS Client AI &bull; 2.0s Hold Gate</div>
     </div>
   </footer>
 
   <script src="/static/js/api.js"></script>
   <script src="/static/js/live.js"></script>
-  <script src="/static/js/vocabulary.js"></script>
   <script>
     if (typeof lucide !== "undefined") lucide.createIcons();
-
-    // Toggle In-Browser PDF Viewer
-    window.togglePdfViewer = function() {
-      const viewer = document.getElementById("embeddedPdfViewerContainer");
-      const btnText = document.getElementById("pdfViewerBtnText");
-      if (viewer) {
-        const isHidden = viewer.style.display === "none";
-        viewer.style.display = isHidden ? "block" : "none";
-        if (btnText) {
-          btnText.innerText = isHidden ? "Hide PDF Viewer" : "View PDF in Browser";
-        }
-        if (isHidden) {
-          viewer.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      }
-    };
-
-    // Helper to open and scroll down to dictionary
-    function openAndScrollToDictionary() {
-      const dictContent = document.getElementById("dictionaryContent");
-      const toggleBtn = document.getElementById("toggleDictionaryBtn");
-      if (dictContent) {
-        dictContent.style.display = "block";
-        if (toggleBtn) {
-          toggleBtn.innerHTML = '<i data-lucide="chevron-up" style="width: 14px;"></i> Collapse Cards';
-          if (typeof lucide !== "undefined") lucide.createIcons();
-        }
-      }
-      const section = document.getElementById("dictionarySection");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
 
     // Theme Toggle
     const themeBtn = document.getElementById("themeToggle");
