@@ -1,8 +1,29 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/api"
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/predict/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/health",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/vocabulary",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/categories",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/vocab",
+      "destination": "/vocabulary.html"
     }
   ]
 }

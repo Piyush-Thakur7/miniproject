@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Meeting Mode (Google Meet & Zoom Assistant) — SignBridge AI</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- MediaPipe Hands for Client Landmark Tracking -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <style>
+    .meeting-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      min-height: 520px;
+    }
+    .meeting-participant {
+      background: #1e293b;
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0.5rem;
+    }
+    .meeting-caption-overlay {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(12px);
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--radius-full);
+      max-width: 90%;
+      text-align: center;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-hover);
+      z-index: 20;
+    }
+    .chat-bubble {
+      padding: 0.55rem 0.85rem;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      margin-bottom: 0.45rem;
+      line-height: 1.45;
+    }
+    .chat-bubble-me {
+      background: var(--primary-light);
+      border: 1px solid rgba(79, 70, 229, 0.2);
+      color: var(--primary);
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+    .chat-bubble-other {
+      background: var(--bg-surface-subtle);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Handcrafted Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-header-row">
+      <a href="/" class="brand">
+        <div class="brand-icon">🤟</div>
+        <span>Sign<span class="gradient-text">Bridge</span></span>
+      </a>
+      <div class="nav-right-actions">
+        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+        </button>
+        <div class="nav-status">
+          <span class="pulse-dot"></span>
+          <span>Meeting Ready</span>
+        </div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link"><i data-lucide="home" style="width: 16px;"></i> Home</a></li>
+      <li><a href="/live" class="nav-link"><i data-lucide="video" style="width: 16px;"></i> Live Webcam</a></li>
+      <li><a href="/upload" class="nav-link"><i data-lucide="upload-cloud" style="width: 16px;"></i> Video File</a></li>
+      <li><a href="/meeting" class="nav-link active"><i data-lucide="users" style="width: 16px;"></i> Meeting Mode</a></li>
+      <li><a href="/vocab" class="nav-link"><i data-lucide="book-open" style="width: 16px;"></i> 500+ Dictionary</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    
+    <div class="meeting-grid">
+      
+      <!-- Left Column: User Webcam & Gesture Detection Panel -->
+      <div class="ui-card" style="display: flex; flex-direction: column; padding: 1.25rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <h2 style="font-size: 1.05rem; display: flex; align-items: center; gap: 0.4rem;">
+            <i data-lucide="camera" style="width: 18px; color: var(--primary);"></i>
+            Your Gesture Input Feed
+          </h2>
+          <button id="btnMeetingCam" class="btn btn-primary btn-sm">
+            <i data-lucide="video"></i> Start Camera
+          </button>
+        </div>
+
+        <div class="video-wrapper" style="flex: 1; min-height: 220px;">
+          <video id="meetingWebcam" autoplay playsinline muted></video>
+          <canvas id="meetingCanvas"></canvas>
+          <div class="camera-placeholder" id="meetingCamPlaceholder">
+            <i data-lucide="camera-off" style="width: 38px; height: 38px;"></i>
+            <p style="font-size: 0.85rem; color: #94a3b8;">Click Start Camera to translate</p>
+          </div>
+        </div>
+
+        <!-- Detection Status Ribbon -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; font-size: 0.8rem;">
+          <div>Detected: <strong style="color: var(--primary);" id="meetingDetectedWord">NONE</strong> (<span id="meetingConfidence">0%</span>)</div>
+          <label style="display: flex; align-items: center; gap: 0.35rem; cursor: pointer; color: var(--text-secondary); font-weight: 600;">
+            <input type="checkbox" id="autoSpeechToggle" checked> Auto-TTS
+          </label>
+        </div>
+
+        <!-- Assembled Sentence Bar -->
+        <div style="margin-top: 0.75rem; padding: 0.75rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+          <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Live Subtitle Buffer</div>
+          <p id="meetingSentence" style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; min-height: 1.3rem; margin-top: 0.25rem;">
+            Sign to speak...
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: Simulated Google Meet / Zoom Conference Workspace -->
+      <div class="ui-card" style="display: flex; flex-direction: column; padding: 1.25rem; position: relative;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.45rem;">
+            <div class="pulse-dot"></div>
+            <strong style="font-size: 0.92rem;">Conference Call (4 Users)</strong>
+          </div>
+          <span class="badge badge-beginner">Google Meet Active</span>
+        </div>
+
+        <!-- Simulated Meeting Call Grid -->
+        <div style="flex: 1; min-height: 240px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.5rem; border-radius: var(--radius-sm); overflow: hidden; position: relative; background: #020617; border: 1px solid var(--border-subtle); padding: 0.5rem;">
+          
+          <div class="meeting-participant">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; color: #fff;">
+              JD
+            </div>
+            <span style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.35rem;">Prof. Davis</span>
+          </div>
+
+          <div class="meeting-participant">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #ec4899; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; color: #fff;">
+              SM
+            </div>
+            <span style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.35rem;">Sarah</span>
+          </div>
+
+          <div class="meeting-participant">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; color: #fff;">
+              AK
+            </div>
+            <span style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.35rem;">Alex</span>
+          </div>
+
+          <div class="meeting-participant" style="border: 2px solid var(--primary);">
+            <div style="font-size: 1.35rem;">🤟</div>
+            <span style="font-size: 0.75rem; color: var(--primary); font-weight: 700;">You (AI Voice)</span>
+          </div>
+
+          <!-- Floating Closed Caption Overlay -->
+          <div class="meeting-caption-overlay" id="captionOverlay">
+            <span style="color: var(--primary); font-size: 0.8rem; font-weight: 700;">[You]:</span>
+            <span id="captionText">Waiting for sign gestures...</span>
+          </div>
+
+        </div>
+
+        <!-- Meeting Chat Feed -->
+        <div style="margin-top: 0.75rem; height: 110px; overflow-y: auto; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); padding: 0.5rem; border: 1px solid var(--border-subtle);" id="chatFeed">
+          <div class="chat-bubble chat-bubble-other">
+            <strong>Prof. Davis:</strong> Welcome everyone! Feel free to share your updates.
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.4rem; margin-top: 0.5rem;">
+          <input type="text" id="chatInput" placeholder="Type or sign a message..." style="flex: 1; padding: 0.5rem 0.85rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.85rem;">
+          <button id="btnSendChat" class="btn btn-primary btn-sm">
+            <i data-lucide="send" style="width: 14px;"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/meeting.js"></script>
+  <script>
+    const themeBtn = document.getElementById("themeToggle");
+    const currentTheme = localStorage.getItem("signbridge-theme") || "light";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeBtn.addEventListener("click", () => {
+      const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("signbridge-theme", nextTheme);
+      updateThemeIcon(nextTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      themeBtn.innerHTML = theme === "dark" 
+        ? '<i data-lucide="sun" style="width: 18px; height: 18px;"></i>' 
+        : '<i data-lucide="moon" style="width: 18px; height: 18px;"></i>';
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
