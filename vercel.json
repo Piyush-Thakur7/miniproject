@@ -1,71 +1,8 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/frontend/$1"
-    },
-    {
-      "src": "/frontend/(.*)",
-      "dest": "/frontend/$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/predict/(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/health",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/vocabulary",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/categories",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/live",
-      "dest": "/frontend/live.html"
-    },
-    {
-      "src": "/upload",
-      "dest": "/frontend/upload.html"
-    },
-    {
-      "src": "/meeting",
-      "dest": "/frontend/meeting.html"
-    },
-    {
-      "src": "/vocab",
-      "dest": "/frontend/vocabulary.html"
-    },
-    {
-      "src": "/dictionary",
-      "dest": "/frontend/vocabulary.html"
-    },
-    {
-      "src": "/explore",
-      "dest": "/frontend/vocabulary.html"
-    },
-    {
-      "src": "/",
-      "dest": "/frontend/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.py"
+      "source": "/(.*)",
+      "destination": "/api/index.py"
     }
   ]
 }
