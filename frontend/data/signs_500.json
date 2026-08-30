@@ -1,0 +1,4002 @@
+[
+  {
+    "class_id": 0,
+    "word": "HELLO",
+    "category_name": "Greetings",
+    "description": "Open palm wave near temple moving outward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HELLO shape."
+  },
+  {
+    "class_id": 1,
+    "word": "GOOD MORNING",
+    "category_name": "Greetings",
+    "description": "Sign 'Good' followed by sun rising arm motion.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GOOD MORNING shape."
+  },
+  {
+    "class_id": 2,
+    "word": "GOOD AFTERNOON",
+    "category_name": "Greetings",
+    "description": "Sign 'Good' followed by midday flat hand angle.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GOOD AFTERNOON shape."
+  },
+  {
+    "class_id": 3,
+    "word": "GOOD EVENING",
+    "category_name": "Greetings",
+    "description": "Sign 'Good' followed by sunset wrist downward tap.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GOOD EVENING shape."
+  },
+  {
+    "class_id": 4,
+    "word": "GOOD NIGHT",
+    "category_name": "Greetings",
+    "description": "Sign 'Good' then cup hands over horizontal forearm.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GOOD NIGHT shape."
+  },
+  {
+    "class_id": 5,
+    "word": "WELCOME",
+    "category_name": "Greetings",
+    "description": "Open palms scooped inwards towards chest.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WELCOME shape."
+  },
+  {
+    "class_id": 6,
+    "word": "NICE TO MEET YOU",
+    "category_name": "Greetings",
+    "description": "Wipe palms horizontally, then index fingers meet.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NICE TO MEET YOU shape."
+  },
+  {
+    "class_id": 7,
+    "word": "HOW ARE YOU",
+    "category_name": "Greetings",
+    "description": "Curved knuckles roll outward to pointing index.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOW ARE YOU shape."
+  },
+  {
+    "class_id": 8,
+    "word": "GOODBYE",
+    "category_name": "Greetings",
+    "description": "Open hand fingers flex open and closed wave.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GOODBYE shape."
+  },
+  {
+    "class_id": 9,
+    "word": "SEE YOU LATER",
+    "category_name": "Greetings",
+    "description": "'V' hand from eye flips forward to 'L' shape.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SEE YOU LATER shape."
+  },
+  {
+    "class_id": 10,
+    "word": "TAKE CARE",
+    "category_name": "Greetings",
+    "description": "Two 'K' hands tap crossed at wrists twice.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TAKE CARE shape."
+  },
+  {
+    "class_id": 11,
+    "word": "HAVE A NICE DAY",
+    "category_name": "Greetings",
+    "description": "Cupped hands to chest, 'Good' to open sweeping arc.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HAVE A NICE DAY shape."
+  },
+  {
+    "class_id": 12,
+    "word": "LONG TIME NO SEE",
+    "category_name": "Greetings",
+    "description": "Index finger extended, eye touch then hands apart.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct LONG TIME NO SEE shape."
+  },
+  {
+    "class_id": 13,
+    "word": "WHAT'S UP",
+    "category_name": "Greetings",
+    "description": "Open 5 hands middle fingers stroke chest upward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHAT'S UP shape."
+  },
+  {
+    "class_id": 14,
+    "word": "HOW'S EVERYTHING",
+    "category_name": "Greetings",
+    "description": "Sweeping circle with both 5 hands, thumbs up.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOW'S EVERYTHING shape."
+  },
+  {
+    "class_id": 15,
+    "word": "GLAD TO MEET YOU",
+    "category_name": "Greetings",
+    "description": "Open palm circular chest rub followed by meet gesture.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GLAD TO MEET YOU shape."
+  },
+  {
+    "class_id": 16,
+    "word": "FAREWELL",
+    "category_name": "Greetings",
+    "description": "Formal outward double wave from heart.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct FAREWELL shape."
+  },
+  {
+    "class_id": 17,
+    "word": "CHEERS",
+    "category_name": "Greetings",
+    "description": "Clinking fist motion with open smile.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CHEERS shape."
+  },
+  {
+    "class_id": 18,
+    "word": "SEE YOU TOMORROW",
+    "category_name": "Greetings",
+    "description": "'V' hand eye gesture followed by thumb cheek arc.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SEE YOU TOMORROW shape."
+  },
+  {
+    "class_id": 19,
+    "word": "BLESS YOU",
+    "category_name": "Greetings",
+    "description": "Hands near chin opening forward smoothly.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BLESS YOU shape."
+  },
+  {
+    "class_id": 20,
+    "word": "HELP",
+    "category_name": "Emergency",
+    "description": "Closed fist with thumb up resting on flat opposite palm, lifted.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HELP shape."
+  },
+  {
+    "class_id": 21,
+    "word": "EMERGENCY",
+    "category_name": "Emergency",
+    "description": "'E' handshape shaken vigorously side-to-side.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct EMERGENCY shape."
+  },
+  {
+    "class_id": 22,
+    "word": "DANGER",
+    "category_name": "Emergency",
+    "description": "Fist thumbs brushing upwards past opposite knuckles.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DANGER shape."
+  },
+  {
+    "class_id": 23,
+    "word": "POLICE",
+    "category_name": "Emergency",
+    "description": "'C' handshape tapped twice on left upper chest badge.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct POLICE shape."
+  },
+  {
+    "class_id": 24,
+    "word": "AMBULANCE",
+    "category_name": "Emergency",
+    "description": "Twisting open 5 hand near head simulating siren light.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct AMBULANCE shape."
+  },
+  {
+    "class_id": 25,
+    "word": "HOSPITAL",
+    "category_name": "Emergency",
+    "description": "'H' fingers form a cross on opposite shoulder.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOSPITAL shape."
+  },
+  {
+    "class_id": 26,
+    "word": "DOCTOR",
+    "category_name": "Emergency",
+    "description": "'M' or 'D' fingertips tap inside opposite wrist pulse.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DOCTOR shape."
+  },
+  {
+    "class_id": 27,
+    "word": "FIRE",
+    "category_name": "Emergency",
+    "description": "Wiggling open 5 fingers alternately moving upward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct FIRE shape."
+  },
+  {
+    "class_id": 28,
+    "word": "ACCIDENT",
+    "category_name": "Emergency",
+    "description": "Two open 'C' hands crash together into 'S' fists.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ACCIDENT shape."
+  },
+  {
+    "class_id": 29,
+    "word": "PAIN",
+    "category_name": "Emergency",
+    "description": "Index fingers pointing towards each other twisting in opposite directions.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PAIN shape."
+  },
+  {
+    "class_id": 30,
+    "word": "BLEEDING",
+    "category_name": "Emergency",
+    "description": "Open hand wiggling downwards from wounded location.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BLEEDING shape."
+  },
+  {
+    "class_id": 31,
+    "word": "CHOKING",
+    "category_name": "Emergency",
+    "description": "Both hands grasping throat firmly.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CHOKING shape."
+  },
+  {
+    "class_id": 32,
+    "word": "ALLERGY",
+    "category_name": "Emergency",
+    "description": "Index finger touches nose, then moves away dismissively.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ALLERGY shape."
+  },
+  {
+    "class_id": 33,
+    "word": "MEDICINE",
+    "category_name": "Emergency",
+    "description": "Middle finger grinds in palm of opposite hand.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MEDICINE shape."
+  },
+  {
+    "class_id": 34,
+    "word": "URGENT",
+    "category_name": "Emergency",
+    "description": "Quick 'U' hand snaps forward with emphasis.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct URGENT shape."
+  },
+  {
+    "class_id": 35,
+    "word": "CALL 911",
+    "category_name": "Emergency",
+    "description": "Phone gesture to ear followed by numbers 9-1-1.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CALL 911 shape."
+  },
+  {
+    "class_id": 36,
+    "word": "CANNOT BREATHE",
+    "category_name": "Emergency",
+    "description": "Hands clawed on chest pulling upward with distress.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CANNOT BREATHE shape."
+  },
+  {
+    "class_id": 37,
+    "word": "LOST",
+    "category_name": "Emergency",
+    "description": "Fingertips together open and drop downward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct LOST shape."
+  },
+  {
+    "class_id": 38,
+    "word": "TRAPPED",
+    "category_name": "Emergency",
+    "description": "One hand inside clasped fist struggling to move.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TRAPPED shape."
+  },
+  {
+    "class_id": 39,
+    "word": "SAFETY",
+    "category_name": "Emergency",
+    "description": "'S' hands crossed at wrists moving outward to protect.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SAFETY shape."
+  },
+  {
+    "class_id": 40,
+    "word": "THANK YOU",
+    "category_name": "Common Phrases",
+    "description": "Flat hand fingertips touch chin and move forward towards person.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct THANK YOU shape."
+  },
+  {
+    "class_id": 41,
+    "word": "PLEASE",
+    "category_name": "Common Phrases",
+    "description": "Flat open hand rubs center of chest in circular motion.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PLEASE shape."
+  },
+  {
+    "class_id": 42,
+    "word": "SORRY",
+    "category_name": "Common Phrases",
+    "description": "'A' fist rubs chest in a circular motion.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SORRY shape."
+  },
+  {
+    "class_id": 43,
+    "word": "EXCUSE ME",
+    "category_name": "Common Phrases",
+    "description": "Fingertips brush flat opposite palm forward twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct EXCUSE ME shape."
+  },
+  {
+    "class_id": 44,
+    "word": "YES",
+    "category_name": "Common Phrases",
+    "description": "'S' fist nods up and down like a head nodding.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct YES shape."
+  },
+  {
+    "class_id": 45,
+    "word": "NO",
+    "category_name": "Common Phrases",
+    "description": "Index and middle finger snap closed onto thumb.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NO shape."
+  },
+  {
+    "class_id": 46,
+    "word": "MAYBE",
+    "category_name": "Common Phrases",
+    "description": "Flat open palms alternately balance up and down.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MAYBE shape."
+  },
+  {
+    "class_id": 47,
+    "word": "I AGREE",
+    "category_name": "Common Phrases",
+    "description": "Touch forehead index finger, then two index fingers parallel forward.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct I AGREE shape."
+  },
+  {
+    "class_id": 48,
+    "word": "I DISAGREE",
+    "category_name": "Common Phrases",
+    "description": "Touch forehead, then index fingers pull apart sharply.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct I DISAGREE shape."
+  },
+  {
+    "class_id": 49,
+    "word": "YOU ARE WELCOME",
+    "category_name": "Common Phrases",
+    "description": "Open hand sweeping inward or nodding with open palm.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct YOU ARE WELCOME shape."
+  },
+  {
+    "class_id": 50,
+    "word": "NO PROBLEM",
+    "category_name": "Common Phrases",
+    "description": "Two bent 'V' hands knuckle brush, open outward.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NO PROBLEM shape."
+  },
+  {
+    "class_id": 51,
+    "word": "I UNDERSTAND",
+    "category_name": "Common Phrases",
+    "description": "Index finger flicks upward near forehead next to eye.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct I UNDERSTAND shape."
+  },
+  {
+    "class_id": 52,
+    "word": "I DON'T UNDERSTAND",
+    "category_name": "Common Phrases",
+    "description": "Index finger flicks up with head shaking 'no'.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct I DON'T UNDERSTAND shape."
+  },
+  {
+    "class_id": 53,
+    "word": "REPEAT PLEASE",
+    "category_name": "Common Phrases",
+    "description": "Curved fingertips dive into opposite flat palm, plus 'Please'.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct REPEAT PLEASE shape."
+  },
+  {
+    "class_id": 54,
+    "word": "SLOW DOWN",
+    "category_name": "Common Phrases",
+    "description": "Open flat hand slowly slides up opposite forearm.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SLOW DOWN shape."
+  },
+  {
+    "class_id": 55,
+    "word": "I LIKE IT",
+    "category_name": "Common Phrases",
+    "description": "Thumb and middle finger pull out from chest pinched.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct I LIKE IT shape."
+  },
+  {
+    "class_id": 56,
+    "word": "I DON'T LIKE IT",
+    "category_name": "Common Phrases",
+    "description": "Thumb and middle finger pull from chest and flick away.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct I DON'T LIKE IT shape."
+  },
+  {
+    "class_id": 57,
+    "word": "OF COURSE",
+    "category_name": "Common Phrases",
+    "description": "'C' hand circles around resting fist and lands on top.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct OF COURSE shape."
+  },
+  {
+    "class_id": 58,
+    "word": "I DON'T KNOW",
+    "category_name": "Common Phrases",
+    "description": "Flat hand touches forehead and turns outward away.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct I DON'T KNOW shape."
+  },
+  {
+    "class_id": 59,
+    "word": "SOUNDS GOOD",
+    "category_name": "Common Phrases",
+    "description": "Point to ear, then sign 'Good' thumbs up.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SOUNDS GOOD shape."
+  },
+  {
+    "class_id": 60,
+    "word": "WHAT",
+    "category_name": "Questions",
+    "description": "Open palms facing upward shaking side to side gently.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHAT shape."
+  },
+  {
+    "class_id": 61,
+    "word": "WHERE",
+    "category_name": "Questions",
+    "description": "Index finger pointing up shaking side to side.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHERE shape."
+  },
+  {
+    "class_id": 62,
+    "word": "WHEN",
+    "category_name": "Questions",
+    "description": "Index finger circles and touches tip of opposite index finger.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHEN shape."
+  },
+  {
+    "class_id": 63,
+    "word": "WHO",
+    "category_name": "Questions",
+    "description": "Index finger wiggles while thumb rests on chin.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHO shape."
+  },
+  {
+    "class_id": 64,
+    "word": "WHY",
+    "category_name": "Questions",
+    "description": "Fingertips touch temple and pull away into 'Y' handshape.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHY shape."
+  },
+  {
+    "class_id": 65,
+    "word": "HOW",
+    "category_name": "Questions",
+    "description": "Curved hands back of fingers together roll palms upward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOW shape."
+  },
+  {
+    "class_id": 66,
+    "word": "WHICH",
+    "category_name": "Questions",
+    "description": "Both 'A' fists thumbs up alternate up and down.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHICH shape."
+  },
+  {
+    "class_id": 67,
+    "word": "HOW MUCH",
+    "category_name": "Questions",
+    "description": "Closed fists at waist throw upward into open 5 hands.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOW MUCH shape."
+  },
+  {
+    "class_id": 68,
+    "word": "HOW MANY",
+    "category_name": "Questions",
+    "description": "Fists facing up open quickly into 5 hands counting.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOW MANY shape."
+  },
+  {
+    "class_id": 69,
+    "word": "ARE YOU READY",
+    "category_name": "Questions",
+    "description": "'R' hands shake across body from center outward.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ARE YOU READY shape."
+  },
+  {
+    "class_id": 70,
+    "word": "WHAT HAPPENED",
+    "category_name": "Questions",
+    "description": "Both index fingers pointing forward flip palm up.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHAT HAPPENED shape."
+  },
+  {
+    "class_id": 71,
+    "word": "WHAT TIME",
+    "category_name": "Questions",
+    "description": "Index finger taps opposite wrist watch twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHAT TIME shape."
+  },
+  {
+    "class_id": 72,
+    "word": "CAN YOU HELP ME",
+    "category_name": "Questions",
+    "description": "'Help' sign directed inward towards self with question face.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CAN YOU HELP ME shape."
+  },
+  {
+    "class_id": 73,
+    "word": "DO YOU UNDERSTAND",
+    "category_name": "Questions",
+    "description": "Flick index finger near temple with raised eyebrows.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DO YOU UNDERSTAND shape."
+  },
+  {
+    "class_id": 74,
+    "word": "WHERE IS THE RESTROOM",
+    "category_name": "Questions",
+    "description": "'T' handshape shakes side-to-side with question expression.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHERE IS THE RESTROOM shape."
+  },
+  {
+    "class_id": 75,
+    "word": "CAN I ASK A QUESTION",
+    "category_name": "Questions",
+    "description": "Index finger curves into hook moving toward listener.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CAN I ASK A QUESTION shape."
+  },
+  {
+    "class_id": 76,
+    "word": "WHO IS THAT",
+    "category_name": "Questions",
+    "description": "Thumb on chin wiggling index pointing at target.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHO IS THAT shape."
+  },
+  {
+    "class_id": 77,
+    "word": "WHY NOT",
+    "category_name": "Questions",
+    "description": "'Why' sign quickly followed by head shake and 'No'.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHY NOT shape."
+  },
+  {
+    "class_id": 78,
+    "word": "HOW OLD ARE YOU",
+    "category_name": "Questions",
+    "description": "Stroke chin downward like pulling long beard with question face.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOW OLD ARE YOU shape."
+  },
+  {
+    "class_id": 79,
+    "word": "WHAT DOES THIS MEAN",
+    "category_name": "Questions",
+    "description": "'V' fingertips twist on opposite flat palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WHAT DOES THIS MEAN shape."
+  },
+  {
+    "class_id": 80,
+    "word": "STUDENT",
+    "category_name": "Work & Education",
+    "description": "Learn sign (take from palm to forehead) + agent marker.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct STUDENT shape."
+  },
+  {
+    "class_id": 81,
+    "word": "TEACHER",
+    "category_name": "Work & Education",
+    "description": "Both 'O' hands near head move forward + agent marker.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TEACHER shape."
+  },
+  {
+    "class_id": 82,
+    "word": "SCHOOL",
+    "category_name": "Work & Education",
+    "description": "Clap flat hands horizontally twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SCHOOL shape."
+  },
+  {
+    "class_id": 83,
+    "word": "COLLEGE",
+    "category_name": "Work & Education",
+    "description": "Flat hands together, top hand circles up and settles.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct COLLEGE shape."
+  },
+  {
+    "class_id": 84,
+    "word": "UNIVERSITY",
+    "category_name": "Work & Education",
+    "description": "'U' handshape circles upward off flat opposite palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct UNIVERSITY shape."
+  },
+  {
+    "class_id": 85,
+    "word": "CLASSROOM",
+    "category_name": "Work & Education",
+    "description": "'C' hands form circle + flat hands outline room walls.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CLASSROOM shape."
+  },
+  {
+    "class_id": 86,
+    "word": "HOMEWORK",
+    "category_name": "Work & Education",
+    "description": "Pinch chin-cheek + fist tap on opposite wrist.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOMEWORK shape."
+  },
+  {
+    "class_id": 87,
+    "word": "EXAM",
+    "category_name": "Work & Education",
+    "description": "Index fingers bend into hooks moving downward in test rows.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct EXAM shape."
+  },
+  {
+    "class_id": 88,
+    "word": "ASSIGNMENT",
+    "category_name": "Work & Education",
+    "description": "Hands grasp imaginary paper placing on desk.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ASSIGNMENT shape."
+  },
+  {
+    "class_id": 89,
+    "word": "PROJECT",
+    "category_name": "Work & Education",
+    "description": "'P' hand moves down 'J' path on opposite palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PROJECT shape."
+  },
+  {
+    "class_id": 90,
+    "word": "ENGINEERING",
+    "category_name": "Work & Education",
+    "description": "'Y' thumb knuckles link and twist alternately like gears.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ENGINEERING shape."
+  },
+  {
+    "class_id": 91,
+    "word": "COMPUTER SCIENCE",
+    "category_name": "Work & Education",
+    "description": "'C' hand sweeps up forearm + 'Science' pouring beakers.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct COMPUTER SCIENCE shape."
+  },
+  {
+    "class_id": 92,
+    "word": "PRESENTATION",
+    "category_name": "Work & Education",
+    "description": "Flat hands open wide like opening theater curtain.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PRESENTATION shape."
+  },
+  {
+    "class_id": 93,
+    "word": "MEETING",
+    "category_name": "Work & Education",
+    "description": "Both open hands close fingertips together in center.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MEETING shape."
+  },
+  {
+    "class_id": 94,
+    "word": "DEADLINE",
+    "category_name": "Work & Education",
+    "description": "Flat hand chops straight down on horizontal opposite wrist.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DEADLINE shape."
+  },
+  {
+    "class_id": 95,
+    "word": "OFFICE",
+    "category_name": "Work & Education",
+    "description": "'O' hands outline perimeter of square room.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct OFFICE shape."
+  },
+  {
+    "class_id": 96,
+    "word": "MANAGER",
+    "category_name": "Work & Education",
+    "description": "'X' hands hold reins shaking + person marker.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MANAGER shape."
+  },
+  {
+    "class_id": 97,
+    "word": "SCHEDULE",
+    "category_name": "Work & Education",
+    "description": "Four fingers draw grid lines across opposite flat palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SCHEDULE shape."
+  },
+  {
+    "class_id": 98,
+    "word": "COLLABORATION",
+    "category_name": "Work & Education",
+    "description": "Interlocked index/middle fingers swing side to side.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct COLLABORATION shape."
+  },
+  {
+    "class_id": 99,
+    "word": "RESEARCH",
+    "category_name": "Work & Education",
+    "description": "'R' fingertips stroke back of opposite hand repeatedly.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct RESEARCH shape."
+  },
+  {
+    "class_id": 100,
+    "word": "COMPUTER",
+    "category_name": "Technology & AI",
+    "description": "'C' hand arcs bouncing upward along opposite forearm.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct COMPUTER shape."
+  },
+  {
+    "class_id": 101,
+    "word": "LAPTOP",
+    "category_name": "Technology & AI",
+    "description": "Flat hands open hinge-like like opening a notebook laptop.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct LAPTOP shape."
+  },
+  {
+    "class_id": 102,
+    "word": "INTERNET",
+    "category_name": "Technology & AI",
+    "description": "Middle fingertips touch and twist alternately.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct INTERNET shape."
+  },
+  {
+    "class_id": 103,
+    "word": "ARTIFICIAL INTELLIGENCE",
+    "category_name": "Technology & AI",
+    "description": "Finger spell A-I or 'Smart' + 'Robot/Machine' signs.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ARTIFICIAL INTELLIGENCE shape."
+  },
+  {
+    "class_id": 104,
+    "word": "MACHINE LEARNING",
+    "category_name": "Technology & AI",
+    "description": "Gear twists + take knowledge from palm to head.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MACHINE LEARNING shape."
+  },
+  {
+    "class_id": 105,
+    "word": "SOFTWARE",
+    "category_name": "Technology & AI",
+    "description": "'S' hand slides smoothly over flat opposite palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SOFTWARE shape."
+  },
+  {
+    "class_id": 106,
+    "word": "HARDWARE",
+    "category_name": "Technology & AI",
+    "description": "'H' knuckles tap back of solid fist.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HARDWARE shape."
+  },
+  {
+    "class_id": 107,
+    "word": "MOBILE PHONE",
+    "category_name": "Technology & AI",
+    "description": "'Y' hand held against ear or tapping flat palm.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MOBILE PHONE shape."
+  },
+  {
+    "class_id": 108,
+    "word": "APPLICATION",
+    "category_name": "Technology & AI",
+    "description": "'A' hand stamps onto opposite flat palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct APPLICATION shape."
+  },
+  {
+    "class_id": 109,
+    "word": "DATABASE",
+    "category_name": "Technology & AI",
+    "description": "Stacked flat 'C' hands forming multi-tiered cylinder.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DATABASE shape."
+  },
+  {
+    "class_id": 110,
+    "word": "ALGORITHM",
+    "category_name": "Technology & AI",
+    "description": "Fingertips trace mathematical formula in air.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ALGORITHM shape."
+  },
+  {
+    "class_id": 111,
+    "word": "WEBSITE",
+    "category_name": "Technology & AI",
+    "description": "'W' hand bounces three times horizontally (WWW).",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WEBSITE shape."
+  },
+  {
+    "class_id": 112,
+    "word": "CAMERA",
+    "category_name": "Technology & AI",
+    "description": "Index fingers bend in clicking photo shutter motion.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CAMERA shape."
+  },
+  {
+    "class_id": 113,
+    "word": "MICROPHONE",
+    "category_name": "Technology & AI",
+    "description": "Fist held at mouth speaking into mic.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MICROPHONE shape."
+  },
+  {
+    "class_id": 114,
+    "word": "ALGORITHM",
+    "category_name": "Technology & AI",
+    "description": "Fingers step sequentially across horizontal plane.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ALGORITHM shape."
+  },
+  {
+    "class_id": 115,
+    "word": "CODE",
+    "category_name": "Technology & AI",
+    "description": "'V' fingers cross and uncross like binary logic.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CODE shape."
+  },
+  {
+    "class_id": 116,
+    "word": "DATA",
+    "category_name": "Technology & AI",
+    "description": "Curved fingers stamp rows of coordinates on palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DATA shape."
+  },
+  {
+    "class_id": 117,
+    "word": "NETWORK",
+    "category_name": "Technology & AI",
+    "description": "Middle fingers interconnected pulsing outward.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NETWORK shape."
+  },
+  {
+    "class_id": 118,
+    "word": "SERVER",
+    "category_name": "Technology & AI",
+    "description": "Stacked horizontal trays moving forward together.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SERVER shape."
+  },
+  {
+    "class_id": 119,
+    "word": "CYBERSECURITY",
+    "category_name": "Technology & AI",
+    "description": "Shield hand guarding digital keypad press.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CYBERSECURITY shape."
+  },
+  {
+    "class_id": 120,
+    "word": "HAPPY",
+    "category_name": "Emotions & States",
+    "description": "Flat open hands stroke upward on chest repeatedly.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HAPPY shape."
+  },
+  {
+    "class_id": 121,
+    "word": "SAD",
+    "category_name": "Emotions & States",
+    "description": "Open 5 hands drop downward in front of drooping face.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SAD shape."
+  },
+  {
+    "class_id": 122,
+    "word": "EXCITED",
+    "category_name": "Emotions & States",
+    "description": "Middle fingers alternate brushing upward on chest rapidly.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct EXCITED shape."
+  },
+  {
+    "class_id": 123,
+    "word": "ANGRY",
+    "category_name": "Emotions & States",
+    "description": "Clawed hands pull sharply away from chest/face.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ANGRY shape."
+  },
+  {
+    "class_id": 124,
+    "word": "CONFUSED",
+    "category_name": "Emotions & States",
+    "description": "Point to forehead, then hands twist clawed in opposing circles.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CONFUSED shape."
+  },
+  {
+    "class_id": 125,
+    "word": "TIRED",
+    "category_name": "Emotions & States",
+    "description": "Bent flat hands on chest roll downward heavily.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TIRED shape."
+  },
+  {
+    "class_id": 126,
+    "word": "BORED",
+    "category_name": "Emotions & States",
+    "description": "Index finger twists at side of nose with sigh.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BORED shape."
+  },
+  {
+    "class_id": 127,
+    "word": "NERVOUS",
+    "category_name": "Emotions & States",
+    "description": "Both open hands trembling shaking at waist level.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NERVOUS shape."
+  },
+  {
+    "class_id": 128,
+    "word": "CONFIDENT",
+    "category_name": "Emotions & States",
+    "description": "'C' hands pull firmly down into solid 'S' fists.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CONFIDENT shape."
+  },
+  {
+    "class_id": 129,
+    "word": "PROUD",
+    "category_name": "Emotions & States",
+    "description": "'A' thumb strokes upward up center of chest.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PROUD shape."
+  },
+  {
+    "class_id": 130,
+    "word": "SCARED",
+    "category_name": "Emotions & States",
+    "description": "Open 5 hands protectively cross and shake at chest.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SCARED shape."
+  },
+  {
+    "class_id": 131,
+    "word": "SURPRISED",
+    "category_name": "Emotions & States",
+    "description": "Index and thumbs pinch at eyes and snap wide open.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SURPRISED shape."
+  },
+  {
+    "class_id": 132,
+    "word": "PEACEFUL",
+    "category_name": "Emotions & States",
+    "description": "Hands clasp, turn, and smooth outward flat.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PEACEFUL shape."
+  },
+  {
+    "class_id": 133,
+    "word": "FRUSTRATED",
+    "category_name": "Emotions & States",
+    "description": "Back of flat hand hits chin or forehead sharply.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct FRUSTRATED shape."
+  },
+  {
+    "class_id": 134,
+    "word": "CURIOUS",
+    "category_name": "Emotions & States",
+    "description": "'C' hand gently pinches neck throat area shaking.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CURIOUS shape."
+  },
+  {
+    "class_id": 135,
+    "word": "HOPEFUL",
+    "category_name": "Emotions & States",
+    "description": "Hands near shoulders bend fingers waving down in prayerful wish.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOPEFUL shape."
+  },
+  {
+    "class_id": 136,
+    "word": "DISAPPOINTED",
+    "category_name": "Emotions & States",
+    "description": "Index finger drops down touching chin solemnly.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DISAPPOINTED shape."
+  },
+  {
+    "class_id": 137,
+    "word": "SHY",
+    "category_name": "Emotions & States",
+    "description": "Back of curved fingers twist against blushing cheek.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SHY shape."
+  },
+  {
+    "class_id": 138,
+    "word": "LONELY",
+    "category_name": "Emotions & States",
+    "description": "Index finger circles alone in front of mouth/chin.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct LONELY shape."
+  },
+  {
+    "class_id": 139,
+    "word": "GRATEFUL",
+    "category_name": "Emotions & States",
+    "description": "Both open hands from heart reach gracefully forward.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GRATEFUL shape."
+  },
+  {
+    "class_id": 140,
+    "word": "WAKE UP",
+    "category_name": "Daily Activities",
+    "description": "Index and thumbs closed at eyes snap open.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WAKE UP shape."
+  },
+  {
+    "class_id": 141,
+    "word": "SLEEP",
+    "category_name": "Daily Activities",
+    "description": "Hand over face pulls down into pinched fingers as eyes close.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SLEEP shape."
+  },
+  {
+    "class_id": 142,
+    "word": "EAT",
+    "category_name": "Daily Activities",
+    "description": "Squished 'O' hand taps mouth repeatedly.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct EAT shape."
+  },
+  {
+    "class_id": 143,
+    "word": "DRINK",
+    "category_name": "Daily Activities",
+    "description": "'C' hand tilts toward mouth like drinking from cup.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DRINK shape."
+  },
+  {
+    "class_id": 144,
+    "word": "COOK",
+    "category_name": "Daily Activities",
+    "description": "Flat hand flips over back-and-forth on opposite palm.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct COOK shape."
+  },
+  {
+    "class_id": 145,
+    "word": "CLEAN",
+    "category_name": "Daily Activities",
+    "description": "Flat hand wipes smoothly across opposite flat palm twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CLEAN shape."
+  },
+  {
+    "class_id": 146,
+    "word": "WASH HANDS",
+    "category_name": "Daily Activities",
+    "description": "Hands rub together vigorously like washing soap.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WASH HANDS shape."
+  },
+  {
+    "class_id": 147,
+    "word": "SHOWER",
+    "category_name": "Daily Activities",
+    "description": "Fist above head opens and pulses like water spray.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SHOWER shape."
+  },
+  {
+    "class_id": 148,
+    "word": "BRUSH TEETH",
+    "category_name": "Daily Activities",
+    "description": "Index finger scrubs side-to-side across front teeth.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BRUSH TEETH shape."
+  },
+  {
+    "class_id": 149,
+    "word": "EXERCISE",
+    "category_name": "Daily Activities",
+    "description": "Fists pump up and down near shoulders like barbell reps.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct EXERCISE shape."
+  },
+  {
+    "class_id": 150,
+    "word": "READ",
+    "category_name": "Daily Activities",
+    "description": "'V' fingers scan up and down opposite flat palm 'book'.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct READ shape."
+  },
+  {
+    "class_id": 151,
+    "word": "WRITE",
+    "category_name": "Daily Activities",
+    "description": "Thumb and index pinch scribble across opposite flat palm.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WRITE shape."
+  },
+  {
+    "class_id": 152,
+    "word": "LISTEN",
+    "category_name": "Daily Activities",
+    "description": "Cupped hand curved behind ear leaning forward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct LISTEN shape."
+  },
+  {
+    "class_id": 153,
+    "word": "WATCH",
+    "category_name": "Daily Activities",
+    "description": "'L' hand near chin points forward focusing eyes.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WATCH shape."
+  },
+  {
+    "class_id": 154,
+    "word": "DRIVE",
+    "category_name": "Daily Activities",
+    "description": "Fists grip imaginary steering wheel turning left and right.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DRIVE shape."
+  },
+  {
+    "class_id": 155,
+    "word": "SHOPPING",
+    "category_name": "Daily Activities",
+    "description": "Back of hand drops coins out of palm repeatedly.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SHOPPING shape."
+  },
+  {
+    "class_id": 156,
+    "word": "WALK",
+    "category_name": "Daily Activities",
+    "description": "Flat hands paddle downward alternately like footsteps.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WALK shape."
+  },
+  {
+    "class_id": 157,
+    "word": "RUN",
+    "category_name": "Daily Activities",
+    "description": "'L' hands hook index into opposite thumb and sprint.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct RUN shape."
+  },
+  {
+    "class_id": 158,
+    "word": "STUDY",
+    "category_name": "Daily Activities",
+    "description": "Fingertips flutter from open book palm towards eyes.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct STUDY shape."
+  },
+  {
+    "class_id": 159,
+    "word": "REST",
+    "category_name": "Daily Activities",
+    "description": "Arms crossed over chest resting peacefully.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct REST shape."
+  },
+  {
+    "class_id": 160,
+    "word": "WATER",
+    "category_name": "Food & Dining",
+    "description": "'W' index finger taps chin twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WATER shape."
+  },
+  {
+    "class_id": 161,
+    "word": "BREAD",
+    "category_name": "Food & Dining",
+    "description": "Curved fingers slice down back of opposite curved hand.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BREAD shape."
+  },
+  {
+    "class_id": 162,
+    "word": "RICE",
+    "category_name": "Food & Dining",
+    "description": "'R' hand scoops from bowl palm to mouth.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct RICE shape."
+  },
+  {
+    "class_id": 163,
+    "word": "MILK",
+    "category_name": "Food & Dining",
+    "description": "'S' fist squeezes twice like milking.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MILK shape."
+  },
+  {
+    "class_id": 164,
+    "word": "TEA",
+    "category_name": "Food & Dining",
+    "description": "'F' hand dips imaginary tea bag into opposite 'O' cup.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TEA shape."
+  },
+  {
+    "class_id": 165,
+    "word": "COFFEE",
+    "category_name": "Food & Dining",
+    "description": "Top fist grinds in circle on lower fist like coffee grinder.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct COFFEE shape."
+  },
+  {
+    "class_id": 166,
+    "word": "APPLE",
+    "category_name": "Food & Dining",
+    "description": "'X' knuckle twists into cheek.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct APPLE shape."
+  },
+  {
+    "class_id": 167,
+    "word": "BANANA",
+    "category_name": "Food & Dining",
+    "description": "Peeing motion of fingers down upright index finger.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BANANA shape."
+  },
+  {
+    "class_id": 168,
+    "word": "PIZZA",
+    "category_name": "Food & Dining",
+    "description": "'Z' carved in air with 'V' or 'P' fingers.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PIZZA shape."
+  },
+  {
+    "class_id": 169,
+    "word": "BURGER",
+    "category_name": "Food & Dining",
+    "description": "Cupped hands press together and flip like hamburger patty.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BURGER shape."
+  },
+  {
+    "class_id": 170,
+    "word": "VEGETABLES",
+    "category_name": "Food & Dining",
+    "description": "'V' index and middle twist touching cheek twice.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct VEGETABLES shape."
+  },
+  {
+    "class_id": 171,
+    "word": "FRUIT",
+    "category_name": "Food & Dining",
+    "description": "'F' fingertips twist touching cheek twice.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct FRUIT shape."
+  },
+  {
+    "class_id": 172,
+    "word": "RESTAURANT",
+    "category_name": "Food & Dining",
+    "description": "'R' strokes down each side of mouth napkin-style.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct RESTAURANT shape."
+  },
+  {
+    "class_id": 173,
+    "word": "BREAKFAST",
+    "category_name": "Food & Dining",
+    "description": "Eat + Morning signs linked.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BREAKFAST shape."
+  },
+  {
+    "class_id": 174,
+    "word": "LUNCH",
+    "category_name": "Food & Dining",
+    "description": "Eat + Noon signs linked.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct LUNCH shape."
+  },
+  {
+    "class_id": 175,
+    "word": "DINNER",
+    "category_name": "Food & Dining",
+    "description": "Eat + Night signs linked.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DINNER shape."
+  },
+  {
+    "class_id": 176,
+    "word": "DELICIOUS",
+    "category_name": "Food & Dining",
+    "description": "Middle finger snaps off lips outward with smile.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DELICIOUS shape."
+  },
+  {
+    "class_id": 177,
+    "word": "HUNGRY",
+    "category_name": "Food & Dining",
+    "description": "'C' hand slides down center of chest to stomach.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HUNGRY shape."
+  },
+  {
+    "class_id": 178,
+    "word": "THIRSTY",
+    "category_name": "Food & Dining",
+    "description": "Index finger traces straight down throat.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct THIRSTY shape."
+  },
+  {
+    "class_id": 179,
+    "word": "SWEET",
+    "category_name": "Food & Dining",
+    "description": "Fingertips brush downward across chin twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SWEET shape."
+  },
+  {
+    "class_id": 180,
+    "word": "CAR",
+    "category_name": "Travel & Transport",
+    "description": "Hands grip steering wheel driving forward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CAR shape."
+  },
+  {
+    "class_id": 181,
+    "word": "BUS",
+    "category_name": "Travel & Transport",
+    "description": "Spell B-U-S or steer large oversized bus wheel.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BUS shape."
+  },
+  {
+    "class_id": 182,
+    "word": "TRAIN",
+    "category_name": "Travel & Transport",
+    "description": "'H' fingers slide back and forth over opposite 'H' tracks.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TRAIN shape."
+  },
+  {
+    "class_id": 183,
+    "word": "AIRPLANE",
+    "category_name": "Travel & Transport",
+    "description": "'ILY' handshape glides forward through air like flight.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct AIRPLANE shape."
+  },
+  {
+    "class_id": 184,
+    "word": "BICYCLE",
+    "category_name": "Travel & Transport",
+    "description": "Fists pedal in alternating circles forward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BICYCLE shape."
+  },
+  {
+    "class_id": 185,
+    "word": "BOAT",
+    "category_name": "Travel & Transport",
+    "description": "Cupped hands together bobbing on water waves.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BOAT shape."
+  },
+  {
+    "class_id": 186,
+    "word": "TICKET",
+    "category_name": "Travel & Transport",
+    "description": "Bent 'V' fingers pinch edge of opposite flat hand.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TICKET shape."
+  },
+  {
+    "class_id": 187,
+    "word": "PASSPORT",
+    "category_name": "Travel & Transport",
+    "description": "'P' or stamp hand presses onto flat book palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PASSPORT shape."
+  },
+  {
+    "class_id": 188,
+    "word": "AIRPORT",
+    "category_name": "Travel & Transport",
+    "description": "'ILY' plane lands gently on flat runway palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct AIRPORT shape."
+  },
+  {
+    "class_id": 189,
+    "word": "HOTEL",
+    "category_name": "Travel & Transport",
+    "description": "'H' flag waving on upright index flagpole.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOTEL shape."
+  },
+  {
+    "class_id": 190,
+    "word": "MAP",
+    "category_name": "Travel & Transport",
+    "description": "'M' thumbs trace grid boundary lines.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MAP shape."
+  },
+  {
+    "class_id": 191,
+    "word": "LUGGAGE",
+    "category_name": "Travel & Transport",
+    "description": "Fist holds suitcase handle walking forward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct LUGGAGE shape."
+  },
+  {
+    "class_id": 192,
+    "word": "STATION",
+    "category_name": "Travel & Transport",
+    "description": "'S' fist lands on flat horizontal platform palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct STATION shape."
+  },
+  {
+    "class_id": 193,
+    "word": "DEPARTURE",
+    "category_name": "Travel & Transport",
+    "description": "Airplane glides up and away into sky.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DEPARTURE shape."
+  },
+  {
+    "class_id": 194,
+    "word": "ARRIVAL",
+    "category_name": "Travel & Transport",
+    "description": "Flat hand swoops down and settles on palm base.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ARRIVAL shape."
+  },
+  {
+    "class_id": 195,
+    "word": "TRAFFIC",
+    "category_name": "Travel & Transport",
+    "description": "Open 5 hands alternating past each other like cars.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TRAFFIC shape."
+  },
+  {
+    "class_id": 196,
+    "word": "ROAD",
+    "category_name": "Travel & Transport",
+    "description": "Parallel flat hands glide forward together straight.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ROAD shape."
+  },
+  {
+    "class_id": 197,
+    "word": "BRIDGE",
+    "category_name": "Travel & Transport",
+    "description": "'V' fingers cross under and arch across forearm span.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BRIDGE shape."
+  },
+  {
+    "class_id": 198,
+    "word": "DESTINATION",
+    "category_name": "Travel & Transport",
+    "description": "Index finger arches through air to land at target spot.",
+    "difficulty": "Advanced",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DESTINATION shape."
+  },
+  {
+    "class_id": 199,
+    "word": "EXPLORE",
+    "category_name": "Travel & Transport",
+    "description": "Clawed 'C' scans around eyes searching landscape.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct EXPLORE shape."
+  },
+  {
+    "class_id": 200,
+    "word": "FAMILY",
+    "category_name": "Family & People",
+    "description": "'F' hands touch thumbs, circle around, and meet pinkies.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct FAMILY shape."
+  },
+  {
+    "class_id": 201,
+    "word": "MOTHER",
+    "category_name": "Family & People",
+    "description": "Thumb of open 5 hand taps chin twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MOTHER shape."
+  },
+  {
+    "class_id": 202,
+    "word": "FATHER",
+    "category_name": "Family & People",
+    "description": "Thumb of open 5 hand taps forehead twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct FATHER shape."
+  },
+  {
+    "class_id": 203,
+    "word": "BROTHER",
+    "category_name": "Family & People",
+    "description": "'L' thumb from forehead drops onto opposite 'L' fist.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BROTHER shape."
+  },
+  {
+    "class_id": 204,
+    "word": "SISTER",
+    "category_name": "Family & People",
+    "description": "'L' thumb from chin drops onto opposite 'L' fist.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SISTER shape."
+  },
+  {
+    "class_id": 205,
+    "word": "BABY",
+    "category_name": "Family & People",
+    "description": "Arms cradled rocking imaginary infant back and forth.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct BABY shape."
+  },
+  {
+    "class_id": 206,
+    "word": "CHILD",
+    "category_name": "Family & People",
+    "description": "Flat hand pats top of small child's head twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CHILD shape."
+  },
+  {
+    "class_id": 207,
+    "word": "FRIEND",
+    "category_name": "Family & People",
+    "description": "Interlocking index finger hooks reversing sides.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct FRIEND shape."
+  },
+  {
+    "class_id": 208,
+    "word": "GRANDMOTHER",
+    "category_name": "Family & People",
+    "description": "Thumb from chin bounces forward in two generational arcs.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GRANDMOTHER shape."
+  },
+  {
+    "class_id": 209,
+    "word": "GRANDFATHER",
+    "category_name": "Family & People",
+    "description": "Thumb from forehead bounces forward in two generational arcs.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct GRANDFATHER shape."
+  },
+  {
+    "class_id": 210,
+    "word": "SON",
+    "category_name": "Family & People",
+    "description": "Salute forehead, then cradle baby into crook of arm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SON shape."
+  },
+  {
+    "class_id": 211,
+    "word": "DAUGHTER",
+    "category_name": "Family & People",
+    "description": "Salute chin, then cradle baby into crook of arm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DAUGHTER shape."
+  },
+  {
+    "class_id": 212,
+    "word": "HUSBAND",
+    "category_name": "Family & People",
+    "description": "C-hand from forehead clasps opposite flat hand.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HUSBAND shape."
+  },
+  {
+    "class_id": 213,
+    "word": "WIFE",
+    "category_name": "Family & People",
+    "description": "C-hand from chin clasps opposite flat hand.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WIFE shape."
+  },
+  {
+    "class_id": 214,
+    "word": "NEIGHBOR",
+    "category_name": "Family & People",
+    "description": "Near sign + person agent marker.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NEIGHBOR shape."
+  },
+  {
+    "class_id": 215,
+    "word": "PERSON",
+    "category_name": "Family & People",
+    "description": "Flat hands drop vertically down along body sides.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PERSON shape."
+  },
+  {
+    "class_id": 216,
+    "word": "PEOPLE",
+    "category_name": "Family & People",
+    "description": "'P' hands cycle alternately forward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct PEOPLE shape."
+  },
+  {
+    "class_id": 217,
+    "word": "MAN",
+    "category_name": "Family & People",
+    "description": "Thumb from forehead touches chest.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MAN shape."
+  },
+  {
+    "class_id": 218,
+    "word": "WOMAN",
+    "category_name": "Family & People",
+    "description": "Thumb from chin touches chest.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WOMAN shape."
+  },
+  {
+    "class_id": 219,
+    "word": "COMMUNITY",
+    "category_name": "Family & People",
+    "description": "Fingertips together twisting outward forming group.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct COMMUNITY shape."
+  },
+  {
+    "class_id": 220,
+    "word": "TIME",
+    "category_name": "Time & Calendar",
+    "description": "Index finger taps opposite wrist watch.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TIME shape."
+  },
+  {
+    "class_id": 221,
+    "word": "TODAY",
+    "category_name": "Time & Calendar",
+    "description": "'Y' hands bounce downward in front of body twice.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TODAY shape."
+  },
+  {
+    "class_id": 222,
+    "word": "TOMORROW",
+    "category_name": "Time & Calendar",
+    "description": "'A' thumb strokes forward off cheek.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct TOMORROW shape."
+  },
+  {
+    "class_id": 223,
+    "word": "YESTERDAY",
+    "category_name": "Time & Calendar",
+    "description": "'A' or 'Y' thumb touches chin then touches ear.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct YESTERDAY shape."
+  },
+  {
+    "class_id": 224,
+    "word": "NOW",
+    "category_name": "Time & Calendar",
+    "description": "Bent 'Y' hands drop firmly downward once.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NOW shape."
+  },
+  {
+    "class_id": 225,
+    "word": "LATER",
+    "category_name": "Time & Calendar",
+    "description": "'L' index finger drops downward forward like clock hand.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct LATER shape."
+  },
+  {
+    "class_id": 226,
+    "word": "SOON",
+    "category_name": "Time & Calendar",
+    "description": "'H' or 'F' thumb and index pinch chin.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct SOON shape."
+  },
+  {
+    "class_id": 227,
+    "word": "ALWAYS",
+    "category_name": "Time & Calendar",
+    "description": "Index finger pointing up circles continuously.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct ALWAYS shape."
+  },
+  {
+    "class_id": 228,
+    "word": "NEVER",
+    "category_name": "Time & Calendar",
+    "description": "Flat hand carves a question-mark style path downward.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NEVER shape."
+  },
+  {
+    "class_id": 229,
+    "word": "DAY",
+    "category_name": "Time & Calendar",
+    "description": "Arm on horizontal table, index arm sets like sun arc.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct DAY shape."
+  },
+  {
+    "class_id": 230,
+    "word": "NIGHT",
+    "category_name": "Time & Calendar",
+    "description": "Bent wrist drops over horizontal arm barrier.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct NIGHT shape."
+  },
+  {
+    "class_id": 231,
+    "word": "WEEK",
+    "category_name": "Time & Calendar",
+    "description": "Index finger slides across opposite flat palm calendar line.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct WEEK shape."
+  },
+  {
+    "class_id": 232,
+    "word": "MONTH",
+    "category_name": "Time & Calendar",
+    "description": "Index finger strokes down back of opposite index.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MONTH shape."
+  },
+  {
+    "class_id": 233,
+    "word": "YEAR",
+    "category_name": "Time & Calendar",
+    "description": "'S' fist orbits around opposite fist and lands on top.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct YEAR shape."
+  },
+  {
+    "class_id": 234,
+    "word": "MORNING",
+    "category_name": "Time & Calendar",
+    "description": "Arm lifts up through crook of opposite arm like sunrise.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MORNING shape."
+  },
+  {
+    "class_id": 235,
+    "word": "AFTERNOON",
+    "category_name": "Time & Calendar",
+    "description": "Flat hand leans over horizontal forearm at 45 degree angle.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct AFTERNOON shape."
+  },
+  {
+    "class_id": 236,
+    "word": "EVENING",
+    "category_name": "Time & Calendar",
+    "description": "Curved hand rests over edge of opposite forearm at dusk.",
+    "difficulty": "Beginner",
+    "tips": "Keep hand positioned at chest level. Focus on distinct EVENING shape."
+  },
+  {
+    "class_id": 237,
+    "word": "HOUR",
+    "category_name": "Time & Calendar",
+    "description": "Index finger makes full 360 clock revolution on palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct HOUR shape."
+  },
+  {
+    "class_id": 238,
+    "word": "MINUTE",
+    "category_name": "Time & Calendar",
+    "description": "Index finger ticks one small second notch on palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct MINUTE shape."
+  },
+  {
+    "class_id": 239,
+    "word": "CALENDAR",
+    "category_name": "Time & Calendar",
+    "description": "'C' hand tracks down and across open flat book palm.",
+    "difficulty": "Intermediate",
+    "tips": "Keep hand positioned at chest level. Focus on distinct CALENDAR shape."
+  },
+  {
+    "class_id": 240,
+    "word": "ZERO",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ZERO'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'ZERO'."
+  },
+  {
+    "class_id": 241,
+    "word": "ONE",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ONE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'ONE'."
+  },
+  {
+    "class_id": 242,
+    "word": "TWO",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TWO'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'TWO'."
+  },
+  {
+    "class_id": 243,
+    "word": "THREE",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'THREE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'THREE'."
+  },
+  {
+    "class_id": 244,
+    "word": "FOUR",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FOUR'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FOUR'."
+  },
+  {
+    "class_id": 245,
+    "word": "FIVE",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FIVE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FIVE'."
+  },
+  {
+    "class_id": 246,
+    "word": "SIX",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SIX'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SIX'."
+  },
+  {
+    "class_id": 247,
+    "word": "SEVEN",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SEVEN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SEVEN'."
+  },
+  {
+    "class_id": 248,
+    "word": "EIGHT",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'EIGHT'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'EIGHT'."
+  },
+  {
+    "class_id": 249,
+    "word": "NINE",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'NINE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'NINE'."
+  },
+  {
+    "class_id": 250,
+    "word": "TEN",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TEN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'TEN'."
+  },
+  {
+    "class_id": 251,
+    "word": "TWENTY",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TWENTY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'TWENTY'."
+  },
+  {
+    "class_id": 252,
+    "word": "FIFTY",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FIFTY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FIFTY'."
+  },
+  {
+    "class_id": 253,
+    "word": "HUNDRED",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'HUNDRED'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'HUNDRED'."
+  },
+  {
+    "class_id": 254,
+    "word": "THOUSAND",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'THOUSAND'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'THOUSAND'."
+  },
+  {
+    "class_id": 255,
+    "word": "MILLION",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MILLION'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'MILLION'."
+  },
+  {
+    "class_id": 256,
+    "word": "PLUS",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PLUS'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'PLUS'."
+  },
+  {
+    "class_id": 257,
+    "word": "MINUS",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MINUS'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'MINUS'."
+  },
+  {
+    "class_id": 258,
+    "word": "MULTIPLY",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MULTIPLY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'MULTIPLY'."
+  },
+  {
+    "class_id": 259,
+    "word": "DIVIDE",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'DIVIDE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'DIVIDE'."
+  },
+  {
+    "class_id": 260,
+    "word": "EQUALS",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'EQUALS'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'EQUALS'."
+  },
+  {
+    "class_id": 261,
+    "word": "PERCENT",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PERCENT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'PERCENT'."
+  },
+  {
+    "class_id": 262,
+    "word": "FRACTION",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FRACTION'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'FRACTION'."
+  },
+  {
+    "class_id": 263,
+    "word": "DECIMAL",
+    "category_name": "Numbers & Math",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'DECIMAL'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'DECIMAL'."
+  },
+  {
+    "class_id": 264,
+    "word": "RED",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RED'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'RED'."
+  },
+  {
+    "class_id": 265,
+    "word": "BLUE",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BLUE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BLUE'."
+  },
+  {
+    "class_id": 266,
+    "word": "GREEN",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'GREEN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'GREEN'."
+  },
+  {
+    "class_id": 267,
+    "word": "YELLOW",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'YELLOW'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'YELLOW'."
+  },
+  {
+    "class_id": 268,
+    "word": "ORANGE",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ORANGE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'ORANGE'."
+  },
+  {
+    "class_id": 269,
+    "word": "PURPLE",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PURPLE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'PURPLE'."
+  },
+  {
+    "class_id": 270,
+    "word": "BLACK",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BLACK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BLACK'."
+  },
+  {
+    "class_id": 271,
+    "word": "WHITE",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'WHITE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'WHITE'."
+  },
+  {
+    "class_id": 272,
+    "word": "GRAY",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'GRAY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'GRAY'."
+  },
+  {
+    "class_id": 273,
+    "word": "BROWN",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BROWN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BROWN'."
+  },
+  {
+    "class_id": 274,
+    "word": "PINK",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PINK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'PINK'."
+  },
+  {
+    "class_id": 275,
+    "word": "GOLD",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'GOLD'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'GOLD'."
+  },
+  {
+    "class_id": 276,
+    "word": "SILVER",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SILVER'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'SILVER'."
+  },
+  {
+    "class_id": 277,
+    "word": "BRIGHT",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BRIGHT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'BRIGHT'."
+  },
+  {
+    "class_id": 278,
+    "word": "DARK",
+    "category_name": "Colors",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'DARK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'DARK'."
+  },
+  {
+    "class_id": 279,
+    "word": "HOUSE",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'HOUSE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'HOUSE'."
+  },
+  {
+    "class_id": 280,
+    "word": "APARTMENT",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'APARTMENT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'APARTMENT'."
+  },
+  {
+    "class_id": 281,
+    "word": "BUILDING",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BUILDING'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'BUILDING'."
+  },
+  {
+    "class_id": 282,
+    "word": "PARK",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PARK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'PARK'."
+  },
+  {
+    "class_id": 283,
+    "word": "BEACH",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BEACH'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BEACH'."
+  },
+  {
+    "class_id": 284,
+    "word": "MOUNTAIN",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MOUNTAIN'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'MOUNTAIN'."
+  },
+  {
+    "class_id": 285,
+    "word": "FOREST",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FOREST'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'FOREST'."
+  },
+  {
+    "class_id": 286,
+    "word": "RIVER",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RIVER'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'RIVER'."
+  },
+  {
+    "class_id": 287,
+    "word": "OCEAN",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'OCEAN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'OCEAN'."
+  },
+  {
+    "class_id": 288,
+    "word": "GARDEN",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'GARDEN'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'GARDEN'."
+  },
+  {
+    "class_id": 289,
+    "word": "STREET",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'STREET'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'STREET'."
+  },
+  {
+    "class_id": 290,
+    "word": "CITY",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CITY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'CITY'."
+  },
+  {
+    "class_id": 291,
+    "word": "COUNTRY",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'COUNTRY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'COUNTRY'."
+  },
+  {
+    "class_id": 292,
+    "word": "WORLD",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'WORLD'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'WORLD'."
+  },
+  {
+    "class_id": 293,
+    "word": "SKY",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SKY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SKY'."
+  },
+  {
+    "class_id": 294,
+    "word": "SUN",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SUN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SUN'."
+  },
+  {
+    "class_id": 295,
+    "word": "MOON",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MOON'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'MOON'."
+  },
+  {
+    "class_id": 296,
+    "word": "STAR",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'STAR'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'STAR'."
+  },
+  {
+    "class_id": 297,
+    "word": "RAIN",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RAIN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'RAIN'."
+  },
+  {
+    "class_id": 298,
+    "word": "SNOW",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SNOW'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SNOW'."
+  },
+  {
+    "class_id": 299,
+    "word": "WIND",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'WIND'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'WIND'."
+  },
+  {
+    "class_id": 300,
+    "word": "CLOUD",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CLOUD'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'CLOUD'."
+  },
+  {
+    "class_id": 301,
+    "word": "EARTHQUAKE",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'EARTHQUAKE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'EARTHQUAKE'."
+  },
+  {
+    "class_id": 302,
+    "word": "ISLAND",
+    "category_name": "Places & Nature",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ISLAND'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'ISLAND'."
+  },
+  {
+    "class_id": 303,
+    "word": "GIVE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'GIVE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'GIVE'."
+  },
+  {
+    "class_id": 304,
+    "word": "TAKE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TAKE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'TAKE'."
+  },
+  {
+    "class_id": 305,
+    "word": "BRING",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BRING'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BRING'."
+  },
+  {
+    "class_id": 306,
+    "word": "SEND",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SEND'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SEND'."
+  },
+  {
+    "class_id": 307,
+    "word": "RECEIVE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RECEIVE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'RECEIVE'."
+  },
+  {
+    "class_id": 308,
+    "word": "FIND",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FIND'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FIND'."
+  },
+  {
+    "class_id": 309,
+    "word": "LOSE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'LOSE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'LOSE'."
+  },
+  {
+    "class_id": 310,
+    "word": "OPEN",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'OPEN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'OPEN'."
+  },
+  {
+    "class_id": 311,
+    "word": "CLOSE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CLOSE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'CLOSE'."
+  },
+  {
+    "class_id": 312,
+    "word": "START",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'START'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'START'."
+  },
+  {
+    "class_id": 313,
+    "word": "STOP",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'STOP'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'STOP'."
+  },
+  {
+    "class_id": 314,
+    "word": "CONTINUE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CONTINUE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CONTINUE'."
+  },
+  {
+    "class_id": 315,
+    "word": "WAIT",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'WAIT'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'WAIT'."
+  },
+  {
+    "class_id": 316,
+    "word": "CHANGE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CHANGE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CHANGE'."
+  },
+  {
+    "class_id": 317,
+    "word": "BUILD",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BUILD'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BUILD'."
+  },
+  {
+    "class_id": 318,
+    "word": "BREAK",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BREAK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BREAK'."
+  },
+  {
+    "class_id": 319,
+    "word": "FIX",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FIX'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FIX'."
+  },
+  {
+    "class_id": 320,
+    "word": "CREATE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CREATE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CREATE'."
+  },
+  {
+    "class_id": 321,
+    "word": "DESTROY",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'DESTROY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'DESTROY'."
+  },
+  {
+    "class_id": 322,
+    "word": "CHOOSE",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CHOOSE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CHOOSE'."
+  },
+  {
+    "class_id": 323,
+    "word": "TRY",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TRY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'TRY'."
+  },
+  {
+    "class_id": 324,
+    "word": "WIN",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'WIN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'WIN'."
+  },
+  {
+    "class_id": 325,
+    "word": "SUCCEED",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SUCCEED'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'SUCCEED'."
+  },
+  {
+    "class_id": 326,
+    "word": "FAIL",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FAIL'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FAIL'."
+  },
+  {
+    "class_id": 327,
+    "word": "GROW",
+    "category_name": "Actions & Verbs",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'GROW'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'GROW'."
+  },
+  {
+    "class_id": 328,
+    "word": "BOOK",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BOOK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BOOK'."
+  },
+  {
+    "class_id": 329,
+    "word": "PEN",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PEN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'PEN'."
+  },
+  {
+    "class_id": 330,
+    "word": "PAPER",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PAPER'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'PAPER'."
+  },
+  {
+    "class_id": 331,
+    "word": "BAG",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BAG'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BAG'."
+  },
+  {
+    "class_id": 332,
+    "word": "KEY",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'KEY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'KEY'."
+  },
+  {
+    "class_id": 333,
+    "word": "LOCK",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'LOCK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'LOCK'."
+  },
+  {
+    "class_id": 334,
+    "word": "CLOCK",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CLOCK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'CLOCK'."
+  },
+  {
+    "class_id": 335,
+    "word": "CHAIR",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CHAIR'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'CHAIR'."
+  },
+  {
+    "class_id": 336,
+    "word": "TABLE",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TABLE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'TABLE'."
+  },
+  {
+    "class_id": 337,
+    "word": "BED",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BED'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BED'."
+  },
+  {
+    "class_id": 338,
+    "word": "WINDOW",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'WINDOW'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'WINDOW'."
+  },
+  {
+    "class_id": 339,
+    "word": "DOOR",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'DOOR'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'DOOR'."
+  },
+  {
+    "class_id": 340,
+    "word": "MIRROR",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MIRROR'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'MIRROR'."
+  },
+  {
+    "class_id": 341,
+    "word": "BOTTLE",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BOTTLE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'BOTTLE'."
+  },
+  {
+    "class_id": 342,
+    "word": "BOX",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BOX'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BOX'."
+  },
+  {
+    "class_id": 343,
+    "word": "SCISSORS",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SCISSORS'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'SCISSORS'."
+  },
+  {
+    "class_id": 344,
+    "word": "HAMMER",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'HAMMER'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'HAMMER'."
+  },
+  {
+    "class_id": 345,
+    "word": "LAMP",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'LAMP'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'LAMP'."
+  },
+  {
+    "class_id": 346,
+    "word": "GLASSES",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'GLASSES'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'GLASSES'."
+  },
+  {
+    "class_id": 347,
+    "word": "WALLET",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'WALLET'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'WALLET'."
+  },
+  {
+    "class_id": 348,
+    "word": "MONEY",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MONEY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'MONEY'."
+  },
+  {
+    "class_id": 349,
+    "word": "CREDIT CARD",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CREDIT CARD'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CREDIT CARD'."
+  },
+  {
+    "class_id": 350,
+    "word": "COAT",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'COAT'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'COAT'."
+  },
+  {
+    "class_id": 351,
+    "word": "SHOES",
+    "category_name": "Objects & Tools",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SHOES'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SHOES'."
+  },
+  {
+    "class_id": 352,
+    "word": "HEALTHY",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'HEALTHY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'HEALTHY'."
+  },
+  {
+    "class_id": 353,
+    "word": "SICK",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SICK'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SICK'."
+  },
+  {
+    "class_id": 354,
+    "word": "FEVER",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FEVER'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FEVER'."
+  },
+  {
+    "class_id": 355,
+    "word": "COUGH",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'COUGH'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'COUGH'."
+  },
+  {
+    "class_id": 356,
+    "word": "HEADACHE",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'HEADACHE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'HEADACHE'."
+  },
+  {
+    "class_id": 357,
+    "word": "STOMACHACHE",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'STOMACHACHE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'STOMACHACHE'."
+  },
+  {
+    "class_id": 358,
+    "word": "INJURY",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'INJURY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'INJURY'."
+  },
+  {
+    "class_id": 359,
+    "word": "BANDAGE",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BANDAGE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'BANDAGE'."
+  },
+  {
+    "class_id": 360,
+    "word": "SURGERY",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SURGERY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'SURGERY'."
+  },
+  {
+    "class_id": 361,
+    "word": "VACCINE",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'VACCINE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'VACCINE'."
+  },
+  {
+    "class_id": 362,
+    "word": "NURSE",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'NURSE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'NURSE'."
+  },
+  {
+    "class_id": 363,
+    "word": "CLINIC",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CLINIC'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CLINIC'."
+  },
+  {
+    "class_id": 364,
+    "word": "PHARMACY",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PHARMACY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'PHARMACY'."
+  },
+  {
+    "class_id": 365,
+    "word": "PRESCRIPTION",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PRESCRIPTION'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'PRESCRIPTION'."
+  },
+  {
+    "class_id": 366,
+    "word": "HEART",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'HEART'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'HEART'."
+  },
+  {
+    "class_id": 367,
+    "word": "BLOOD",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BLOOD'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BLOOD'."
+  },
+  {
+    "class_id": 368,
+    "word": "BREATH",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BREATH'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'BREATH'."
+  },
+  {
+    "class_id": 369,
+    "word": "EXAMINE",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'EXAMINE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'EXAMINE'."
+  },
+  {
+    "class_id": 370,
+    "word": "RECOVER",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RECOVER'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'RECOVER'."
+  },
+  {
+    "class_id": 371,
+    "word": "HEAL",
+    "category_name": "Health & Medical",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'HEAL'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'HEAL'."
+  },
+  {
+    "class_id": 372,
+    "word": "GOVERNMENT",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'GOVERNMENT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'GOVERNMENT'."
+  },
+  {
+    "class_id": 373,
+    "word": "LAW",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'LAW'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'LAW'."
+  },
+  {
+    "class_id": 374,
+    "word": "RIGHTS",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RIGHTS'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'RIGHTS'."
+  },
+  {
+    "class_id": 375,
+    "word": "COURT",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'COURT'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'COURT'."
+  },
+  {
+    "class_id": 376,
+    "word": "JUDGE",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'JUDGE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'JUDGE'."
+  },
+  {
+    "class_id": 377,
+    "word": "CITIZEN",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CITIZEN'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CITIZEN'."
+  },
+  {
+    "class_id": 378,
+    "word": "VOTE",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'VOTE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'VOTE'."
+  },
+  {
+    "class_id": 379,
+    "word": "ELECTION",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ELECTION'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'ELECTION'."
+  },
+  {
+    "class_id": 380,
+    "word": "PRESIDENT",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PRESIDENT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'PRESIDENT'."
+  },
+  {
+    "class_id": 381,
+    "word": "JUSTICE",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'JUSTICE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'JUSTICE'."
+  },
+  {
+    "class_id": 382,
+    "word": "FREEDOM",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FREEDOM'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'FREEDOM'."
+  },
+  {
+    "class_id": 383,
+    "word": "RULES",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RULES'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'RULES'."
+  },
+  {
+    "class_id": 384,
+    "word": "CONTRACT",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CONTRACT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CONTRACT'."
+  },
+  {
+    "class_id": 385,
+    "word": "AGREEMENT",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'AGREEMENT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'AGREEMENT'."
+  },
+  {
+    "class_id": 386,
+    "word": "EQUALITY",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'EQUALITY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'EQUALITY'."
+  },
+  {
+    "class_id": 387,
+    "word": "TAX",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TAX'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'TAX'."
+  },
+  {
+    "class_id": 388,
+    "word": "POLITICS",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'POLITICS'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'POLITICS'."
+  },
+  {
+    "class_id": 389,
+    "word": "NATION",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'NATION'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'NATION'."
+  },
+  {
+    "class_id": 390,
+    "word": "LEADER",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'LEADER'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'LEADER'."
+  },
+  {
+    "class_id": 391,
+    "word": "PEACE",
+    "category_name": "Government & Law",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PEACE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'PEACE'."
+  },
+  {
+    "class_id": 392,
+    "word": "MIC ON",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MIC ON'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'MIC ON'."
+  },
+  {
+    "class_id": 393,
+    "word": "MIC OFF",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MIC OFF'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'MIC OFF'."
+  },
+  {
+    "class_id": 394,
+    "word": "CAMERA ON",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CAMERA ON'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CAMERA ON'."
+  },
+  {
+    "class_id": 395,
+    "word": "CAMERA OFF",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CAMERA OFF'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CAMERA OFF'."
+  },
+  {
+    "class_id": 396,
+    "word": "MUTE",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MUTE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'MUTE'."
+  },
+  {
+    "class_id": 397,
+    "word": "UNMUTE",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'UNMUTE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'UNMUTE'."
+  },
+  {
+    "class_id": 398,
+    "word": "SCREEN SHARE",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SCREEN SHARE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'SCREEN SHARE'."
+  },
+  {
+    "class_id": 399,
+    "word": "RAISE HAND",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RAISE HAND'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'RAISE HAND'."
+  },
+  {
+    "class_id": 400,
+    "word": "LOWER HAND",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'LOWER HAND'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'LOWER HAND'."
+  },
+  {
+    "class_id": 401,
+    "word": "RECORD MEETING",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RECORD MEETING'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'RECORD MEETING'."
+  },
+  {
+    "class_id": 402,
+    "word": "LEAVE MEETING",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'LEAVE MEETING'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'LEAVE MEETING'."
+  },
+  {
+    "class_id": 403,
+    "word": "JOIN CALL",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'JOIN CALL'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'JOIN CALL'."
+  },
+  {
+    "class_id": 404,
+    "word": "CHAT MESSAGE",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'CHAT MESSAGE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'CHAT MESSAGE'."
+  },
+  {
+    "class_id": 405,
+    "word": "BREAKOUT ROOM",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BREAKOUT ROOM'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'BREAKOUT ROOM'."
+  },
+  {
+    "class_id": 406,
+    "word": "FULL SCREEN",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FULL SCREEN'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'FULL SCREEN'."
+  },
+  {
+    "class_id": 407,
+    "word": "PIN VIDEO",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PIN VIDEO'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'PIN VIDEO'."
+  },
+  {
+    "class_id": 408,
+    "word": "APPLAUD",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'APPLAUD'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'APPLAUD'."
+  },
+  {
+    "class_id": 409,
+    "word": "THUMBS UP",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'THUMBS UP'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'THUMBS UP'."
+  },
+  {
+    "class_id": 410,
+    "word": "THUMBS DOWN",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'THUMBS DOWN'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'THUMBS DOWN'."
+  },
+  {
+    "class_id": 411,
+    "word": "RECONNECT",
+    "category_name": "Meeting & Video Controls",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'RECONNECT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'RECONNECT'."
+  },
+  {
+    "class_id": 412,
+    "word": "AGAIN",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'AGAIN'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'AGAIN'."
+  },
+  {
+    "class_id": 413,
+    "word": "ALMOST",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ALMOST'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'ALMOST'."
+  },
+  {
+    "class_id": 414,
+    "word": "ENOUGH",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ENOUGH'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'ENOUGH'."
+  },
+  {
+    "class_id": 415,
+    "word": "MORE",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MORE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'MORE'."
+  },
+  {
+    "class_id": 416,
+    "word": "LESS",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'LESS'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'LESS'."
+  },
+  {
+    "class_id": 417,
+    "word": "SAME",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SAME'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'SAME'."
+  },
+  {
+    "class_id": 418,
+    "word": "DIFFERENT",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'DIFFERENT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'DIFFERENT'."
+  },
+  {
+    "class_id": 419,
+    "word": "REAL",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'REAL'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'REAL'."
+  },
+  {
+    "class_id": 420,
+    "word": "FAKE",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FAKE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FAKE'."
+  },
+  {
+    "class_id": 421,
+    "word": "TRUE",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TRUE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'TRUE'."
+  },
+  {
+    "class_id": 422,
+    "word": "FALSE",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FALSE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FALSE'."
+  },
+  {
+    "class_id": 423,
+    "word": "EASY",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'EASY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'EASY'."
+  },
+  {
+    "class_id": 424,
+    "word": "HARD",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'HARD'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'HARD'."
+  },
+  {
+    "class_id": 425,
+    "word": "IMPORTANT",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'IMPORTANT'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'IMPORTANT'."
+  },
+  {
+    "class_id": 426,
+    "word": "SPECIAL",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SPECIAL'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'SPECIAL'."
+  },
+  {
+    "class_id": 427,
+    "word": "READY",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'READY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'READY'."
+  },
+  {
+    "class_id": 428,
+    "word": "BUSY",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'BUSY'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'BUSY'."
+  },
+  {
+    "class_id": 429,
+    "word": "FREE",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FREE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'FREE'."
+  },
+  {
+    "class_id": 430,
+    "word": "TOGETHER",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'TOGETHER'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'TOGETHER'."
+  },
+  {
+    "class_id": 431,
+    "word": "ALONE",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ALONE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'ALONE'."
+  },
+  {
+    "class_id": 432,
+    "word": "EVERYONE",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'EVERYONE'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'EVERYONE'."
+  },
+  {
+    "class_id": 433,
+    "word": "NOTHING",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'NOTHING'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'NOTHING'."
+  },
+  {
+    "class_id": 434,
+    "word": "EVERYTHING",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'EVERYTHING'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'EVERYTHING'."
+  },
+  {
+    "class_id": 435,
+    "word": "MAYBE",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'MAYBE'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'MAYBE'."
+  },
+  {
+    "class_id": 436,
+    "word": "DEFINITIVELY",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'DEFINITIVELY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'DEFINITIVELY'."
+  },
+  {
+    "class_id": 437,
+    "word": "PROBABLY",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'PROBABLY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'PROBABLY'."
+  },
+  {
+    "class_id": 438,
+    "word": "SOMETIMES",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'SOMETIMES'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'SOMETIMES'."
+  },
+  {
+    "class_id": 439,
+    "word": "ALWAYS",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'ALWAYS'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'ALWAYS'."
+  },
+  {
+    "class_id": 440,
+    "word": "NEVER",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'NEVER'.",
+    "difficulty": "Beginner",
+    "tips": "Maintain clear finger articulation for 'NEVER'."
+  },
+  {
+    "class_id": 441,
+    "word": "FINALLY",
+    "category_name": "General Conversation",
+    "description": "Standard ASL / ISL manual gesture pattern representing 'FINALLY'.",
+    "difficulty": "Intermediate",
+    "tips": "Maintain clear finger articulation for 'FINALLY'."
+  },
+  {
+    "class_id": 442,
+    "word": "VOCAB_PHRASE_443",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 443.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 443,
+    "word": "VOCAB_PHRASE_444",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 444.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 444,
+    "word": "VOCAB_PHRASE_445",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 445.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 445,
+    "word": "VOCAB_PHRASE_446",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 446.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 446,
+    "word": "VOCAB_PHRASE_447",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 447.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 447,
+    "word": "VOCAB_PHRASE_448",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 448.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 448,
+    "word": "VOCAB_PHRASE_449",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 449.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 449,
+    "word": "VOCAB_PHRASE_450",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 450.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 450,
+    "word": "VOCAB_PHRASE_451",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 451.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 451,
+    "word": "VOCAB_PHRASE_452",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 452.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 452,
+    "word": "VOCAB_PHRASE_453",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 453.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 453,
+    "word": "VOCAB_PHRASE_454",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 454.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 454,
+    "word": "VOCAB_PHRASE_455",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 455.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 455,
+    "word": "VOCAB_PHRASE_456",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 456.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 456,
+    "word": "VOCAB_PHRASE_457",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 457.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 457,
+    "word": "VOCAB_PHRASE_458",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 458.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 458,
+    "word": "VOCAB_PHRASE_459",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 459.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 459,
+    "word": "VOCAB_PHRASE_460",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 460.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 460,
+    "word": "VOCAB_PHRASE_461",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 461.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 461,
+    "word": "VOCAB_PHRASE_462",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 462.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 462,
+    "word": "VOCAB_PHRASE_463",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 463.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 463,
+    "word": "VOCAB_PHRASE_464",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 464.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 464,
+    "word": "VOCAB_PHRASE_465",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 465.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 465,
+    "word": "VOCAB_PHRASE_466",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 466.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 466,
+    "word": "VOCAB_PHRASE_467",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 467.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 467,
+    "word": "VOCAB_PHRASE_468",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 468.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 468,
+    "word": "VOCAB_PHRASE_469",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 469.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 469,
+    "word": "VOCAB_PHRASE_470",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 470.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 470,
+    "word": "VOCAB_PHRASE_471",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 471.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 471,
+    "word": "VOCAB_PHRASE_472",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 472.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 472,
+    "word": "VOCAB_PHRASE_473",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 473.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 473,
+    "word": "VOCAB_PHRASE_474",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 474.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 474,
+    "word": "VOCAB_PHRASE_475",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 475.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 475,
+    "word": "VOCAB_PHRASE_476",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 476.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 476,
+    "word": "VOCAB_PHRASE_477",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 477.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 477,
+    "word": "VOCAB_PHRASE_478",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 478.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 478,
+    "word": "VOCAB_PHRASE_479",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 479.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 479,
+    "word": "VOCAB_PHRASE_480",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 480.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 480,
+    "word": "VOCAB_PHRASE_481",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 481.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 481,
+    "word": "VOCAB_PHRASE_482",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 482.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 482,
+    "word": "VOCAB_PHRASE_483",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 483.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 483,
+    "word": "VOCAB_PHRASE_484",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 484.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 484,
+    "word": "VOCAB_PHRASE_485",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 485.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 485,
+    "word": "VOCAB_PHRASE_486",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 486.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 486,
+    "word": "VOCAB_PHRASE_487",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 487.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 487,
+    "word": "VOCAB_PHRASE_488",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 488.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 488,
+    "word": "VOCAB_PHRASE_489",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 489.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 489,
+    "word": "VOCAB_PHRASE_490",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 490.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 490,
+    "word": "VOCAB_PHRASE_491",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 491.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 491,
+    "word": "VOCAB_PHRASE_492",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 492.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 492,
+    "word": "VOCAB_PHRASE_493",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 493.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 493,
+    "word": "VOCAB_PHRASE_494",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 494.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 494,
+    "word": "VOCAB_PHRASE_495",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 495.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 495,
+    "word": "VOCAB_PHRASE_496",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 496.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 496,
+    "word": "VOCAB_PHRASE_497",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 497.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 497,
+    "word": "VOCAB_PHRASE_498",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 498.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 498,
+    "word": "VOCAB_PHRASE_499",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 499.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  },
+  {
+    "class_id": 499,
+    "word": "VOCAB_PHRASE_500",
+    "category_name": "General Conversation",
+    "description": "Dynamic conversational phrase unit 500.",
+    "difficulty": "Advanced",
+    "tips": "Execute smooth sequence transition."
+  }
+]
