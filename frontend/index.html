@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>SignBridge — AI Sign Language Recognition & Real-Time Text Conversion</title>
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +12,18 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Responsive Navigation Bar -->
   <nav class="navbar">
-    <a href="/" class="brand">
-      <div class="brand-icon">🤟</div>
-      <span>Sign<span class="gradient-text">Bridge</span></span>
-    </a>
+    <div class="nav-header-row">
+      <a href="/" class="brand">
+        <div class="brand-icon">🤟</div>
+        <span>Sign<span class="gradient-text">Bridge</span></span>
+      </a>
+      <div class="nav-status" id="systemHealthBadge">
+        <span class="pulse-dot"></span>
+        <span id="healthStatusText">AI Online</span>
+      </div>
+    </div>
     <ul class="nav-links">
       <li><a href="/" class="nav-link active"><i data-lucide="home"></i> Home</a></li>
       <li><a href="/live" class="nav-link"><i data-lucide="video"></i> Live Webcam</a></li>
@@ -25,10 +31,6 @@
       <li><a href="/meeting" class="nav-link"><i data-lucide="users"></i> Meeting Mode</a></li>
       <li><a href="/vocab" class="nav-link"><i data-lucide="book-open"></i> 500+ Dictionary</a></li>
     </ul>
-    <div class="nav-status" id="systemHealthBadge">
-      <span class="pulse-dot"></span>
-      <span id="healthStatusText">Connecting AI Engine...</span>
-    </div>
   </nav>
 
   <!-- Main Content -->
@@ -37,15 +39,15 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-badge">
-        <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+        <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i>
         Next-Gen Deep Learning Accessibility Suite
       </div>
       <h1 class="hero-title">
         Bridging Silence with <br>
-        <span class="gradient-text">AI Sign Language Translation</span>
+        <span class="gradient-text">AI Sign Translation</span>
       </h1>
       <p class="hero-desc">
-        SignBridge leverages deep bidirectional recurrent neural networks (BiGRU) with temporal self-attention and 3D MediaPipe landmark tracking to convert 500+ sign language words and phrases into real-time text and speech.
+        SignBridge leverages deep bidirectional recurrent neural networks (BiGRU) with temporal self-attention and 3D MediaPipe landmark tracking to convert 500+ sign language gestures into real-time text and speech.
       </p>
       <div class="hero-actions">
         <a href="/live" class="btn btn-primary">
@@ -64,120 +66,112 @@
     </section>
 
     <!-- Key Metrics Ribbon -->
-    <section style="margin-bottom: 3.5rem;">
+    <section style="margin-bottom: 2.5rem;">
       <div class="grid-4">
         <div class="glass-card" style="text-align: center;">
-          <h3 style="font-size: 2.5rem; color: var(--primary);" id="metricVocab">500+</h3>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">Predefined Sign Vocabulary</p>
-          <span class="badge badge-beginner" style="margin-top: 0.5rem;">19 Categories</span>
+          <h3 style="font-size: 2.25rem; color: var(--primary);" id="metricVocab">500+</h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">Predefined Signs</p>
+          <span class="badge badge-beginner" style="margin-top: 0.4rem;">19 Categories</span>
         </div>
         <div class="glass-card" style="text-align: center;">
-          <h3 style="font-size: 2.5rem; color: var(--accent-emerald);" id="metricLatency">&lt;15ms</h3>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">Real-Time Inference Speed</p>
-          <span class="badge badge-beginner" style="margin-top: 0.5rem;">30 FPS Stream</span>
+          <h3 style="font-size: 2.25rem; color: var(--accent-emerald);" id="metricLatency">&lt;15ms</h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">Real-Time Latency</p>
+          <span class="badge badge-beginner" style="margin-top: 0.4rem;">30 FPS Stream</span>
         </div>
         <div class="glass-card" style="text-align: center;">
-          <h3 style="font-size: 2.5rem; color: var(--accent-purple);" id="metricArch">BiGRU</h3>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">Sequence Model + Attention</p>
-          <span class="badge badge-intermediate" style="margin-top: 0.5rem;">PyTorch Engine</span>
+          <h3 style="font-size: 2.25rem; color: var(--accent-purple);" id="metricArch">BiGRU</h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">Sequence Neural Model</p>
+          <span class="badge badge-intermediate" style="margin-top: 0.4rem;">PyTorch Engine</span>
         </div>
         <div class="glass-card" style="text-align: center;">
-          <h3 style="font-size: 2.5rem; color: var(--accent-rose);">126-D</h3>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">Scale-Invariant Keypoints</p>
-          <span class="badge badge-advanced" style="margin-top: 0.5rem;">MediaPipe Mesh</span>
+          <h3 style="font-size: 2.25rem; color: var(--accent-rose);">126-D</h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">Normalized Keypoints</p>
+          <span class="badge badge-advanced" style="margin-top: 0.4rem;">MediaPipe Mesh</span>
         </div>
       </div>
     </section>
 
     <!-- Core Operational Modes -->
-    <section style="margin-bottom: 3.5rem;">
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <h2 style="font-size: 2rem;">Engineered for <span class="gradient-text">Real-World Communication</span></h2>
-        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Explore our three dedicated translation pipelines tailored for daily scenarios.</p>
+    <section style="margin-bottom: 2.5rem;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.75rem;">Engineered for <span class="gradient-text">Real-World Use</span></h2>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.35rem;">Three dedicated translation workflows.</p>
       </div>
 
       <div class="grid-3">
         <!-- Live Webcam -->
         <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1.25rem;">
-              <i data-lucide="camera" style="width: 24px; height: 24px;"></i>
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1rem;">
+              <i data-lucide="camera" style="width: 22px; height: 22px;"></i>
             </div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">1. Live Webcam Recognition</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Instant continuous sign language translation via webcam. Includes visual hand mesh skeleton tracking, temporal hysteresis debouncing, and automated sentence formation.
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">1. Live Webcam Studio</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
+              Continuous gesture recognition with real-time skeletal landmark mesh overlay and speech synthesis.
             </p>
           </div>
-          <a href="/live" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%;">
-            Launch Camera <i data-lucide="arrow-right" style="width: 16px;"></i>
+          <a href="/live" class="btn btn-primary btn-sm" style="margin-top: 1.25rem; width: 100%;">
+            Launch Camera <i data-lucide="arrow-right" style="width: 14px;"></i>
           </a>
         </div>
 
         <!-- Video Upload -->
         <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(52, 211, 153, 0.15); display: flex; align-items: center; justify-content: center; color: var(--accent-emerald); margin-bottom: 1.25rem;">
-              <i data-lucide="film" style="width: 24px; height: 24px;"></i>
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(52, 211, 153, 0.15); display: flex; align-items: center; justify-content: center; color: var(--accent-emerald); margin-bottom: 1rem;">
+              <i data-lucide="film" style="width: 22px; height: 22px;"></i>
             </div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">2. Uploaded Video Processing</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Batch file translation with frame sliding-window analysis. Generates timestamped sign segment timelines, confidence scores, and downloadable narrative transcripts.
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">2. Video File Analysis</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
+              Upload MP4/WebM videos to generate chronological timestamped segments and complete narrative transcripts.
             </p>
           </div>
-          <a href="/upload" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; width: 100%;">
-            Upload Video File <i data-lucide="arrow-right" style="width: 16px;"></i>
+          <a href="/upload" class="btn btn-secondary btn-sm" style="margin-top: 1.25rem; width: 100%;">
+            Upload Video <i data-lucide="arrow-right" style="width: 14px;"></i>
           </a>
         </div>
 
         <!-- Meeting Mode -->
         <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(168, 85, 247, 0.15); display: flex; align-items: center; justify-content: center; color: var(--accent-purple); margin-bottom: 1.25rem;">
-              <i data-lucide="presentation" style="width: 24px; height: 24px;"></i>
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(168, 85, 247, 0.15); display: flex; align-items: center; justify-content: center; color: var(--accent-purple); margin-bottom: 1rem;">
+              <i data-lucide="presentation" style="width: 22px; height: 22px;"></i>
             </div>
-            <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">3. Online Meeting Assistant</h3>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-              Companion mode built for Google Meet & Zoom calls. Displays real-time floating closed captions, auto-copies text to chat, and speaks aloud via browser text-to-speech.
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">3. Meeting Companion</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
+              Online conference assistant for Google Meet / Zoom with floating live closed captions and auto-TTS voice.
             </p>
           </div>
-          <a href="/meeting" class="btn btn-accent btn-sm" style="margin-top: 1.5rem; width: 100%;">
-            Open Meeting Mode <i data-lucide="arrow-right" style="width: 16px;"></i>
+          <a href="/meeting" class="btn btn-accent btn-sm" style="margin-top: 1.25rem; width: 100%;">
+            Open Meeting Mode <i data-lucide="arrow-right" style="width: 14px;"></i>
           </a>
         </div>
       </div>
     </section>
 
     <!-- Architecture & DFD Section -->
-    <section class="glass-card" style="margin-bottom: 3.5rem;">
-      <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">🏛️ System Architecture & Data Flow</h2>
-      <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
-        From raw camera frames to normalized 126-dimensional spatial vectors, PyTorch bidirectional sequence classification, and temporal debouncing:
+    <section class="glass-card" style="margin-bottom: 2.5rem;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">🏛️ System Architecture Flow</h2>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.25rem; line-height: 1.5;">
+        Video Ingestion ➔ MediaPipe 3D Landmark Extractor ➔ Normalization (126-D) ➔ PyTorch BiGRU Sequence Model ➔ Temporal Debounce ➔ Text & TTS Audio.
       </p>
       
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; color: var(--primary);">1. Ingestion</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">Webcam / Upload Video</div>
+      <div style="display: flex; flex-direction: column; gap: 0.6rem; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0.85rem; background: var(--bg-card); border-radius: 6px; font-size: 0.85rem;">
+          <span><strong>1. Video Ingestion:</strong> Webcam / Video File</span>
+          <span class="badge badge-beginner">30 FPS</span>
         </div>
-        <div style="display: flex; align-items: center; color: var(--text-muted);">➔</div>
-        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; color: var(--primary);">2. Landmark Extraction</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">MediaPipe 42 3D Points</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0.85rem; background: var(--bg-card); border-radius: 6px; font-size: 0.85rem;">
+          <span><strong>2. Landmark Tracking:</strong> MediaPipe 42 3D Points</span>
+          <span class="badge badge-beginner">126 Features</span>
         </div>
-        <div style="display: flex; align-items: center; color: var(--text-muted);">➔</div>
-        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; color: var(--primary);">3. Normalization</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">Centering & Scale Invariance</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0.85rem; background: var(--bg-card); border-radius: 6px; font-size: 0.85rem;">
+          <span><strong>3. Neural Classifier:</strong> BiGRU + Self-Attention</span>
+          <span class="badge badge-intermediate">500 Classes</span>
         </div>
-        <div style="display: flex; align-items: center; color: var(--text-muted);">➔</div>
-        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; color: var(--accent-purple);">4. BiGRU Neural Model</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">Temporal Attention (30 frames)</div>
-        </div>
-        <div style="display: flex; align-items: center; color: var(--text-muted);">➔</div>
-        <div style="text-align: center; padding: 0.75rem 1.25rem; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; color: var(--accent-emerald);">5. Temporal Debounce</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">Unknown Sign & Sentence Assembler</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0.85rem; background: var(--bg-card); border-radius: 6px; font-size: 0.85rem;">
+          <span><strong>4. Debounce & Voice:</strong> Hysteresis & Web Speech TTS</span>
+          <span class="badge badge-beginner">&lt;15ms</span>
         </div>
       </div>
     </section>
@@ -186,12 +180,12 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container" style="padding: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+    <div class="container" style="padding: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
       <div>
-        <strong>SignBridge AI System</strong> — Academic Mini-Project Submission
+        <strong>SignBridge AI System</strong> — Academic Mini-Project
       </div>
       <div>
-        Built with FastAPI, PyTorch, MediaPipe, OpenCV & SQLite
+        FastAPI &bull; PyTorch &bull; MediaPipe &bull; SQLite
       </div>
     </div>
   </footer>
@@ -200,16 +194,11 @@
   <script>
     lucide.createIcons();
 
-    // Check backend health telemetry on load
     async function loadTelemetry() {
       const health = await SignBridgeAPI.getHealth();
-      const badge = document.getElementById("systemHealthBadge");
       const text = document.getElementById("healthStatusText");
-
       if (health.status === "healthy") {
-        text.innerText = `Engine: ${health.inference_engine.toUpperCase()} (${health.device.toUpperCase()}) | ${health.database_words} Signs`;
-      } else {
-        text.innerText = "System Initializing...";
+        text.innerText = `Engine: ${health.inference_engine.toUpperCase()} | 500 Signs`;
       }
     }
     loadTelemetry();
