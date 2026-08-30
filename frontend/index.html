@@ -3,180 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SignBridge — AI Sign Language Recognition & Real-Time Voice Translation</title>
+  <title>SignBridge AI — Live Sign Language Recognition & Voice Translation</title>
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- MediaPipe Hands for Real-Time 60 FPS Browser Tracking -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- Handcrafted Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="nav-header-row">
       <a href="/" class="brand">
         <div class="brand-icon">🤟</div>
-        <span>Sign<span class="gradient-text">Bridge</span></span>
+        <span>Sign<span class="gradient-text">Bridge AI</span></span>
       </a>
       <div class="nav-right-actions">
+        <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--bg-surface-subtle); padding: 0.35rem 0.75rem; border-radius: 99px; border: 1px solid var(--border-subtle); font-size: 0.8rem;">
+          <input type="checkbox" id="autoVoiceToggle" checked style="cursor: pointer;">
+          <label for="autoVoiceToggle" style="cursor: pointer; font-weight: 600; color: var(--text-primary);">Auto-Voice Speech</label>
+        </div>
         <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
           <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
         </button>
-        <div class="nav-status" id="systemHealthBadge">
+        <div class="nav-status">
           <span class="pulse-dot"></span>
-          <span id="healthStatusText">AI Online</span>
+          <span id="fpsDisplay">Vision Engine Active</span>
         </div>
       </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="/" class="nav-link active"><i data-lucide="home" style="width: 16px;"></i> Home</a></li>
-      <li><a href="/live" class="nav-link"><i data-lucide="video" style="width: 16px;"></i> Live Webcam</a></li>
-      <li><a href="/upload" class="nav-link"><i data-lucide="upload-cloud" style="width: 16px;"></i> Video File</a></li>
-      <li><a href="/meeting" class="nav-link"><i data-lucide="users" style="width: 16px;"></i> Meeting Mode</a></li>
-      <li><a href="/vocab" class="nav-link"><i data-lucide="book-open" style="width: 16px;"></i> 500+ Dictionary</a></li>
-    </ul>
   </nav>
 
-  <!-- Main Content Container -->
-  <main class="container">
+  <!-- Main Single-Screen Recognition Studio -->
+  <main class="container" style="max-width: 1180px; padding-top: 1.25rem;">
     
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-pill">
-        <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i>
-        Production AI Accessibility Platform
-      </div>
-      <h1 class="hero-title">
-        Bridging Silence with <br>
-        <span class="gradient-text">Real-Time Sign Translation</span>
+    <!-- Header Banner -->
+    <div style="text-align: center; margin-bottom: 1.25rem;">
+      <h1 style="font-size: clamp(1.5rem, 3.5vw, 2.25rem); font-weight: 800; letter-spacing: -0.02em;">
+        AI Sign Language <span class="gradient-text">Live Camera Studio</span>
       </h1>
-      <p class="hero-desc">
-        SignBridge transforms hand gestures into fluid text and spoken audio using deep bidirectional sequence models and 3D joint landmark geometry.
+      <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 600px; margin: 0.35rem auto 0;">
+        Turn on your camera and show gestures in front of the lens. The AI instantly tracks 21 hand joints and speaks out the translation in real-time.
       </p>
-      <div class="hero-actions">
-        <a href="/live" class="btn btn-primary">
-          <i data-lucide="camera"></i> Launch Live Studio
-        </a>
-        <a href="/upload" class="btn btn-secondary">
-          <i data-lucide="file-video"></i> Upload Sign Video
-        </a>
-        <a href="/meeting" class="btn btn-accent">
-          <i data-lucide="monitor"></i> Meeting Mode (Meet/Zoom)
-        </a>
-        <a href="/vocab" class="btn btn-secondary">
-          <i data-lucide="search"></i> Browse 500+ Signs
-        </a>
-      </div>
-    </section>
+    </div>
 
-    <!-- Key Metrics Ribbon -->
-    <section style="margin-bottom: 2.5rem;">
-      <div class="grid-4">
-        <div class="ui-card" style="text-align: center;">
-          <h3 style="font-size: 2.25rem; color: var(--primary);" id="metricVocab">500+</h3>
-          <p style="font-size: 0.85rem; margin-top: 0.2rem; font-weight: 500;">Predefined Signs</p>
-          <span class="badge badge-beginner" style="margin-top: 0.5rem;">19 Categories</span>
-        </div>
-        <div class="ui-card" style="text-align: center;">
-          <h3 style="font-size: 2.25rem; color: var(--accent-emerald);" id="metricLatency">&lt;15ms</h3>
-          <p style="font-size: 0.85rem; margin-top: 0.2rem; font-weight: 500;">Inference Latency</p>
-          <span class="badge badge-beginner" style="margin-top: 0.5rem;">30 FPS Real-Time</span>
-        </div>
-        <div class="ui-card" style="text-align: center;">
-          <h3 style="font-size: 2.25rem; color: var(--accent-sky);" id="metricArch">BiGRU</h3>
-          <p style="font-size: 0.85rem; margin-top: 0.2rem; font-weight: 500;">Sequence Classifier</p>
-          <span class="badge badge-intermediate" style="margin-top: 0.5rem;">PyTorch Engine</span>
-        </div>
-        <div class="ui-card" style="text-align: center;">
-          <h3 style="font-size: 2.25rem; color: var(--accent-amber);">126-D</h3>
-          <p style="font-size: 0.85rem; margin-top: 0.2rem; font-weight: 500;">Normalized Features</p>
-          <span class="badge badge-advanced" style="margin-top: 0.5rem;">3D Joint Mesh</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3 Dedicated Application Workflows -->
-    <section style="margin-bottom: 3rem;">
-      <div style="text-align: center; margin-bottom: 1.75rem;">
-        <h2 style="font-size: 1.85rem;">Engineered for <span class="gradient-text">Real-World Accessibility</span></h2>
-        <p style="font-size: 0.95rem; margin-top: 0.35rem;">Three distinct modes designed for daily communication and digital meetings.</p>
-      </div>
-
-      <div class="grid-3">
-        <!-- Live Webcam -->
-        <div class="ui-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="width: 46px; height: 46px; border-radius: 12px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1.25rem;">
-              <i data-lucide="camera" style="width: 24px; height: 24px;"></i>
+    <!-- Dual-Column Recognition Stage -->
+    <div class="grid-2" style="align-items: start; gap: 1.5rem;">
+      
+      <!-- Left Column: Camera Stage & Skeleton Overlay -->
+      <div class="ui-card" style="padding: 1.25rem;">
+        <div class="video-wrapper" id="videoContainer" style="aspect-ratio: 4/3; background: #0f172a; border-radius: var(--radius-md); overflow: hidden; position: relative;">
+          <video id="webcamVideo" autoplay playsinline muted style="width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1);"></video>
+          <canvas id="overlayCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: scaleX(-1); pointer-events: none;"></canvas>
+          
+          <div class="camera-placeholder" id="cameraPlaceholder" style="position: absolute; inset: 0; background: #090d16; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; color: #fff; z-index: 10;">
+            <div style="width: 68px; height: 68px; border-radius: 50%; background: rgba(79, 70, 229, 0.2); border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+              <i data-lucide="camera" style="width: 32px; height: 32px; color: var(--primary);"></i>
             </div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">1. Live Camera Translation</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6;">
-              Continuous gesture recognition with real-time skeletal landmark mesh overlay and instant text-to-speech voice audio.
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Camera is Ready</h3>
+            <p style="font-size: 0.85rem; color: #94a3b8; max-width: 300px; margin: 0.4rem 0 1.25rem;">
+              Click below to grant camera access and start real-time gesture recognition.
             </p>
+            <button id="btnStartCamera" class="btn btn-primary" style="padding: 0.75rem 1.75rem; font-size: 0.95rem;">
+              <i data-lucide="camera"></i> Start Camera & Recognize
+            </button>
           </div>
-          <a href="/live" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; width: 100%;">
-            Launch Camera <i data-lucide="arrow-right" style="width: 14px;"></i>
-          </a>
         </div>
 
-        <!-- Video Upload -->
-        <div class="ui-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="width: 46px; height: 46px; border-radius: 12px; background: var(--accent-emerald-light); display: flex; align-items: center; justify-content: center; color: var(--accent-emerald); margin-bottom: 1.25rem;">
-              <i data-lucide="film" style="width: 24px; height: 24px;"></i>
-            </div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">2. Video File Analysis</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6;">
-              Upload MP4/WebM videos to generate chronological timestamped sign segments and exportable complete narrative transcripts.
-            </p>
-          </div>
-          <a href="/upload" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; width: 100%;">
-            Upload Video <i data-lucide="arrow-right" style="width: 14px;"></i>
-          </a>
-        </div>
-
-        <!-- Meeting Mode -->
-        <div class="ui-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="width: 46px; height: 46px; border-radius: 12px; background: var(--accent-sky-light); display: flex; align-items: center; justify-content: center; color: var(--accent-sky); margin-bottom: 1.25rem;">
-              <i data-lucide="presentation" style="width: 24px; height: 24px;"></i>
-            </div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">3. Online Meeting Assistant</h3>
-            <p style="font-size: 0.9rem; line-height: 1.6;">
-              Real-time companion for Google Meet and Zoom with floating live closed captions and automatic vocalization into meeting chat.
-            </p>
-          </div>
-          <a href="/meeting" class="btn btn-accent btn-sm" style="margin-top: 1.5rem; width: 100%;">
-            Open Meeting Mode <i data-lucide="arrow-right" style="width: 14px;"></i>
-          </a>
+        <!-- Telemetry Ribbon -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.9rem; font-size: 0.82rem; color: var(--text-secondary); padding: 0 0.25rem;">
+          <div>Latency: <strong id="latencyDisplay" style="color: var(--text-primary);">0 ms</strong></div>
+          <div>Status: <strong id="handsCountDisplay" style="color: var(--primary);">0 Hands Tracked</strong></div>
+          <div>Speed: <strong style="color: var(--accent-emerald);">60 FPS Zero-Lag</strong></div>
         </div>
       </div>
-    </section>
 
-    <!-- Architecture Section -->
-    <section class="ui-card" style="margin-bottom: 2.5rem;">
-      <h2 style="font-size: 1.45rem; margin-bottom: 0.5rem;">🏛️ System Architecture Flow</h2>
-      <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">
-        Camera Ingestion ➔ 3D Joint Normalization (126-D) ➔ PyTorch BiGRU Sequence Model ➔ Temporal Debounce State Machine ➔ Text & Voice Output.
+      <!-- Right Column: Recognition Output & Sentence Hub -->
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        
+        <!-- Live Detected Sign Card -->
+        <div class="ui-card" style="text-align: center; padding: 1.5rem;">
+          <span style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;">
+            Current Recognized Sign
+          </span>
+          <div class="recognized-sign" id="detectedSignDisplay" style="font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; color: var(--primary); margin: 0.5rem 0; min-height: 58px; display: flex; align-items: center; justify-content: center;">
+            WAITING FOR GESTURE...
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 0.75rem; width: 100%; max-width: 320px; margin: 0 auto;">
+            <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary);" id="confidenceLabel">0%</span>
+            <div class="confidence-bar-bg" style="flex: 1; height: 10px; background: rgba(0,0,0,0.06); border-radius: 99px; overflow: hidden;">
+              <div class="confidence-bar-fill" id="confidenceBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #4f46e5, #059669); border-radius: 99px; transition: width 0.15s ease;"></div>
+            </div>
+            <span class="badge badge-beginner" id="statusBadge">Idle</span>
+          </div>
+          
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.65rem;" id="statusMessage">
+            Show your hand clearly in front of the camera.
+          </p>
+        </div>
+
+        <!-- Real-Time Translated Sentence Builder -->
+        <div class="ui-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="font-size: 1.05rem; display: flex; align-items: center; gap: 0.4rem; font-weight: 700;">
+              <i data-lucide="volume-2" style="width: 18px; color: var(--primary);"></i>
+              Translated Speech Transcript
+            </h3>
+            <div style="display: flex; gap: 0.4rem;">
+              <button id="btnSpeak" class="btn btn-primary btn-sm" title="Speak Aloud">
+                <i data-lucide="volume-2" style="width: 14px;"></i> Speak
+              </button>
+              <button id="btnCopy" class="btn btn-secondary btn-sm" title="Copy text">
+                <i data-lucide="copy" style="width: 14px;"></i> Copy
+              </button>
+              <button id="btnClear" class="btn btn-secondary btn-sm" title="Clear">
+                <i data-lucide="trash-2" style="width: 14px;"></i> Clear
+              </button>
+            </div>
+          </div>
+          <div class="sentence-container" style="background: var(--bg-surface-subtle); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); min-height: 80px;">
+            <p class="sentence-text" id="sentenceDisplay" style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0; line-height: 1.5;">
+              Recognized signs will automatically construct your translated sentence here...
+            </p>
+            <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem;">
+              <span>Auto-Speech Synthesis: <strong style="color: var(--accent-emerald);">ON</strong></span>
+              <span id="wordCountDisplay">0 signs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Probability Candidates -->
+        <div class="ui-card" style="padding: 1.25rem;">
+          <h4 style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.65rem; text-transform: uppercase; font-weight: 700;">
+            Candidate Probabilities (Top 3)
+          </h4>
+          <div id="candidatesList" style="display: flex; flex-direction: column; gap: 0.35rem;">
+            <div style="color: var(--text-muted); font-size: 0.85rem;">Start camera to see live predictions.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Quick Sign Gesture Cheat Sheet for Easy Testing -->
+    <section class="ui-card" style="margin-top: 1.5rem; padding: 1.5rem;">
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span>🖐️</span> Quick Signs You Can Test Right Now
+      </h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+        Perform any of these hand gestures in front of the webcam. The AI will instantly recognize and pronounce them:
       </p>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
-        <div style="padding: 0.85rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-primary);">1. Video Feed</div>
-          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">30 FPS Web Camera / File</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.75rem;">
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">🖐️</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">HELLO</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Open 5 fingers</div>
         </div>
-        <div style="padding: 0.85rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-primary);">2. Landmark Extraction</div>
-          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">42 3D Keypoints (126-D)</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">🤟</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">I LOVE YOU</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Thumb + Index + Pinky</div>
         </div>
-        <div style="padding: 0.85rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-primary);">3. Sequence Classifier</div>
-          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">PyTorch BiGRU (500 Classes)</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">👍</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">YES</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Thumbs Up</div>
         </div>
-        <div style="padding: 0.85rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
-          <div style="font-weight: 700; font-size: 0.85rem; color: var(--text-primary);">4. Voice Synthesizer</div>
-          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Web Speech TTS + Audio</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">👎</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">NO</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Thumbs Down</div>
+        </div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">✌️</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">PEACE / TWO</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Index + Middle in V</div>
+        </div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">👌</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">OK / PERFECT</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Thumb + Index circle</div>
+        </div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">🤙</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">CALL ME</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Thumb + Pinky only</div>
+        </div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">☝️</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">YOU / POINT</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Index finger up</div>
+        </div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">✊</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">FIST / WAIT</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Closed fist</div>
+        </div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-size: 1.75rem;">🤘</div>
+          <div style="font-weight: 700; font-size: 0.9rem; margin-top: 0.25rem;">ROCK ON</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Index + Pinky up</div>
         </div>
       </div>
     </section>
@@ -184,49 +217,40 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="container" style="padding: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
-      <div style="font-weight: 600;">
-        SignBridge AI Accessibility System &bull; Academic Project
-      </div>
-      <div style="color: var(--text-muted); font-size: 0.85rem;">
-        FastAPI &bull; PyTorch &bull; MediaPipe &bull; SQLite
-      </div>
+  <footer style="margin-top: 2rem; border-top: 1px solid var(--border-subtle); padding: 1.25rem 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+      <div>SignBridge AI &bull; Real-Time Sign Language Accessibility</div>
+      <div>60 FPS Client-Side Vision &bull; Web Speech TTS</div>
     </div>
   </footer>
 
   <script src="/static/js/api.js"></script>
+  <script src="/static/js/live.js"></script>
   <script>
-    lucide.createIcons();
+    if (typeof lucide !== "undefined") lucide.createIcons();
 
-    // Theme Toggle Controller
+    // Theme Toggle
     const themeBtn = document.getElementById("themeToggle");
     const currentTheme = localStorage.getItem("signbridge-theme") || "light";
     document.documentElement.setAttribute("data-theme", currentTheme);
     updateThemeIcon(currentTheme);
 
-    themeBtn.addEventListener("click", () => {
-      const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", nextTheme);
-      localStorage.setItem("signbridge-theme", nextTheme);
-      updateThemeIcon(nextTheme);
-    });
+    if (themeBtn) {
+      themeBtn.addEventListener("click", () => {
+        const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("signbridge-theme", nextTheme);
+        updateThemeIcon(nextTheme);
+      });
+    }
 
     function updateThemeIcon(theme) {
+      if (!themeBtn) return;
       themeBtn.innerHTML = theme === "dark" 
         ? '<i data-lucide="sun" style="width: 18px; height: 18px;"></i>' 
         : '<i data-lucide="moon" style="width: 18px; height: 18px;"></i>';
-      lucide.createIcons();
+      if (typeof lucide !== "undefined") lucide.createIcons();
     }
-
-    async function loadTelemetry() {
-      const health = await SignBridgeAPI.getHealth();
-      const text = document.getElementById("healthStatusText");
-      if (health.status === "healthy") {
-        text.innerText = `Engine: ${health.inference_engine.toUpperCase()} | 500 Signs`;
-      }
-    }
-    loadTelemetry();
   </script>
 </body>
 </html>
