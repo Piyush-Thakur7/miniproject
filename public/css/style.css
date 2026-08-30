@@ -511,3 +511,110 @@ body {
   70% { transform: scale(1); box-shadow: 0 0 0 7px rgba(5, 150, 105, 0); }
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
 }
+
+/* -------------------------------------------------------------
+   Comprehensive Mobile & Tablet Responsive Media Queries
+   ------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.25rem 1.25rem;
+  }
+  .grid-studio {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.65rem 1rem;
+  }
+
+  .header-row {
+    gap: 0.5rem;
+  }
+
+  .app-title {
+    font-size: 1.1rem;
+  }
+
+  .header-controls {
+    gap: 0.35rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .container {
+    padding: 0.85rem 0.85rem;
+  }
+
+  .studio-panel {
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .video-stage {
+    min-height: 240px;
+    height: 56vw;
+    max-height: 380px;
+  }
+
+  .sign-hero-display {
+    font-size: clamp(1.25rem, 5vw, 1.85rem);
+    padding: 1rem 0.75rem;
+    min-height: 75px;
+  }
+
+  .telemetry-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+  }
+
+  .chapter-pills-row {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.4rem;
+  }
+
+  .chapter-pills-row span {
+    flex-shrink: 0;
+  }
+
+  iframe[title="Official Sign Language Book"] {
+    height: 480px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.02rem;
+  }
+
+  .btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.78rem;
+  }
+
+  .btn-sm {
+    padding: 0.32rem 0.65rem;
+    font-size: 0.74rem;
+  }
+
+  .video-stage {
+    min-height: 220px;
+    height: 60vw;
+  }
+
+  .transcript-box {
+    padding: 0.85rem;
+    font-size: 0.92rem;
+  }
+
+  iframe[title="Official Sign Language Book"] {
+    height: 420px !important;
+  }
+}
+
