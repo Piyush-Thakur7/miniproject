@@ -19,6 +19,24 @@ const SignBridgeAPI = {
   },
 
   /**
+   * Predicts sign from landmarks or base64 frame via REST API
+   */
+  async predictFrame(payload) {
+    try {
+      const res = await fetch(`${API_BASE}/predict/frame`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    } catch (err) {
+      console.warn("REST predict/frame fallback warning:", err);
+      return null;
+    }
+  },
+
+  /**
    * Fetches vocabulary with optional filtering
    */
   async getVocabulary(params = {}) {
@@ -83,32 +101,39 @@ const SignBridgeAPI = {
   connectLiveWebSocket(onMessage, onError, onClose) {
     const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
     const wsUrl = `${protocol}//${window.location.host}/ws/live`;
-    const socket = new WebSocket(wsUrl);
+    
+    try {
+      const socket = new WebSocket(wsUrl);
 
-    socket.onopen = () => {
-      console.log("Connected to SignBridge Live WebSocket!");
-    };
+      socket.onopen = () => {
+        console.log("Connected to SignBridge Live WebSocket!");
+      };
 
-    socket.onmessage = (event) => {
-      try {
-        const data = JSON.parse(event.data);
-        if (onMessage) onMessage(data);
-      } catch (err) {
-        console.error("Failed to parse WS payload:", err);
-      }
-    };
+      socket.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          if (onMessage) onMessage(data);
+        } catch (err) {
+          console.error("Failed to parse WS payload:", err);
+        }
+      };
 
-    socket.onerror = (err) => {
-      console.error("WebSocket error:", err);
-      if (onError) onError(err);
-    };
+      socket.onerror = (err) => {
+        console.warn("WebSocket connection not available (using REST API stream):", err);
+        if (onError) onError(err);
+      };
 
-    socket.onclose = () => {
-      console.warn("WebSocket closed.");
-      if (onClose) onClose();
-    };
+      socket.onclose = () => {
+        console.warn("WebSocket closed.");
+        if (onClose) onClose();
+      };
 
-    return socket;
+      return socket;
+    } catch (e) {
+      console.warn("WebSocket initialization bypassed (running in REST mode)");
+      if (onError) onError(e);
+      return null;
+    }
   },
 
   /**
@@ -116,11 +141,15 @@ const SignBridgeAPI = {
    */
   speakText(text) {
     if (!("speechSynthesis" in window) || !text) return;
-    window.speechSynthesis.cancel(); // Stop prior speech
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 1.0;
-    utterance.pitch = 1.0;
-    window.speechSynthesis.speak(utterance);
+    try {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.0;
+      utterance.pitch = 1.0;
+      window.speechSynthesis.speak(utterance);
+    } catch (e) {
+      console.warn("TTS speech warning:", e);
+    }
   },
 
   /**

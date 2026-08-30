@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/static/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- MediaPipe Hands & Camera Utils for Client-Side Zero-Latency Landmark Tracking -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -19,7 +22,7 @@
       </a>
       <div class="nav-status" id="wsStatus">
         <span class="pulse-dot"></span>
-        <span id="wsStatusText">WS Ready</span>
+        <span id="wsStatusText">AI Ready</span>
       </div>
     </div>
     <ul class="nav-links">
@@ -69,7 +72,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-secondary);">
           <div>Latency: <strong id="latencyDisplay">0 ms</strong></div>
           <div>Hands: <strong id="handsCountDisplay">0 detected</strong></div>
-          <div>Stream: <strong id="fpsDisplay">30 FPS</strong></div>
+          <div>Mode: <strong id="fpsDisplay">Client AI</strong></div>
         </div>
       </div>
 

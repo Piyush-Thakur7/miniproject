@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/static/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- MediaPipe Hands for Client-Side Landmark Tracking -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
   <style>
     .meeting-grid {
       display: grid;
@@ -75,7 +78,7 @@
       </a>
       <div class="nav-status">
         <span class="pulse-dot"></span>
-        <span>Meeting Active</span>
+        <span>Meeting Ready</span>
       </div>
     </div>
     <ul class="nav-links">

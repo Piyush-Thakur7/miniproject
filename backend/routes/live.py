@@ -30,7 +30,6 @@ def predict_single_frame(payload: FramePredictionRequest):
     Evaluates a single frame or landmark set.
     """
     engine = SignInferenceEngine.get_instance()
-    detector = HandDetector(static_image_mode=True)
     t0 = time.time()
     
     if payload.landmarks:
@@ -41,10 +40,22 @@ def predict_single_frame(payload: FramePredictionRequest):
         frame = decode_base64_frame(payload.image_base64)
         if frame is None:
             raise HTTPException(status_code=400, detail="Invalid base64 image data.")
+        detector = HandDetector(static_image_mode=True)
         result = detector.process_frame(frame)
+        detector.close()
         features = result["features"]
     else:
         raise HTTPException(status_code=400, detail="Must provide either image_base64 or landmarks payload.")
+
+    # Check if empty landmarks
+    if np.all(features == 0.0):
+        return {
+            "word": "NO HANDS DETECTED",
+            "class_id": -1,
+            "confidence": 0.0,
+            "inference_time_ms": round((time.time() - t0) * 1000, 2),
+            "top_candidates": []
+        }
 
     # Create sequence replication for single frame evaluation
     seq = np.tile(features, (SEQUENCE_LENGTH, 1)) # (30, 126)
