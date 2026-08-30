@@ -9,9 +9,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, Response
 
-from backend.config import FRONTEND_DIR, BASE_DIR
+from backend.config import FRONTEND_DIR, BASE_DIR, IS_SERVERLESS
 from backend.database.db import init_db
-from backend.models.sign_model import SignInferenceEngine
 from backend.routes.health import router as health_router
 from backend.routes.vocabulary import router as vocabulary_router
 from backend.routes.live import router as live_router
@@ -20,22 +19,24 @@ from backend.routes.video import router as video_router
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan context for initialization."""
-    try:
-        init_db()
-        from backend.database.db import get_stats
-        stats = get_stats()
-        if stats.get("total_words", 0) < 500:
-            from backend.database.seed_vocabulary import seed_database
-            seed_database()
-    except Exception as e:
-        print(f"[Lifespan Notice] {e}")
-        
-    try:
-        engine = SignInferenceEngine.get_instance()
-        print(f"SignBridge Ready on {engine.device.upper()} with 500+ sign vocabulary!")
-    except Exception as e:
-        print(f"[Model Prewarm Notice] {e}")
-        
+    if not IS_SERVERLESS:
+        try:
+            init_db()
+            from backend.database.db import get_stats
+            stats = get_stats()
+            if stats.get("total_words", 0) < 500:
+                from backend.database.seed_vocabulary import seed_database
+                seed_database()
+        except Exception as e:
+            print(f"[Lifespan Notice] {e}")
+            
+        try:
+            from backend.models.sign_model import SignInferenceEngine
+            engine = SignInferenceEngine.get_instance()
+            print(f"SignBridge Ready on {engine.device.upper()} with 500+ sign vocabulary!")
+        except Exception as e:
+            print(f"[Model Prewarm Notice] {e}")
+            
     yield
 
 app = FastAPI(
