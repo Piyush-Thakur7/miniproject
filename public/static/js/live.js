@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         handsModel.onResults(onHandResults);
-        if (fpsDisplay) fpsDisplay.innerText = "Vision AI: 60 FPS Ready";
+        if (fpsDisplay) fpsDisplay.innerText = "Ready (60 FPS)";
         console.log("[SignBridge Engine] 500+ Sign MediaPipe Classifier Active!");
       } catch (err) {
         console.warn("MediaPipe Hands init error:", err);
