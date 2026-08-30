@@ -104,9 +104,20 @@
             </div>
             <span class="badge badge-beginner" id="statusBadge">Idle</span>
           </div>
+
+          <!-- 2-Second Hold-to-Commit Progress Gate -->
+          <div style="margin: 0.85rem auto 0; max-width: 320px; text-align: left; background: var(--bg-surface-subtle); padding: 0.6rem 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.35rem;">
+              <span>⏱️ Hold 2.0s to Insert</span>
+              <span id="holdTimerLabel" style="color: var(--primary);">0.0s / 2.0s</span>
+            </div>
+            <div style="width: 100%; height: 8px; background: rgba(0,0,0,0.08); border-radius: 99px; overflow: hidden;">
+              <div id="holdProgressBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #3b82f6, #10b981); border-radius: 99px; transition: width 0.1s linear;"></div>
+            </div>
+          </div>
           
           <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.65rem;" id="statusMessage">
-            Show your hand clearly in front of the camera.
+            Show your hand clearly and hold for 2 seconds to commit.
           </p>
         </div>
 

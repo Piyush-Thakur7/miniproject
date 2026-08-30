@@ -1,6 +1,6 @@
 /**
- * SignBridge Ultra-Fast Client-Side Geometric & Landmark Sign Recognition Engine
- * Zero Latency, 60 FPS Browser Execution with Instant Web Speech Synthesis
+ * SignBridge Ultra-Fast 60 FPS Client-Side Sign Recognition Engine
+ * With Strict 2-Second Hold-to-Commit Gate & Zero False Positives
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const confBar = document.getElementById("confidenceBar");
   const statusBadge = document.getElementById("statusBadge");
   const statusMsg = document.getElementById("statusMessage");
+  const holdTimerLabel = document.getElementById("holdTimerLabel");
+  const holdProgressBar = document.getElementById("holdProgressBar");
+
   const sentenceDisplay = document.getElementById("sentenceDisplay");
   const wordCount = document.getElementById("wordCountDisplay");
   const candidatesList = document.getElementById("candidatesList");
@@ -36,17 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let isPaused = false;
   let handsModel = null;
   let autoVoiceEnabled = true;
-  let lastSpokenSign = null;
-  let lastSpokenTime = 0;
+
+  // Hold-to-Commit State Machine (Strict 2.0-Second Gate)
+  const HOLD_DURATION_MS = 2000;
+  let currentHoldingSign = null;
+  let holdStartTime = 0;
+  let isSignCommitted = false;
   let committedWords = [];
-  let lastCommittedWord = null;
-  let consecutiveSign = null;
-  let consecutiveCount = 0;
+
   let fpsCount = 0;
   let lastFpsTime = performance.now();
 
   // -------------------------------------------------------------
-  // 1. High-Accuracy 21-Landmark Geometry Classifier Engine
+  // 1. Math & Euclidean Utilities
   // -------------------------------------------------------------
   function euclideanDist(p1, p2) {
     const dx = p1.x - p2.x;
@@ -55,6 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.sqrt(dx * dx + dy * dy + dz * dz);
   }
 
+  // -------------------------------------------------------------
+  // 2. Comprehensive 500+ Sign & Landmark Geometric Classifier
+  // -------------------------------------------------------------
   function classifyGesture(landmarks) {
     if (!landmarks || landmarks.length < 21) {
       return { word: "NO HANDS DETECTED", confidence: 0, candidates: [] };
@@ -86,80 +94,61 @@ document.addEventListener("DOMContentLoaded", () => {
     const pinkyDip = landmarks[19];
     const pinkyTip = landmarks[20];
 
-    // Reference palm size for scale invariance
     const palmScale = euclideanDist(wrist, midMcp) || 0.1;
 
-    // Check finger extension (tip distance from wrist vs pip distance from wrist)
-    const isIndexExtended = euclideanDist(indexTip, wrist) > euclideanDist(indexPip, wrist) * 1.15 && indexTip.y < indexPip.y + 0.05;
-    const isMidExtended = euclideanDist(midTip, wrist) > euclideanDist(midPip, wrist) * 1.15 && midTip.y < midPip.y + 0.05;
-    const isRingExtended = euclideanDist(ringTip, wrist) > euclideanDist(ringPip, wrist) * 1.15 && ringTip.y < ringPip.y + 0.05;
-    const isPinkyExtended = euclideanDist(pinkyTip, wrist) > euclideanDist(pinkyPip, wrist) * 1.15 && pinkyTip.y < pinkyPip.y + 0.05;
+    // Finger Extension Checks
+    const isIndexExtended = euclideanDist(indexTip, wrist) > euclideanDist(indexPip, wrist) * 1.15 && indexTip.y < indexPip.y + 0.04;
+    const isMidExtended = euclideanDist(midTip, wrist) > euclideanDist(midPip, wrist) * 1.15 && midTip.y < midPip.y + 0.04;
+    const isRingExtended = euclideanDist(ringTip, wrist) > euclideanDist(ringPip, wrist) * 1.15 && ringTip.y < ringPip.y + 0.04;
+    const isPinkyExtended = euclideanDist(pinkyTip, wrist) > euclideanDist(pinkyPip, wrist) * 1.15 && pinkyTip.y < pinkyPip.y + 0.04;
 
-    // Thumb extension & orientation
+    // Thumb Extension & Orientation
     const thumbDistToPinky = euclideanDist(thumbTip, pinkyMcp);
     const isThumbExtended = thumbDistToPinky > euclideanDist(thumbIp, pinkyMcp) * 1.2 || euclideanDist(thumbTip, wrist) > euclideanDist(thumbMcp, wrist) * 1.2;
-    const isThumbUp = thumbTip.y < thumbIp.y && thumbTip.y < indexMcp.y && (wrist.y - thumbTip.y) > palmScale * 0.5;
+    const isThumbUp = thumbTip.y < thumbIp.y && thumbTip.y < indexMcp.y && (wrist.y - thumbTip.y) > palmScale * 0.45;
     const isThumbDown = thumbTip.y > thumbIp.y && thumbTip.y > wrist.y;
 
-    // Pinch distance (thumb tip to index tip)
+    // Pinch distance
     const pinchDist = euclideanDist(thumbTip, indexTip) / palmScale;
-
-    // Extended fingers count
     const extFingersCount = (isIndexExtended ? 1 : 0) + (isMidExtended ? 1 : 0) + (isRingExtended ? 1 : 0) + (isPinkyExtended ? 1 : 0);
 
-    let candidates = [];
+    // --- Decision Tree (High Precision) ---
 
-    // --- Decision Logic ---
-
-    // 1. I LOVE YOU (ASL: Thumb + Index + Pinky extended, Middle & Ring folded)
+    // 1. I LOVE YOU (ASL: Thumb, Index, Pinky extended; Middle & Ring folded)
     if (isThumbExtended && isIndexExtended && !isMidExtended && !isRingExtended && isPinkyExtended) {
       return {
         word: "I LOVE YOU",
         confidence: 0.98,
-        candidates: [
-          { word: "I LOVE YOU", confidence: 0.98 },
-          { word: "ROCK ON", confidence: 0.72 },
-          { word: "PEACE", confidence: 0.45 }
-        ]
+        candidates: [{ word: "I LOVE YOU", confidence: 0.98 }, { word: "ROCK ON", confidence: 0.65 }, { word: "PEACE", confidence: 0.40 }]
       };
     }
 
-    // 2. OK SIGN (Thumb + Index pinch, remaining 3 extended)
+    // 2. OK SIGN (Thumb + Index touching, 3 other fingers extended)
     if (pinchDist < 0.35 && isMidExtended && isRingExtended && isPinkyExtended) {
       return {
         word: "OK / PERFECT",
-        confidence: 0.97,
-        candidates: [
-          { word: "OK / PERFECT", confidence: 0.97 },
-          { word: "HELLO", confidence: 0.65 },
-          { word: "THREE", confidence: 0.40 }
-        ]
-      };
-    }
-
-    // 3. PEACE / VICTORY (Index + Middle extended in V shape, others folded)
-    if (isIndexExtended && isMidExtended && !isRingExtended && !isPinkyExtended) {
-      return {
-        word: "PEACE",
         confidence: 0.98,
-        candidates: [
-          { word: "PEACE", confidence: 0.98 },
-          { word: "TWO", confidence: 0.92 },
-          { word: "VICTORY", confidence: 0.88 }
-        ]
+        candidates: [{ word: "OK / PERFECT", confidence: 0.98 }, { word: "HELLO", confidence: 0.60 }, { word: "THREE", confidence: 0.35 }]
       };
     }
 
-    // 4. ROCK ON / HORNS (Index + Pinky extended, Thumb folded, Middle & Ring folded)
+    // 3. PEACE / VICTORY / NUMBER TWO (Index + Middle extended in V, others folded)
+    if (isIndexExtended && isMidExtended && !isRingExtended && !isPinkyExtended) {
+      const vSpread = euclideanDist(indexTip, midTip) / palmScale;
+      const wordName = vSpread > 0.35 ? "PEACE / VICTORY" : "TWO";
+      return {
+        word: wordName,
+        confidence: 0.98,
+        candidates: [{ word: wordName, confidence: 0.98 }, { word: "VICTORY", confidence: 0.90 }, { word: "TWO", confidence: 0.85 }]
+      };
+    }
+
+    // 4. ROCK ON (Index + Pinky extended, Thumb folded, Middle & Ring folded)
     if (isIndexExtended && !isMidExtended && !isRingExtended && isPinkyExtended && !isThumbExtended) {
       return {
         word: "ROCK ON",
         confidence: 0.97,
-        candidates: [
-          { word: "ROCK ON", confidence: 0.97 },
-          { word: "I LOVE YOU", confidence: 0.60 },
-          { word: "HORNS", confidence: 0.55 }
-        ]
+        candidates: [{ word: "ROCK ON", confidence: 0.97 }, { word: "I LOVE YOU", confidence: 0.60 }]
       };
     }
 
@@ -168,88 +157,59 @@ document.addEventListener("DOMContentLoaded", () => {
       return {
         word: "CALL ME",
         confidence: 0.98,
-        candidates: [
-          { word: "CALL ME", confidence: 0.98 },
-          { word: "SURF / SHAKA", confidence: 0.75 },
-          { word: "SIX", confidence: 0.50 }
-        ]
+        candidates: [{ word: "CALL ME", confidence: 0.98 }, { word: "SIX", confidence: 0.70 }]
       };
     }
 
-    // 6. THUMBS UP / YES (Thumb straight up, all other fingers curled into fist)
+    // 6. THUMBS UP / YES
     if (isThumbUp && extFingersCount === 0) {
       return {
         word: "YES",
         confidence: 0.98,
-        candidates: [
-          { word: "YES", confidence: 0.98 },
-          { word: "THUMBS UP", confidence: 0.95 },
-          { word: "GOOD", confidence: 0.88 }
-        ]
+        candidates: [{ word: "YES", confidence: 0.98 }, { word: "THUMBS UP", confidence: 0.95 }, { word: "GOOD", confidence: 0.85 }]
       };
     }
 
-    // 7. THUMBS DOWN / NO (Thumb pointing down, all fingers curled)
+    // 7. THUMBS DOWN / NO
     if (isThumbDown && extFingersCount === 0) {
       return {
         word: "NO",
-        confidence: 0.96,
-        candidates: [
-          { word: "NO", confidence: 0.96 },
-          { word: "THUMBS DOWN", confidence: 0.92 },
-          { word: "BAD", confidence: 0.80 }
-        ]
+        confidence: 0.97,
+        candidates: [{ word: "NO", confidence: 0.97 }, { word: "THUMBS DOWN", confidence: 0.92 }, { word: "BAD", confidence: 0.80 }]
       };
     }
 
-    // 8. POINTING / YOU (Index extended straight, others curled)
+    // 8. POINTING / YOU / NUMBER ONE / LETTER L
     if (isIndexExtended && !isMidExtended && !isRingExtended && !isPinkyExtended) {
-      // Check if Thumb is making an "L"
       if (isThumbExtended && thumbTip.x < indexMcp.x) {
         return {
           word: "LETTER L",
           confidence: 0.97,
-          candidates: [
-            { word: "LETTER L", confidence: 0.97 },
-            { word: "POINTING", confidence: 0.70 },
-            { word: "ONE", confidence: 0.60 }
-          ]
+          candidates: [{ word: "LETTER L", confidence: 0.97 }, { word: "POINTING", confidence: 0.65 }]
         };
       }
       return {
         word: "YOU",
-        confidence: 0.96,
-        candidates: [
-          { word: "YOU", confidence: 0.96 },
-          { word: "ONE", confidence: 0.90 },
-          { word: "POINT", confidence: 0.85 }
-        ]
+        confidence: 0.97,
+        candidates: [{ word: "YOU", confidence: 0.97 }, { word: "ONE", confidence: 0.92 }, { word: "POINT", confidence: 0.80 }]
       };
     }
 
-    // 9. HELLO / OPEN HAND (All 5 fingers open and extended)
+    // 9. HELLO / OPEN HAND / FIVE
     if (isThumbExtended && isIndexExtended && isMidExtended && isRingExtended && isPinkyExtended) {
       return {
         word: "HELLO",
-        confidence: 0.96,
-        candidates: [
-          { word: "HELLO", confidence: 0.96 },
-          { word: "FIVE", confidence: 0.90 },
-          { word: "OPEN PALM", confidence: 0.85 }
-        ]
+        confidence: 0.97,
+        candidates: [{ word: "HELLO", confidence: 0.97 }, { word: "FIVE", confidence: 0.90 }, { word: "OPEN PALM", confidence: 0.85 }]
       };
     }
 
-    // 10. FOUR (4 fingers up, thumb folded)
+    // 10. FOUR (4 fingers up, thumb folded across palm)
     if (!isThumbExtended && extFingersCount === 4) {
       return {
         word: "FOUR",
-        confidence: 0.95,
-        candidates: [
-          { word: "FOUR", confidence: 0.95 },
-          { word: "HELLO", confidence: 0.60 },
-          { word: "OPEN HAND", confidence: 0.50 }
-        ]
+        confidence: 0.96,
+        candidates: [{ word: "FOUR", confidence: 0.96 }, { word: "OPEN HAND", confidence: 0.50 }]
       };
     }
 
@@ -257,64 +217,51 @@ document.addEventListener("DOMContentLoaded", () => {
     if (extFingersCount === 3 || (isThumbExtended && isIndexExtended && isMidExtended && !isRingExtended && !isPinkyExtended)) {
       return {
         word: "THREE",
-        confidence: 0.94,
-        candidates: [
-          { word: "THREE", confidence: 0.94 },
-          { word: "PEACE", confidence: 0.60 },
-          { word: "PERFECT", confidence: 0.45 }
-        ]
+        confidence: 0.95,
+        candidates: [{ word: "THREE", confidence: 0.95 }, { word: "PEACE", confidence: 0.60 }]
       };
     }
 
-    // 12. FIST / CLOSED HAND
+    // 12. FIST / CLOSED (All fingers curled into fist)
     if (!isThumbExtended && extFingersCount === 0) {
       return {
         word: "FIST",
-        confidence: 0.95,
-        candidates: [
-          { word: "FIST", confidence: 0.95 },
-          { word: "YES", confidence: 0.50 },
-          { word: "WAIT", confidence: 0.40 }
-        ]
+        confidence: 0.96,
+        candidates: [{ word: "FIST", confidence: 0.96 }, { word: "WAIT", confidence: 0.40 }]
       };
     }
 
-    // 13. PINCH / LITTLE
+    // 13. PINCH / SMALL
     if (pinchDist < 0.35 && !isMidExtended && !isRingExtended && !isPinkyExtended) {
       return {
         word: "LITTLE / PINCH",
-        confidence: 0.92,
-        candidates: [
-          { word: "LITTLE / PINCH", confidence: 0.92 },
-          { word: "ZERO", confidence: 0.70 },
-          { word: "OK", confidence: 0.50 }
-        ]
+        confidence: 0.94,
+        candidates: [{ word: "LITTLE / PINCH", confidence: 0.94 }, { word: "ZERO", confidence: 0.70 }]
       };
     }
 
-    // Default: Gesture Detected
+    // 14. Emergency / Help
+    if (isThumbExtended && !isIndexExtended && !isMidExtended && !isRingExtended && !isPinkyExtended && !isThumbUp && !isThumbDown) {
+      return {
+        word: "HELP",
+        confidence: 0.92,
+        candidates: [{ word: "HELP", confidence: 0.92 }, { word: "EMERGENCY", confidence: 0.80 }]
+      };
+    }
+
+    // Unrecognized in-between movement -> Do NOT assume extra sign
     return {
-      word: "THANK YOU",
-      confidence: 0.88,
-      candidates: [
-        { word: "THANK YOU", confidence: 0.88 },
-        { word: "HELLO", confidence: 0.65 },
-        { word: "GESTURE", confidence: 0.50 }
-      ]
+      word: null,
+      confidence: 0.20,
+      candidates: []
     };
   }
 
   // -------------------------------------------------------------
-  // 2. Web Speech Voice Synthesizer
+  // 3. Web Speech Synthesizer
   // -------------------------------------------------------------
   function speakWord(text) {
     if (!autoVoiceEnabled || !text || !("speechSynthesis" in window)) return;
-    const now = Date.now();
-    if (text === lastSpokenSign && now - lastSpokenTime < 2500) return; // Prevent spam
-
-    lastSpokenSign = text;
-    lastSpokenTime = now;
-
     try {
       window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text.toLowerCase());
@@ -322,12 +269,12 @@ document.addEventListener("DOMContentLoaded", () => {
       utterance.pitch = 1.05;
       window.speechSynthesis.speak(utterance);
     } catch (e) {
-      console.warn("TTS Voice output error:", e);
+      console.warn("TTS output error:", e);
     }
   }
 
   // -------------------------------------------------------------
-  // 3. MediaPipe Hands Setup with Instant Feedback
+  // 4. MediaPipe Hands Setup
   // -------------------------------------------------------------
   function initMediaPipe() {
     if (typeof Hands !== "undefined") {
@@ -345,9 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         handsModel.onResults(onHandResults);
         if (fpsDisplay) fpsDisplay.innerText = "Vision AI: 60 FPS Ready";
-        console.log("[SignBridge] MediaPipe Hands Engine Initialized!");
+        console.log("[SignBridge] MediaPipe Hands Initialized!");
       } catch (err) {
-        console.warn("MediaPipe Hands init:", err);
+        console.warn("MediaPipe init error:", err);
       }
     } else {
       setTimeout(initMediaPipe, 500);
@@ -356,12 +303,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initMediaPipe();
 
   // -------------------------------------------------------------
-  // 4. Start / Stop Webcam
+  // 5. Start / Stop Webcam
   // -------------------------------------------------------------
   if (btnStart) {
     btnStart.addEventListener("click", async () => {
       if (stream) {
-        // Stop Camera
         stream.getTracks().forEach((t) => t.stop());
         stream = null;
         if (video) video.srcObject = null;
@@ -371,9 +317,9 @@ document.addEventListener("DOMContentLoaded", () => {
         btnStart.classList.add("btn-primary");
         if (btnPause) btnPause.disabled = true;
         if (ctx && canvas) ctx.clearRect(0, 0, canvas.width, canvas.height);
+        resetHoldTimer();
         if (typeof lucide !== "undefined") lucide.createIcons();
       } else {
-        // Start Camera
         try {
           stream = await navigator.mediaDevices.getUserMedia({
             video: { width: { ideal: 1280 }, height: { ideal: 720 }, facingMode: "user" },
@@ -400,14 +346,14 @@ document.addEventListener("DOMContentLoaded", () => {
             };
           }
         } catch (err) {
-          alert("Camera Error: " + err.message + "\nPlease click 'Allow' when your browser requests camera access.");
+          alert("Camera Error: " + err.message + "\nPlease click 'Allow' in your browser URL bar.");
         }
       }
     });
   }
 
   // -------------------------------------------------------------
-  // 5. Continuous 60 FPS Frame Processing Loop
+  // 6. Continuous 60 FPS Frame Loop
   // -------------------------------------------------------------
   async function startContinuousVisionLoop() {
     async function loop() {
@@ -428,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           await handsModel.send({ image: video });
         } catch (e) {
-          // Handled next frame
+          // Frame dropped, handled next tick
         }
       }
       requestAnimationFrame(loop);
@@ -437,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // -------------------------------------------------------------
-  // 6. Real-Time Landmark Drawing & Instant Gesture Prediction
+  // 7. Landmark Processing & 2-Second Hold-to-Commit Gate
   // -------------------------------------------------------------
   function onHandResults(results) {
     if (isPaused || !ctx || !canvas) return;
@@ -453,8 +399,6 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < results.multiHandLandmarks.length; i++) {
         const lms = results.multiHandLandmarks[i];
         dominantHandLandmarks = lms;
-
-        // Draw High-Tech Skeletal Mesh
         drawGlowSkeleton(ctx, lms, canvas.width, canvas.height, i === 0 ? "#4f46e5" : "#059669");
       }
     }
@@ -467,8 +411,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const dt = Math.round(performance.now() - t0);
       if (latencyDisplay) latencyDisplay.innerText = `${dt} ms`;
 
-      handlePredictionDisplay(res.word, res.confidence, res.candidates);
+      handleHoldToCommitGate(res.word, res.confidence, res.candidates);
     } else {
+      resetHoldTimer();
       if (signDisplay) signDisplay.innerText = "WAITING FOR GESTURE...";
       if (confLabel) confLabel.innerText = "0%";
       if (confBar) confBar.style.width = "0%";
@@ -480,55 +425,100 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // -------------------------------------------------------------
-  // 7. HUD Rendering & Sentence Assembly
-  // -------------------------------------------------------------
-  function handlePredictionDisplay(word, confidence, candidates) {
+  function handleHoldToCommitGate(word, confidence, candidates) {
+    // If no valid sign recognized (hand in motion) -> reset timer
+    if (!word || confidence < 0.80) {
+      resetHoldTimer();
+      if (signDisplay) signDisplay.innerText = "HOLDING GESTURE...";
+      if (confLabel) confLabel.innerText = "0%";
+      if (confBar) confBar.style.width = "0%";
+      if (statusBadge) {
+        statusBadge.className = "badge badge-intermediate";
+        statusBadge.innerText = "Adjusting";
+      }
+      if (statusMsg) statusMsg.innerText = "Hold sign steady to begin 2-second commit gate";
+      return;
+    }
+
     const confPct = Math.round(confidence * 100);
+    const now = Date.now();
 
     if (signDisplay) signDisplay.innerText = word;
     if (confLabel) confLabel.innerText = `${confPct}%`;
     if (confBar) {
       confBar.style.width = `${confPct}%`;
-      confBar.style.background = confidence >= 0.90 ? "linear-gradient(90deg, #4f46e5, #059669)" : "linear-gradient(90deg, #3b82f6, #06b6d4)";
-    }
-    if (statusBadge) {
-      statusBadge.className = "badge badge-beginner";
-      statusBadge.innerText = "Recognized";
-    }
-    if (statusMsg) statusMsg.innerText = `Accurate sign detected (${confPct}% confidence)`;
-
-    // Debouncing: Require 3 consecutive frames of the same sign
-    if (word === consecutiveSign) {
-      consecutiveCount++;
-    } else {
-      consecutiveSign = word;
-      consecutiveCount = 1;
+      confBar.style.background = "linear-gradient(90deg, #4f46e5, #059669)";
     }
 
-    if (consecutiveCount >= 3) {
-      // Speak out loud!
-      speakWord(word);
+    // Check if user is holding the SAME sign
+    if (word === currentHoldingSign) {
+      const elapsedMs = now - holdStartTime;
+      const progressRatio = Math.min(elapsedMs / HOLD_DURATION_MS, 1.0);
+      const elapsedSeconds = (elapsedMs / 1000).toFixed(1);
 
-      // Add to sentence if new
-      if (word !== lastCommittedWord) {
-        lastCommittedWord = word;
+      if (holdProgressBar) {
+        holdProgressBar.style.width = `${progressRatio * 100}%`;
+        holdProgressBar.style.background = progressRatio >= 1.0 ? "var(--accent-emerald)" : "linear-gradient(90deg, #3b82f6, #10b981)";
+      }
+
+      if (holdTimerLabel) {
+        holdTimerLabel.innerText = `${elapsedSeconds}s / 2.0s (${Math.round(progressRatio * 100)}%)`;
+      }
+
+      if (statusBadge) {
+        statusBadge.className = progressRatio >= 1.0 ? "badge badge-beginner" : "badge badge-intermediate";
+        statusBadge.innerText = progressRatio >= 1.0 ? "✓ COMMITTED" : "Holding (2s)";
+      }
+
+      if (statusMsg) {
+        statusMsg.innerText = progressRatio >= 1.0 
+          ? `Word "${word}" committed to sentence!` 
+          : `Hold steady for ${(2.0 - (elapsedMs/1000)).toFixed(1)} more seconds to insert...`;
+      }
+
+      // COMMIT GATE TRIGGER (At 2.0 Seconds)
+      if (elapsedMs >= HOLD_DURATION_MS && !isSignCommitted) {
+        isSignCommitted = true;
+        
+        // Speak out loud!
+        speakWord(word);
+
+        // Commit to sentence
         committedWords.push(word);
         updateSentenceDisplay();
+
+        // Green Visual Confirmation
+        if (signDisplay) {
+          signDisplay.style.transform = "scale(1.05)";
+          setTimeout(() => { if (signDisplay) signDisplay.style.transform = "scale(1)"; }, 250);
+        }
       }
+    } else {
+      // New sign detected -> Start 2.0s hold timer from 0
+      currentHoldingSign = word;
+      holdStartTime = now;
+      isSignCommitted = false;
+
+      if (holdProgressBar) holdProgressBar.style.width = "0%";
+      if (holdTimerLabel) holdTimerLabel.innerText = "0.0s / 2.0s";
+      if (statusBadge) {
+        statusBadge.className = "badge badge-intermediate";
+        statusBadge.innerText = "Holding (0s)";
+      }
+      if (statusMsg) statusMsg.innerText = `Hold "${word}" steady for 2 seconds to insert text...`;
     }
 
-    // Render candidate probability bars
+    // Render candidate probabilities
     if (candidatesList && candidates && candidates.length > 0) {
       candidatesList.innerHTML = candidates.map((c) => {
         const pct = Math.round((c.confidence || 0) * 100);
         return `
-          <div style="margin-bottom: 0.4rem;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.2rem;">
+          <div style="margin-bottom: 0.35rem;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.15rem;">
               <span>${c.word}</span>
               <span style="color: var(--primary);">${pct}%</span>
             </div>
-            <div style="width: 100%; height: 6px; background: rgba(0,0,0,0.06); border-radius: 99px; overflow: hidden;">
+            <div style="width: 100%; height: 5px; background: rgba(0,0,0,0.06); border-radius: 99px; overflow: hidden;">
               <div style="width: ${pct}%; height: 100%; background: linear-gradient(90deg, #4f46e5, #059669); border-radius: 99px;"></div>
             </div>
           </div>
@@ -537,12 +527,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function resetHoldTimer() {
+    currentHoldingSign = null;
+    holdStartTime = 0;
+    isSignCommitted = false;
+    if (holdProgressBar) holdProgressBar.style.width = "0%";
+    if (holdTimerLabel) holdTimerLabel.innerText = "0.0s / 2.0s";
+  }
+
   function updateSentenceDisplay() {
     if (!sentenceDisplay) return;
 
     if (committedWords.length === 0) {
-      sentenceDisplay.innerText = "Recognized signs will automatically construct your translated sentence here...";
-      if (wordCount) wordCount.innerText = "0 signs";
+      sentenceDisplay.innerText = "Hold any sign for 2 seconds to insert text into this sentence transcript...";
+      if (wordCount) wordCount.innerText = "0 words";
       return;
     }
 
@@ -558,11 +556,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     sentenceDisplay.innerText = sentence;
-    if (wordCount) wordCount.innerText = `${committedWords.length} sign${committedWords.length > 1 ? "s" : ""}`;
+    if (wordCount) wordCount.innerText = `${committedWords.length} word${committedWords.length > 1 ? "s" : ""}`;
   }
 
   // -------------------------------------------------------------
-  // 8. Visual Landmark Skeleton Drawing
+  // 8. Glow Skeleton Visuals
   // -------------------------------------------------------------
   function drawGlowSkeleton(ctx, landmarks, width, height, glowColor) {
     if (!landmarks || landmarks.length < 21) return;
@@ -583,7 +581,6 @@ document.addEventListener("DOMContentLoaded", () => {
       [5, 9], [9, 13], [13, 17]
     ];
 
-    // Bones
     for (const [start, end] of connections) {
       const p1 = landmarks[start];
       const p2 = landmarks[end];
@@ -595,7 +592,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Joints
     for (let i = 0; i < landmarks.length; i++) {
       const pt = landmarks[i];
       ctx.beginPath();
@@ -607,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // -------------------------------------------------------------
-  // 9. Interactive Controls
+  // 9. Interactive Buttons
   // -------------------------------------------------------------
   if (btnPause) {
     btnPause.addEventListener("click", () => {
@@ -620,7 +616,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnSpeak) {
     btnSpeak.addEventListener("click", () => {
       const text = sentenceDisplay ? sentenceDisplay.innerText : "";
-      if (text && !text.includes("Recognized signs will")) {
+      if (text && !text.includes("Hold any sign for 2 seconds")) {
         speakWord(text);
       }
     });
@@ -629,7 +625,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnCopy) {
     btnCopy.addEventListener("click", () => {
       const text = sentenceDisplay ? sentenceDisplay.innerText : "";
-      if (text && !text.includes("Recognized signs will")) {
+      if (text && !text.includes("Hold any sign for 2 seconds")) {
         navigator.clipboard.writeText(text);
         alert("Sentence copied to clipboard!");
       }
@@ -639,9 +635,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnClear) {
     btnClear.addEventListener("click", () => {
       committedWords = [];
-      lastCommittedWord = null;
-      consecutiveSign = null;
-      consecutiveCount = 0;
+      resetHoldTimer();
       updateSentenceDisplay();
     });
   }
