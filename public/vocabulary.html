@@ -3,142 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>500+ Sign Language Lexicon & UN SDG Guide — SignBridge AI</title>
+  <title>500+ Sign Language Dictionary & Execution Guide — SignBridge</title>
   <link rel="stylesheet" href="/static/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    .sdg-badge-10 { background: #e5243b15; color: #e5243b; border: 1px solid #e5243b40; font-weight: 700; font-size: 0.72rem; padding: 0.25rem 0.5rem; border-radius: 99px; }
-    .sdg-badge-4 { background: #c5192d15; color: #c5192d; border: 1px solid #c5192d40; font-weight: 700; font-size: 0.72rem; padding: 0.25rem 0.5rem; border-radius: 99px; }
-    .sdg-badge-3 { background: #4c9f3815; color: #4c9f38; border: 1px solid #4c9f3840; font-weight: 700; font-size: 0.72rem; padding: 0.25rem 0.5rem; border-radius: 99px; }
-    .sdg-badge-9 { background: #fd692515; color: #fd6925; border: 1px solid #fd692540; font-weight: 700; font-size: 0.72rem; padding: 0.25rem 0.5rem; border-radius: 99px; }
-
-    .vocab-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all var(--transition-smooth);
-      box-shadow: var(--shadow-sm);
-    }
-    .vocab-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .category-pill {
-      white-space: nowrap;
-      padding: 0.4rem 0.85rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      border-radius: 99px;
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-surface-subtle);
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .category-pill:hover, .category-pill.active {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Handcrafted Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-header-row">
-      <a href="/" class="brand">
-        <div class="brand-icon">🤟</div>
-        <span>Sign<span class="gradient-text">Bridge AI</span></span>
+  <!-- Top Application Header Bar -->
+  <header class="app-header">
+    <div class="header-row">
+      <a href="/" class="app-title">
+        <span>🤟 SignBridge</span>
+        <span class="version-badge">500+ Sign Lexicon Explorer</span>
       </a>
-      <div class="nav-right-actions">
-        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
-          <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+      
+      <div class="header-controls">
+        <a href="/" class="btn btn-primary btn-sm">
+          <i data-lucide="camera" style="width: 14px;"></i> Live Camera Studio
+        </a>
+
+        <button id="themeToggle" class="btn btn-secondary btn-sm" title="Toggle Light/Dark Theme">
+          <i data-lucide="moon" style="width: 14px;"></i>
         </button>
-        <div class="nav-status">
+
+        <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-secondary); background: var(--bg-surface-subtle); padding: 0.3rem 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle);">
           <span class="pulse-dot"></span>
-          <span id="totalSignsCount">500+ Signs Active</span>
+          <span id="totalSignsCount">500 Signs Loaded</span>
         </div>
       </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="/" class="nav-link"><i data-lucide="camera" style="width: 16px;"></i> Live Camera Studio</a></li>
-      <li><a href="/vocab" class="nav-link active"><i data-lucide="book-open" style="width: 16px;"></i> 500+ Lexicon & SDG Guide</a></li>
-    </ul>
-  </nav>
+  </header>
 
-  <main class="container" style="max-width: 1180px; padding-top: 1.25rem;">
+  <!-- Main Lexicon Workspace -->
+  <main class="container" style="max-width: 1240px; padding-top: 1rem;">
     
-    <!-- Title & SDG Mission Ribbon -->
-    <div style="margin-bottom: 1.5rem;">
-      <div style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.75rem; background: var(--bg-surface-subtle); border-radius: 99px; border: 1px solid var(--border-subtle); font-size: 0.8rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
-        🌍 UN Sustainable Development Goals (SDG) Accessibility Initiative
-      </div>
-      <h1 style="font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 800;">500+ Sign Language Lexicon & Purpose Guide</h1>
-      <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 800px; margin-top: 0.35rem;">
-        Comprehensive dictionary of standardized manual signs across 19 domains. Built to bridge communication gaps for over 70 million Deaf individuals worldwide.
+    <div style="margin-bottom: 1.25rem;">
+      <h1 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">
+        500+ Sign Language Dictionary & Execution Guide
+      </h1>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.25rem;">
+        Search and explore the complete library of standardized sign language gestures, anatomical finger positions, starting postures, and movement trajectories.
       </p>
     </div>
 
-    <!-- 4 UN SDG Impact Cards -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; margin-bottom: 1.75rem;">
-      
-      <div class="ui-card" style="padding: 1rem; border-left: 4px solid #e5243b;">
-        <span class="sdg-badge-10">SDG 10 &bull; Target 10.2</span>
-        <h4 style="font-size: 0.95rem; font-weight: 700; margin: 0.4rem 0 0.2rem;">Reduced Inequalities</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
-          Universal real-time gesture-to-voice translation eliminates social and professional barriers for Deaf citizens.
-        </p>
-      </div>
-
-      <div class="ui-card" style="padding: 1rem; border-left: 4px solid #c5192d;">
-        <span class="sdg-badge-4">SDG 4 &bull; Target 4.5</span>
-        <h4 style="font-size: 0.95rem; font-weight: 700; margin: 0.4rem 0 0.2rem;">Quality Inclusive Education</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
-          Enables Deaf students to engage actively in classrooms, lectures, and technical STEM education.
-        </p>
-      </div>
-
-      <div class="ui-card" style="padding: 1rem; border-left: 4px solid #4c9f38;">
-        <span class="sdg-badge-3">SDG 3 &bull; Target 3.8</span>
-        <h4 style="font-size: 0.95rem; font-weight: 700; margin: 0.4rem 0 0.2rem;">Healthcare & Emergency</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
-          Empowers rapid medical diagnosis and critical emergency communication without waiting for human interpreters.
-        </p>
-      </div>
-
-      <div class="ui-card" style="padding: 1rem; border-left: 4px solid #fd6925;">
-        <span class="sdg-badge-9">SDG 9 &bull; Target 9.5</span>
-        <h4 style="font-size: 0.95rem; font-weight: 700; margin: 0.4rem 0 0.2rem;">Assistive Edge Innovation</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">
-          Zero-latency client-side browser vision running locally on consumer hardware without expensive specialized gloves.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Search & Filters Toolbar -->
-    <div class="ui-card" style="margin-bottom: 1.5rem; padding: 1.25rem;">
-      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
+    <!-- Search & Filter Controls Panel -->
+    <div class="studio-panel" style="margin-bottom: 1.25rem;">
+      <div style="display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 0.85rem;">
         
         <!-- Search Input -->
-        <div style="flex: 1; min-width: 260px; position: relative;">
-          <input type="text" id="searchInput" placeholder="Search by word, meaning, or sign (e.g. Hello, Doctor, Water, Help)..." 
-            style="width: 100%; padding: 0.7rem 0.85rem 0.7rem 2.4rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.88rem;">
-          <i data-lucide="search" style="position: absolute; left: 12px; top: 13px; width: 16px; color: var(--text-muted);"></i>
+        <div style="flex: 1; min-width: 240px; position: relative;">
+          <input type="text" id="searchInput" placeholder="Search by sign, handshape, or meaning (e.g. Hello, Doctor, Water, Help, Letter A)..." 
+            style="width: 100%; padding: 0.6rem 0.85rem 0.6rem 2.2rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-xs); color: var(--text-primary); font-size: 0.85rem;">
+          <i data-lucide="search" style="position: absolute; left: 10px; top: 11px; width: 14px; color: var(--text-muted);"></i>
         </div>
 
-        <!-- Difficulty Filter -->
-        <select id="difficultyFilter" style="padding: 0.7rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.85rem; font-weight: 600; cursor: pointer;">
+        <!-- Difficulty Dropdown -->
+        <select id="difficultyFilter" style="padding: 0.6rem 0.85rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xs); color: var(--text-primary); font-size: 0.82rem; font-weight: 600; cursor: pointer;">
           <option value="all">All Difficulties</option>
           <option value="Beginner">Beginner</option>
           <option value="Intermediate">Intermediate</option>
@@ -147,25 +67,25 @@
       </div>
 
       <!-- 19 Category Filter Pills -->
-      <div id="categoryPillsContainer" style="display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.4rem; -webkit-overflow-scrolling: touch;">
+      <div id="categoryPillsContainer" style="display: flex; gap: 0.35rem; overflow-x: auto; padding-bottom: 0.35rem; -webkit-overflow-scrolling: touch;">
         <button class="category-pill active" data-category="all">All Categories (500)</button>
       </div>
     </div>
 
-    <!-- Vocabulary Cards Grid (3 Columns) -->
-    <div class="grid-3" id="vocabGrid">
-      <div style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 3rem;">
-        Loading 500+ standardized sign dictionary...
+    <!-- Lexicon Cards Grid -->
+    <div class="lexicon-grid" id="vocabGrid">
+      <div style="color: var(--text-muted); grid-column: 1 / -1; text-align: center; padding: 3rem; font-family: var(--font-mono);">
+        Loading sign language dictionary...
       </div>
     </div>
 
   </main>
 
-  <!-- Footer -->
-  <footer style="margin-top: 3rem; border-top: 1px solid var(--border-subtle); padding: 1.5rem 0;">
-    <div class="container" style="max-width: 1180px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
-      <div>SignBridge AI &bull; UN SDG 10, 4, 3, 9 Accessibility Platform</div>
-      <div>500+ Sign Lexicon &bull; Zero-Latency Vision Engine</div>
+  <!-- Clean Footer -->
+  <footer style="margin-top: 2rem; border-top: 1px solid var(--border-subtle); padding: 1rem 0; background: var(--bg-surface);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted);">
+      <div>SignBridge AI &bull; Standard Sign Language Lexicon</div>
+      <div>500 Structured Classes &bull; Client-Side Search Engine</div>
     </div>
   </footer>
 
@@ -192,8 +112,8 @@
     function updateThemeIcon(theme) {
       if (!themeBtn) return;
       themeBtn.innerHTML = theme === "dark" 
-        ? '<i data-lucide="sun" style="width: 18px; height: 18px;"></i>' 
-        : '<i data-lucide="moon" style="width: 18px; height: 18px;"></i>';
+        ? '<i data-lucide="sun" style="width: 14px;"></i>' 
+        : '<i data-lucide="moon" style="width: 14px;"></i>';
       if (typeof lucide !== "undefined") lucide.createIcons();
     }
   </script>
