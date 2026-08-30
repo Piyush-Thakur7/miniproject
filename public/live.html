@@ -17,11 +17,11 @@
     <div class="header-row">
       <a href="/" class="app-title">
         <span>🤟 SignBridge</span>
-        <span class="version-badge">v1.0 • Python / Client Vision</span>
+        <span class="version-badge">Live Vision Studio v1.0</span>
       </a>
       
       <div class="header-controls">
-        <a href="#dictionarySection" class="btn btn-secondary btn-sm" onclick="document.getElementById('dictionarySection').scrollIntoView({behavior: 'smooth'})">
+        <a href="#dictionarySection" class="btn btn-secondary btn-sm" onclick="openAndScrollToDictionary()">
           <i data-lucide="book-open" style="width: 14px;"></i> 500+ Sign Dictionary
         </a>
 
@@ -42,11 +42,11 @@
     </div>
   </header>
 
-  <!-- Main Application Workspace -->
+  <!-- MAIN PAGE: LIVE CAMERA RECOGNITION STUDIO -->
   <main class="container">
     
-    <!-- SECTION 1: LIVE CAMERA RECOGNITION STUDIO -->
-    <div class="grid-studio" style="margin-bottom: 1.75rem;">
+    <!-- Primary Studio Grid -->
+    <div class="grid-studio" style="margin-bottom: 1.25rem;">
       
       <!-- Left Panel: Camera Vision Feed Stage -->
       <div class="studio-panel">
@@ -177,32 +177,90 @@
 
     </div>
 
-    <!-- SECTION 2: 500+ SIGN LANGUAGE DICTIONARY & VISUAL GESTURE GUIDE -->
-    <section id="dictionarySection" class="studio-panel" style="margin-top: 1.5rem; padding: 1.5rem;">
-      <div class="panel-header" style="flex-direction: column; align-items: flex-start; gap: 0.5rem; border-bottom: none; padding-bottom: 0;">
-        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
-            <i data-lucide="book-open" style="color: var(--primary);"></i>
-            500+ Sign Language Visual Dictionary & Gesture Guide
-          </h2>
-          <span id="totalSignsCount" class="version-badge" style="font-size: 0.8rem; font-weight: 700;">500 Signs Loaded</span>
+    <!-- Quick Sign Cheat Sheet (Instant Reference) -->
+    <section class="studio-panel" style="margin-bottom: 1.5rem;">
+      <div class="panel-header">
+        <div class="panel-title">
+          <i data-lucide="sparkles" style="width: 16px; color: var(--primary);"></i>
+          Quick Sign Testing Cheat Sheet
         </div>
-        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">
-          Explore interactive vector hand diagrams, anatomical finger positions, starting body locations, and motion dynamics for every sign.
-        </p>
+        <button onclick="openAndScrollToDictionary()" class="btn btn-secondary btn-sm">
+          Browse 500+ Dictionary <i data-lucide="arrow-down" style="width: 12px;"></i>
+        </button>
       </div>
 
-      <!-- Search & Filters Toolbar -->
-      <div style="margin: 1rem 0;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
+        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">🖐️ HELLO</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Open 5 fingers wave</div>
+        </div>
+
+        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">👍 YES</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Fist with thumb up</div>
+        </div>
+
+        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">👎 NO</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Fist with thumb down</div>
+        </div>
+
+        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">🤟 I LOVE YOU</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Thumb + Index + Pinky</div>
+        </div>
+
+        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">✌️ PEACE / TWO</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Index + Middle in V</div>
+        </div>
+
+        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">👌 OK / PERFECT</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Thumb & Index pinch</div>
+        </div>
+
+        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">🤙 CALL ME</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Thumb + Pinky out</div>
+        </div>
+
+        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">☝️ YOU / POINT</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Index pointing up</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: 500+ SIGN LANGUAGE DICTIONARY (Dedicated Collapsible Section) -->
+    <section id="dictionarySection" class="studio-panel" style="padding: 1.25rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.85rem;">
+        <div>
+          <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+            <i data-lucide="book-open" style="color: var(--primary);"></i>
+            500+ Sign Language Dictionary & Visual Gesture Guide
+          </h2>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0.2rem 0 0;">
+            Explore vector hand diagrams, finger positions, and motion mechanics for all 500 standardized signs.
+          </p>
+        </div>
+        
+        <button id="toggleDictionaryBtn" class="btn btn-primary btn-sm">
+          <i data-lucide="chevron-down" style="width: 14px;"></i> Expand 500+ Sign Dictionary & Visual Guide
+        </button>
+      </div>
+
+      <!-- Collapsible Dictionary Content Area -->
+      <div id="dictionaryContent" style="display: none; margin-top: 1rem;">
+        
+        <!-- Search & Filter Controls -->
         <div style="display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 0.85rem;">
-          <!-- Search Box -->
           <div style="flex: 1; min-width: 240px; position: relative;">
             <input type="text" id="searchInput" placeholder="Search 500+ signs (e.g. Hello, Doctor, Help, Water, Yes, Letter A)..." 
               style="width: 100%; padding: 0.6rem 0.85rem 0.6rem 2.2rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-xs); color: var(--text-primary); font-size: 0.85rem;">
             <i data-lucide="search" style="position: absolute; left: 10px; top: 11px; width: 14px; color: var(--text-muted);"></i>
           </div>
 
-          <!-- Difficulty Dropdown -->
           <select id="difficultyFilter" style="padding: 0.6rem 0.85rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xs); color: var(--text-primary); font-size: 0.82rem; font-weight: 600; cursor: pointer;">
             <option value="all">All Difficulties</option>
             <option value="Beginner">Beginner</option>
@@ -212,16 +270,17 @@
         </div>
 
         <!-- 19 Category Filter Pills -->
-        <div id="categoryPillsContainer" style="display: flex; gap: 0.35rem; overflow-x: auto; padding-bottom: 0.35rem; -webkit-overflow-scrolling: touch;">
+        <div id="categoryPillsContainer" style="display: flex; gap: 0.35rem; overflow-x: auto; padding-bottom: 0.5rem; margin-bottom: 1rem; -webkit-overflow-scrolling: touch;">
           <button class="category-pill active" data-category="all">All Signs (500)</button>
         </div>
-      </div>
 
-      <!-- Lexicon Cards Grid with Visual Vector Diagrams -->
-      <div class="lexicon-grid" id="vocabGrid">
-        <div style="color: var(--text-muted); grid-column: 1 / -1; text-align: center; padding: 3rem; font-family: var(--font-mono);">
-          Loading sign language dictionary and visual gestures...
+        <!-- 500+ Sign Cards Grid with Visual Vector Hand Diagrams -->
+        <div class="lexicon-grid" id="vocabGrid">
+          <div style="color: var(--text-muted); grid-column: 1 / -1; text-align: center; padding: 3rem; font-family: var(--font-mono);">
+            Loading 500+ signs and visual gesture diagrams...
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -230,8 +289,8 @@
   <!-- Clean Footer -->
   <footer style="margin-top: 2rem; border-top: 1px solid var(--border-subtle); padding: 1rem 0; background: var(--bg-surface);">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted);">
-      <div>SignBridge AI &bull; Real-Time Sign Language Recognition Studio</div>
-      <div>60 FPS Client-Side Engine &bull; 500+ Visual Dictionary &bull; 2.0s Hold Gate</div>
+      <div>SignBridge AI &bull; Live Camera Vision Recognition Studio</div>
+      <div>60 FPS Client AI &bull; 500+ Visual Dictionary Section &bull; 2.0s Hold Gate</div>
     </div>
   </footer>
 
@@ -240,6 +299,23 @@
   <script src="/static/js/vocabulary.js"></script>
   <script>
     if (typeof lucide !== "undefined") lucide.createIcons();
+
+    // Helper to open and scroll down to dictionary
+    function openAndScrollToDictionary() {
+      const dictContent = document.getElementById("dictionaryContent");
+      const toggleBtn = document.getElementById("toggleDictionaryBtn");
+      if (dictContent) {
+        dictContent.style.display = "block";
+        if (toggleBtn) {
+          toggleBtn.innerHTML = '<i data-lucide="chevron-up" style="width: 14px;"></i> Collapse Dictionary';
+          if (typeof lucide !== "undefined") lucide.createIcons();
+        }
+      }
+      const section = document.getElementById("dictionarySection");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
 
     // Theme Toggle
     const themeBtn = document.getElementById("themeToggle");
