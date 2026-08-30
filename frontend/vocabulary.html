@@ -1,73 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>500+ Predefined Sign Vocabulary — SignBridge AI</title>
+  <title>500+ Sign Language Lexicon — SignBridge AI</title>
   <link rel="stylesheet" href="/static/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     .vocab-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 1rem;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.2s ease;
+      transition: all var(--transition-smooth);
+      box-shadow: var(--shadow-sm);
     }
     .vocab-card:hover {
-      border-color: var(--border-glow);
+      border-color: var(--primary);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-glow);
+      box-shadow: var(--shadow-card);
     }
   </style>
 </head>
 <body>
 
-  <!-- Responsive Navigation Bar -->
+  <!-- Handcrafted Navigation Bar -->
   <nav class="navbar">
     <div class="nav-header-row">
       <a href="/" class="brand">
         <div class="brand-icon">🤟</div>
         <span>Sign<span class="gradient-text">Bridge</span></span>
       </a>
-      <div class="nav-status">
-        <span class="pulse-dot"></span>
-        <span id="totalSignsCount">500 Signs</span>
+      <div class="nav-right-actions">
+        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+        </button>
+        <div class="nav-status">
+          <span class="pulse-dot"></span>
+          <span id="totalSignsCount">500 Signs</span>
+        </div>
       </div>
     </div>
     <ul class="nav-links">
-      <li><a href="/" class="nav-link"><i data-lucide="home"></i> Home</a></li>
-      <li><a href="/live" class="nav-link"><i data-lucide="video"></i> Live Webcam</a></li>
-      <li><a href="/upload" class="nav-link"><i data-lucide="upload-cloud"></i> Upload Video</a></li>
-      <li><a href="/meeting" class="nav-link"><i data-lucide="users"></i> Meeting Mode</a></li>
-      <li><a href="/vocab" class="nav-link active"><i data-lucide="book-open"></i> 500+ Dictionary</a></li>
+      <li><a href="/" class="nav-link"><i data-lucide="home" style="width: 16px;"></i> Home</a></li>
+      <li><a href="/live" class="nav-link"><i data-lucide="video" style="width: 16px;"></i> Live Webcam</a></li>
+      <li><a href="/upload" class="nav-link"><i data-lucide="upload-cloud" style="width: 16px;"></i> Video File</a></li>
+      <li><a href="/meeting" class="nav-link"><i data-lucide="users" style="width: 16px;"></i> Meeting Mode</a></li>
+      <li><a href="/vocab" class="nav-link active"><i data-lucide="book-open" style="width: 16px;"></i> 500+ Dictionary</a></li>
     </ul>
   </nav>
 
   <main class="container">
-    <div style="margin-bottom: 1.5rem;">
-      <h1 style="font-size: clamp(1.5rem, 4vw, 2.25rem);">500+ Supported Sign Vocabulary</h1>
-      <p style="color: var(--text-secondary); font-size: 0.85rem;">
-        Search and explore the comprehensive lexicon of standardized words, questions, greetings, and emergency phrases.
+    <div style="margin-bottom: 1.75rem;">
+      <h1 style="font-size: clamp(1.6rem, 4vw, 2.25rem);">500+ Sign Language Lexicon Explorer</h1>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        Search and explore the comprehensive dictionary of standardized gestures, emergency phrases, greetings, and daily vocabulary.
       </p>
     </div>
 
     <!-- Search & Filter Controls -->
-    <div class="glass-card" style="margin-bottom: 1.5rem; padding: 1rem;">
-      <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+    <div class="ui-card" style="margin-bottom: 1.75rem; padding: 1.25rem;">
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
         <!-- Search Input -->
-        <div style="flex: 1; min-width: 200px; position: relative;">
-          <input type="text" id="searchInput" placeholder="Search by word or meaning (e.g. Hello, Help)..." 
-            style="width: 100%; padding: 0.6rem 0.85rem 0.6rem 2.2rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 0.85rem;">
-          <i data-lucide="search" style="position: absolute; left: 10px; top: 10px; width: 15px; color: var(--text-muted);"></i>
+        <div style="flex: 1; min-width: 220px; position: relative;">
+          <input type="text" id="searchInput" placeholder="Search by word or meaning (e.g. Hello, Help, Food)..." 
+            style="width: 100%; padding: 0.65rem 0.85rem 0.65rem 2.4rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.88rem;">
+          <i data-lucide="search" style="position: absolute; left: 12px; top: 12px; width: 16px; color: var(--text-muted);"></i>
         </div>
 
         <!-- Difficulty Dropdown -->
-        <select id="difficultyFilter" style="padding: 0.6rem 0.85rem; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 0.8rem; cursor: pointer;">
+        <select id="difficultyFilter" style="padding: 0.65rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.85rem; font-weight: 600; cursor: pointer;">
           <option value="all">All Difficulties</option>
           <option value="Beginner">Beginner</option>
           <option value="Intermediate">Intermediate</option>
@@ -76,14 +84,14 @@
       </div>
 
       <!-- Category Filter Pills (Horizontal Scroll) -->
-      <div id="categoryPillsContainer" style="display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.4rem; -webkit-overflow-scrolling: touch;">
+      <div id="categoryPillsContainer" style="display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; -webkit-overflow-scrolling: touch;">
         <button class="category-pill active" data-category="all">All Categories</button>
       </div>
     </div>
 
     <!-- Vocabulary Grid -->
     <div class="grid-3" id="vocabGrid">
-      <div style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 2rem;">
+      <div style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 3rem;">
         Loading 500+ vocabulary signs...
       </div>
     </div>
@@ -92,5 +100,25 @@
 
   <script src="/static/js/api.js"></script>
   <script src="/static/js/vocabulary.js"></script>
+  <script>
+    const themeBtn = document.getElementById("themeToggle");
+    const currentTheme = localStorage.getItem("signbridge-theme") || "light";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeBtn.addEventListener("click", () => {
+      const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("signbridge-theme", nextTheme);
+      updateThemeIcon(nextTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      themeBtn.innerHTML = theme === "dark" 
+        ? '<i data-lucide="sun" style="width: 18px; height: 18px;"></i>' 
+        : '<i data-lucide="moon" style="width: 18px; height: 18px;"></i>';
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>

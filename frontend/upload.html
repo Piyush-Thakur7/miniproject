@@ -1,68 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Video File Translation — SignBridge AI</title>
   <link rel="stylesheet" href="/static/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-  <!-- Responsive Navigation Bar -->
+  <!-- Handcrafted Navigation Bar -->
   <nav class="navbar">
     <div class="nav-header-row">
       <a href="/" class="brand">
         <div class="brand-icon">🤟</div>
         <span>Sign<span class="gradient-text">Bridge</span></span>
       </a>
-      <div class="nav-status">
-        <span class="pulse-dot"></span>
-        <span>Batch Ready</span>
+      <div class="nav-right-actions">
+        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+        </button>
+        <div class="nav-status">
+          <span class="pulse-dot"></span>
+          <span>Batch Ready</span>
+        </div>
       </div>
     </div>
     <ul class="nav-links">
-      <li><a href="/" class="nav-link"><i data-lucide="home"></i> Home</a></li>
-      <li><a href="/live" class="nav-link"><i data-lucide="video"></i> Live Webcam</a></li>
-      <li><a href="/upload" class="nav-link active"><i data-lucide="upload-cloud"></i> Upload Video</a></li>
-      <li><a href="/meeting" class="nav-link"><i data-lucide="users"></i> Meeting Mode</a></li>
-      <li><a href="/vocab" class="nav-link"><i data-lucide="book-open"></i> 500+ Dictionary</a></li>
+      <li><a href="/" class="nav-link"><i data-lucide="home" style="width: 16px;"></i> Home</a></li>
+      <li><a href="/live" class="nav-link"><i data-lucide="video" style="width: 16px;"></i> Live Webcam</a></li>
+      <li><a href="/upload" class="nav-link active"><i data-lucide="upload-cloud" style="width: 16px;"></i> Video File</a></li>
+      <li><a href="/meeting" class="nav-link"><i data-lucide="users" style="width: 16px;"></i> Meeting Mode</a></li>
+      <li><a href="/vocab" class="nav-link"><i data-lucide="book-open" style="width: 16px;"></i> 500+ Dictionary</a></li>
     </ul>
   </nav>
 
   <main class="container">
-    <div style="margin-bottom: 1.5rem;">
-      <h1 style="font-size: clamp(1.5rem, 4vw, 2.25rem);">Uploaded Video Recognition</h1>
-      <p style="color: var(--text-secondary); font-size: 0.85rem;">
+    <div style="margin-bottom: 1.75rem;">
+      <h1 style="font-size: clamp(1.6rem, 4vw, 2.25rem);">Uploaded Video Recognition</h1>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
         Upload a pre-recorded sign language video to extract frame sequences and generate transcripts.
       </p>
     </div>
 
     <!-- Upload Area & Video Preview Grid -->
-    <div class="grid-2" style="align-items: start; margin-bottom: 1.5rem;">
+    <div class="grid-2" style="align-items: start; margin-bottom: 1.75rem;">
       
       <!-- Left Column: Upload Dropzone -->
-      <div class="glass-card">
+      <div class="ui-card">
         <div class="dropzone" id="videoDropzone">
           <input type="file" id="videoFileInput" accept="video/mp4,video/webm,video/avi,video/quicktime" style="display: none;">
-          <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--primary); margin: 0 auto 1rem;">
-            <i data-lucide="upload-cloud" style="width: 24px; height: 24px;"></i>
+          <div style="width: 52px; height: 52px; border-radius: 14px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; color: var(--primary); margin: 0 auto 1.25rem;">
+            <i data-lucide="upload-cloud" style="width: 26px; height: 26px;"></i>
           </div>
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.35rem;">Choose or Drop Sign Video</h3>
-          <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 1rem;">
-            MP4, WebM, AVI, MOV (Max 100MB)
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Choose or Drag & Drop Video</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+            Supported formats: MP4, WebM, AVI, MOV (Max 100MB)
           </p>
           <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('videoFileInput').click()">
-            <i data-lucide="folder"></i> Browse Video
+            <i data-lucide="folder"></i> Browse Video File
           </button>
         </div>
 
         <!-- Upload Progress Indicator -->
-        <div id="progressContainer" style="display: none; margin-top: 1rem;">
-          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.35rem;">
-            <span id="progressStatusLabel">Analyzing frames...</span>
-            <span id="progressPercentage">0%</span>
+        <div id="progressContainer" style="display: none; margin-top: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.4rem;">
+            <span id="progressStatusLabel" style="color: var(--text-primary);">Analyzing video frames...</span>
+            <span id="progressPercentage" style="color: var(--primary);">0%</span>
           </div>
           <div class="confidence-bar-bg">
             <div class="confidence-bar-fill" id="progressBarFill" style="width: 0%;"></div>
@@ -71,16 +78,16 @@
       </div>
 
       <!-- Right Column: Video Preview Player -->
-      <div class="glass-card">
-        <h3 style="font-size: 1rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
+      <div class="ui-card">
+        <h3 style="font-size: 1.05rem; margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.4rem;">
           <i data-lucide="play" style="width: 16px; color: var(--primary);"></i>
-          Video Playback
+          Video Playback Preview
         </h3>
         <div class="video-wrapper">
           <video id="previewVideoPlayer" controls playsinline style="display: none;"></video>
           <div class="camera-placeholder" id="previewPlaceholder">
-            <i data-lucide="film" style="width: 40px; height: 40px; color: var(--text-muted);"></i>
-            <p style="font-size: 0.8rem;">Upload a video to preview playback.</p>
+            <i data-lucide="film" style="width: 40px; height: 40px; color: #64748b;"></i>
+            <p style="font-size: 0.85rem; color: #94a3b8;">Upload a video to preview playback</p>
           </div>
         </div>
       </div>
@@ -88,66 +95,66 @@
     </div>
 
     <!-- Results Section (Initially Hidden) -->
-    <section id="resultsSection" class="glass-card" style="display: none;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+    <section id="resultsSection" class="ui-card" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
         <div>
-          <h2 style="font-size: 1.35rem;">Transcript & Timeline</h2>
-          <p style="color: var(--text-secondary); font-size: 0.8rem;">Sliding window analysis complete.</p>
+          <h2 style="font-size: 1.4rem;">Transcript & Timeline Breakdown</h2>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">Sliding window temporal sequence analysis complete.</p>
         </div>
-        <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
           <button id="btnSpeakTranscript" class="btn btn-secondary btn-sm">
-            <i data-lucide="volume-2" style="width: 12px;"></i> Speak
+            <i data-lucide="volume-2" style="width: 14px;"></i> Speak
           </button>
           <button id="btnCopyTranscript" class="btn btn-secondary btn-sm">
-            <i data-lucide="copy" style="width: 12px;"></i> Copy
+            <i data-lucide="copy" style="width: 14px;"></i> Copy Text
           </button>
           <button id="btnDownloadJson" class="btn btn-secondary btn-sm">
-            <i data-lucide="download" style="width: 12px;"></i> JSON
+            <i data-lucide="download" style="width: 14px;"></i> Export JSON
           </button>
         </div>
       </div>
 
       <!-- Metadata Grid -->
-      <div class="grid-4" style="margin-bottom: 1.25rem;">
-        <div class="glass-card" style="padding: 0.6rem 0.85rem; text-align: center;">
-          <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Duration</span>
-          <p style="font-size: 1.1rem; font-weight: 700; color: var(--primary);" id="metaDuration">0.0s</p>
+      <div class="grid-4" style="margin-bottom: 1.5rem;">
+        <div style="padding: 0.75rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); text-align: center; border: 1px solid var(--border-subtle);">
+          <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Duration</span>
+          <p style="font-size: 1.2rem; font-weight: 800; color: var(--primary);" id="metaDuration">0.0s</p>
         </div>
-        <div class="glass-card" style="padding: 0.6rem 0.85rem; text-align: center;">
-          <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Frames</span>
-          <p style="font-size: 1.1rem; font-weight: 700; color: var(--accent-emerald);" id="metaFrames">0</p>
+        <div style="padding: 0.75rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); text-align: center; border: 1px solid var(--border-subtle);">
+          <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Frames</span>
+          <p style="font-size: 1.2rem; font-weight: 800; color: var(--accent-emerald);" id="metaFrames">0</p>
         </div>
-        <div class="glass-card" style="padding: 0.6rem 0.85rem; text-align: center;">
-          <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Inference</span>
-          <p style="font-size: 1.1rem; font-weight: 700; color: var(--accent-purple);" id="metaLatency">0 ms</p>
+        <div style="padding: 0.75rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); text-align: center; border: 1px solid var(--border-subtle);">
+          <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Inference</span>
+          <p style="font-size: 1.2rem; font-weight: 800; color: var(--accent-sky);" id="metaLatency">0 ms</p>
         </div>
-        <div class="glass-card" style="padding: 0.6rem 0.85rem; text-align: center;">
-          <span style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Signs</span>
-          <p style="font-size: 1.1rem; font-weight: 700; color: var(--accent-amber);" id="metaSignsCount">0</p>
+        <div style="padding: 0.75rem 1rem; background: var(--bg-surface-subtle); border-radius: var(--radius-sm); text-align: center; border: 1px solid var(--border-subtle);">
+          <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Signs Detected</span>
+          <p style="font-size: 1.2rem; font-weight: 800; color: var(--accent-amber);" id="metaSignsCount">0</p>
         </div>
       </div>
 
       <!-- Synthesized Full Text -->
-      <div class="sentence-container" style="margin-bottom: 1.5rem;">
+      <div class="sentence-container" style="margin-bottom: 1.75rem;">
         <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">
-          Full Assembled Narrative
+          Full Assembled Narrative Transcript
         </span>
-        <p class="sentence-text" id="fullTranscriptText" style="margin-top: 0.35rem;">
+        <p class="sentence-text" id="fullTranscriptText" style="margin-top: 0.4rem;">
           Transcript loading...
         </p>
       </div>
 
       <!-- Timestamped Segments Table -->
       <div>
-        <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">Chronological Sign Segments</h3>
-        <div style="overflow-x: auto;">
-          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem;">
+        <h3 style="font-size: 1.05rem; margin-bottom: 0.9rem;">Chronological Sign Segments</h3>
+        <div style="overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
             <thead>
-              <tr style="border-bottom: 1px solid var(--border-subtle); color: var(--text-muted);">
-                <th style="padding: 0.5rem 0.75rem;">Time</th>
-                <th style="padding: 0.5rem 0.75rem;">Sign</th>
-                <th style="padding: 0.5rem 0.75rem;">Confidence</th>
-                <th style="padding: 0.5rem 0.75rem;">Status</th>
+              <tr style="background: var(--bg-surface-subtle); border-bottom: 1px solid var(--border-subtle); color: var(--text-muted);">
+                <th style="padding: 0.65rem 1rem;">Timestamp</th>
+                <th style="padding: 0.65rem 1rem;">Recognized Sign</th>
+                <th style="padding: 0.65rem 1rem;">Confidence</th>
+                <th style="padding: 0.65rem 1rem;">Status</th>
               </tr>
             </thead>
             <tbody id="segmentsTableBody">
@@ -161,5 +168,25 @@
 
   <script src="/static/js/api.js"></script>
   <script src="/static/js/upload.js"></script>
+  <script>
+    const themeBtn = document.getElementById("themeToggle");
+    const currentTheme = localStorage.getItem("signbridge-theme") || "light";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeBtn.addEventListener("click", () => {
+      const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("signbridge-theme", nextTheme);
+      updateThemeIcon(nextTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      themeBtn.innerHTML = theme === "dark" 
+        ? '<i data-lucide="sun" style="width: 18px; height: 18px;"></i>' 
+        : '<i data-lucide="moon" style="width: 18px; height: 18px;"></i>';
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>
