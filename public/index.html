@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SignBridge — AI Real-Time Sign Language Recognition Studio</title>
+  <title>SignBridge — Real-Time Sign Language Vision AI Studio</title>
   <link rel="stylesheet" href="/static/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- MediaPipe Hands for Real-Time 60 FPS Browser Tracking -->
@@ -12,43 +12,44 @@
 </head>
 <body>
 
-  <!-- Top Application Header Bar -->
+  <!-- Top Glassmorphic Application Header -->
   <header class="app-header">
     <div class="header-row">
       <a href="/" class="app-title">
-        <span>🤟 SignBridge</span>
-        <span class="version-badge">Live Vision Studio v1.0</span>
+        <span style="font-size: 1.35rem;">🤟</span>
+        <span>Sign<span class="gradient-text">Bridge</span></span>
+        <span class="version-chip">Vision Studio v1.0</span>
       </a>
       
       <div class="header-controls">
         <a href="#dictionarySection" class="btn btn-secondary btn-sm" onclick="openAndScrollToDictionary()">
-          <i data-lucide="book-open" style="width: 14px;"></i> 500+ Sign Dictionary
+          <i data-lucide="book-open" style="width: 14px; color: var(--primary);"></i> 500+ Sign Dictionary
         </a>
 
-        <div style="display: flex; align-items: center; gap: 0.4rem; background: var(--bg-surface-subtle); padding: 0.3rem 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); font-size: 0.78rem;">
-          <input type="checkbox" id="autoVoiceToggle" checked style="cursor: pointer;">
+        <div style="display: flex; align-items: center; gap: 0.45rem; background: var(--bg-surface-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle); font-size: 0.78rem;">
+          <input type="checkbox" id="autoVoiceToggle" checked style="cursor: pointer; accent-color: var(--primary);">
           <label for="autoVoiceToggle" style="cursor: pointer; font-weight: 600; color: var(--text-primary);">Voice Speech</label>
         </div>
 
-        <button id="themeToggle" class="btn btn-secondary btn-sm" title="Toggle Light/Dark Theme">
+        <button id="themeToggle" class="btn btn-secondary btn-sm" title="Toggle Light/Dark Theme" style="border-radius: var(--radius-full); padding: 0.38rem 0.55rem;">
           <i data-lucide="moon" style="width: 14px;"></i>
         </button>
 
-        <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-secondary); background: var(--bg-surface-subtle); padding: 0.3rem 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-secondary); background: var(--bg-surface-subtle); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">
           <span class="pulse-dot"></span>
-          <span id="fpsDisplay">Engine Ready</span>
+          <span id="fpsDisplay" style="font-weight: 600;">Engine Ready</span>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- MAIN PAGE: LIVE CAMERA RECOGNITION STUDIO -->
+  <!-- PRIMARY MAIN PAGE: LIVE CAMERA VISION STUDIO -->
   <main class="container">
     
-    <!-- Primary Studio Grid -->
-    <div class="grid-studio" style="margin-bottom: 1.25rem;">
+    <!-- Hero Live Camera & Telemetry Grid -->
+    <div class="grid-studio" style="margin-bottom: 1.5rem;">
       
-      <!-- Left Panel: Camera Vision Feed Stage -->
+      <!-- Left Panel: High-Definition Camera Vision Stage -->
       <div class="studio-panel">
         <div class="panel-header">
           <div class="panel-title">
@@ -67,36 +68,36 @@
           <canvas id="overlayCanvas"></canvas>
           
           <div class="camera-placeholder" id="cameraPlaceholder">
-            <div style="width: 56px; height: 56px; border-radius: var(--radius-sm); background: var(--bg-surface-hover); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
-              <i data-lucide="camera" style="width: 28px; height: 28px; color: var(--primary);"></i>
+            <div style="width: 60px; height: 60px; border-radius: var(--radius-md); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 0.85rem; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
+              <i data-lucide="camera" style="width: 30px; height: 30px; color: #818cf8;"></i>
             </div>
-            <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff;">Camera Inactive</h3>
-            <p style="font-size: 0.82rem; color: #94a3b8; max-width: 280px; margin: 0.3rem 0 1rem;">
-              Click start below to open camera feed and begin gesture recognition.
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">Camera Vision Inactive</h3>
+            <p style="font-size: 0.84rem; color: #94a3b8; max-width: 290px; margin: 0.35rem 0 1.25rem; line-height: 1.45;">
+              Click start below to open camera feed and begin 60 FPS gesture recognition.
             </p>
-            <button id="btnStartCamera" class="btn btn-primary">
+            <button id="btnStartCamera" class="btn btn-primary" style="font-size: 0.92rem; padding: 0.65rem 1.35rem;">
               <i data-lucide="camera"></i> Start Camera & Recognize
             </button>
           </div>
         </div>
 
-        <!-- Telemetry Row -->
+        <!-- Telemetry Chips Row -->
         <div class="telemetry-row">
           <div>LATENCY: <strong id="latencyDisplay" style="color: var(--text-primary);">0 ms</strong></div>
           <div>STATUS: <strong id="handsCountDisplay" style="color: var(--primary);">0 Hands Tracked</strong></div>
-          <div>PIPELINE: <strong style="color: var(--accent-emerald);">60 FPS Client Vision</strong></div>
+          <div>ENGINE: <strong style="color: var(--emerald);">60 FPS Client AI</strong></div>
         </div>
       </div>
 
-      <!-- Right Panel: Recognition & Inference Telemetry -->
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <!-- Right Panel: Recognition Telemetry & Sentence Builder -->
+      <div style="display: flex; flex-direction: column; gap: 1.15rem;">
         
-        <!-- Live Detected Sign Panel -->
+        <!-- Live Detected Sign Hero Card -->
         <div class="studio-panel">
           <div class="panel-header">
             <div class="panel-title">
               <i data-lucide="activity" style="width: 16px; color: var(--primary);"></i>
-              Recognized Sign (Hold 2s to Commit)
+              Recognized Gesture (Hold 2s to Commit)
             </div>
             <span class="badge badge-beginner" id="statusBadge">Idle</span>
           </div>
@@ -106,14 +107,14 @@
           </div>
 
           <!-- Accuracy Meter -->
-          <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;">
-            <span style="font-size: 0.85rem; font-weight: 700; font-family: var(--font-mono); color: var(--text-primary);" id="confidenceLabel">0%</span>
-            <div style="flex: 1; height: 8px; background: var(--bg-surface-hover); border-radius: var(--radius-full); overflow: hidden;">
-              <div id="confidenceBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #2563eb, #059669); border-radius: var(--radius-full); transition: width 0.15s ease;"></div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem;">
+            <span style="font-size: 0.88rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary);" id="confidenceLabel">0%</span>
+            <div style="flex: 1; height: 9px; background: var(--bg-surface-hover); border-radius: var(--radius-full); overflow: hidden;">
+              <div id="confidenceBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #4f46e5, #059669); border-radius: var(--radius-full); transition: width 0.15s ease;"></div>
             </div>
           </div>
 
-          <!-- 2-Second Hold-to-Commit Gate -->
+          <!-- 2-Second Hold-to-Commit Progress Gate -->
           <div class="hold-meter-container">
             <div class="hold-meter-header">
               <span>⏱️ Hold 2.0s to Insert Text</span>
@@ -124,52 +125,52 @@
             </div>
           </div>
 
-          <p style="font-size: 0.8rem; color: var(--text-muted);" id="statusMessage">
-            Position hand steadily in camera frame and hold for 2 seconds to commit.
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;" id="statusMessage">
+            Position hand steadily in camera frame and hold for 2 seconds to commit text.
           </p>
         </div>
 
-        <!-- Sentence Transcript Panel -->
+        <!-- Real-Time Translated Sentence Builder -->
         <div class="studio-panel">
           <div class="panel-header">
             <div class="panel-title">
               <i data-lucide="message-square" style="width: 16px; color: var(--primary);"></i>
-              Sentence Transcript
+              Translated Speech Transcript
             </div>
-            <div style="display: flex; gap: 0.35rem;">
+            <div style="display: flex; gap: 0.4rem;">
               <button id="btnSpeak" class="btn btn-secondary btn-sm" title="Speak Aloud">
-                <i data-lucide="volume-2" style="width: 12px;"></i> Speak
+                <i data-lucide="volume-2" style="width: 13px;"></i> Speak
               </button>
               <button id="btnCopy" class="btn btn-secondary btn-sm" title="Copy to Clipboard">
-                <i data-lucide="copy" style="width: 12px;"></i> Copy
+                <i data-lucide="copy" style="width: 13px;"></i> Copy
               </button>
               <button id="btnClear" class="btn btn-secondary btn-sm" title="Clear Text">
-                <i data-lucide="trash-2" style="width: 12px;"></i> Clear
+                <i data-lucide="trash-2" style="width: 13px;"></i> Clear
               </button>
             </div>
           </div>
 
           <div class="transcript-box">
-            <p id="sentenceDisplay" style="margin: 0;">
+            <p id="sentenceDisplay" style="margin: 0; font-size: 1.02rem;">
               Hold any sign for 2 seconds to insert text into this sentence transcript...
             </p>
-            <div style="display: flex; justify-content: space-between; font-size: 0.72rem; font-family: var(--font-mono); color: var(--text-muted); margin-top: 0.5rem; border-top: 1px solid var(--border-subtle); padding-top: 0.35rem;">
-              <span>Auto-Speech: <strong style="color: var(--accent-emerald);">ON</strong></span>
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted); margin-top: 0.65rem; border-top: 1px solid var(--border-subtle); padding-top: 0.45rem;">
+              <span>Auto-Speech Synthesis: <strong style="color: var(--emerald);">ON</strong></span>
               <span id="wordCountDisplay">0 words</span>
             </div>
           </div>
         </div>
 
-        <!-- Candidate Probabilities Panel -->
-        <div class="studio-panel" style="padding: 0.85rem 1.15rem;">
-          <div class="panel-header" style="margin-bottom: 0.5rem; padding-bottom: 0.35rem;">
+        <!-- Top Probability Candidates -->
+        <div class="studio-panel" style="padding: 1rem 1.35rem;">
+          <div class="panel-header" style="margin-bottom: 0.5rem; padding-bottom: 0.4rem;">
             <div class="panel-title" style="font-size: 0.8rem;">
               <i data-lucide="bar-chart-2" style="width: 14px;"></i>
               Top Candidate Probabilities
             </div>
           </div>
-          <div id="candidatesList" style="display: flex; flex-direction: column; gap: 0.25rem;">
-            <div style="color: var(--text-muted); font-size: 0.78rem; font-family: var(--font-mono);">Start camera to see live probability distributions.</div>
+          <div id="candidatesList" style="display: flex; flex-direction: column; gap: 0.35rem;">
+            <div style="color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-mono);">Start camera to see live probability distributions.</div>
           </div>
         </div>
 
@@ -189,58 +190,58 @@
         </button>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.65rem;">
-        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
-          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">🖐️ HELLO</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Open 5 fingers wave</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem;">
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-primary);">🖐️ HELLO</div>
+          <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">Open 5 fingers wave</div>
         </div>
 
-        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
-          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">👍 YES</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Fist with thumb up</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-primary);">👍 YES</div>
+          <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">Fist with thumb up</div>
         </div>
 
-        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
-          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">👎 NO</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Fist with thumb down</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-primary);">👎 NO</div>
+          <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">Fist with thumb down</div>
         </div>
 
-        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
-          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">🤟 I LOVE YOU</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Thumb + Index + Pinky</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-primary);">🤟 I LOVE YOU</div>
+          <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">Thumb + Index + Pinky</div>
         </div>
 
-        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
-          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">✌️ PEACE / TWO</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Index + Middle in V</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-primary);">✌️ PEACE / TWO</div>
+          <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">Index + Middle in V</div>
         </div>
 
-        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
-          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">👌 OK / PERFECT</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Thumb & Index pinch</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-primary);">👌 OK / PERFECT</div>
+          <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">Thumb & Index pinch</div>
         </div>
 
-        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
-          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">🤙 CALL ME</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Thumb + Pinky out</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-primary);">🤙 CALL ME</div>
+          <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">Thumb + Pinky out</div>
         </div>
 
-        <div style="background: var(--bg-surface-subtle); padding: 0.65rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
-          <div style="font-weight: 800; font-size: 0.92rem; color: var(--text-primary);">☝️ YOU / POINT</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">Index pointing up</div>
+        <div style="background: var(--bg-surface-subtle); padding: 0.75rem; border-radius: var(--radius-xs); border: 1px solid var(--border-subtle); text-align: center;">
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-primary);">☝️ YOU / POINT</div>
+          <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem;">Index pointing up</div>
         </div>
       </div>
     </section>
 
     <!-- SECTION: 500+ SIGN LANGUAGE DICTIONARY (Dedicated Collapsible Section) -->
-    <section id="dictionarySection" class="studio-panel" style="padding: 1.25rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.85rem;">
+    <section id="dictionarySection" class="studio-panel" style="padding: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.85rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem;">
         <div>
-          <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+          <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 0.55rem; margin: 0; letter-spacing: -0.02em;">
             <i data-lucide="book-open" style="color: var(--primary);"></i>
             500+ Sign Language Dictionary & Visual Gesture Guide
           </h2>
-          <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0.2rem 0 0;">
+          <p style="font-size: 0.84rem; color: var(--text-secondary); margin: 0.25rem 0 0;">
             Explore vector hand diagrams, finger positions, and motion mechanics for all 500 standardized signs.
           </p>
         </div>
@@ -251,17 +252,17 @@
       </div>
 
       <!-- Collapsible Dictionary Content Area -->
-      <div id="dictionaryContent" style="display: none; margin-top: 1rem;">
+      <div id="dictionaryContent" style="display: none; margin-top: 1.25rem;">
         
         <!-- Search & Filter Controls -->
-        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 0.85rem;">
-          <div style="flex: 1; min-width: 240px; position: relative;">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
+          <div style="flex: 1; min-width: 250px; position: relative;">
             <input type="text" id="searchInput" placeholder="Search 500+ signs (e.g. Hello, Doctor, Help, Water, Yes, Letter A)..." 
-              style="width: 100%; padding: 0.6rem 0.85rem 0.6rem 2.2rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-xs); color: var(--text-primary); font-size: 0.85rem;">
-            <i data-lucide="search" style="position: absolute; left: 10px; top: 11px; width: 14px; color: var(--text-muted);"></i>
+              style="width: 100%; padding: 0.65rem 0.95rem 0.65rem 2.3rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.88rem; outline: none; transition: border-color 0.15s ease;">
+            <i data-lucide="search" style="position: absolute; left: 11px; top: 12px; width: 15px; color: var(--text-muted);"></i>
           </div>
 
-          <select id="difficultyFilter" style="padding: 0.6rem 0.85rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xs); color: var(--text-primary); font-size: 0.82rem; font-weight: 600; cursor: pointer;">
+          <select id="difficultyFilter" style="padding: 0.65rem 0.95rem; background: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); color: var(--text-primary); font-size: 0.84rem; font-weight: 600; cursor: pointer;">
             <option value="all">All Difficulties</option>
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
@@ -270,7 +271,7 @@
         </div>
 
         <!-- 19 Category Filter Pills -->
-        <div id="categoryPillsContainer" style="display: flex; gap: 0.35rem; overflow-x: auto; padding-bottom: 0.5rem; margin-bottom: 1rem; -webkit-overflow-scrolling: touch;">
+        <div id="categoryPillsContainer" style="display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.65rem; margin-bottom: 1.25rem; -webkit-overflow-scrolling: touch;">
           <button class="category-pill active" data-category="all">All Signs (500)</button>
         </div>
 
@@ -286,10 +287,10 @@
 
   </main>
 
-  <!-- Clean Footer -->
-  <footer style="margin-top: 2rem; border-top: 1px solid var(--border-subtle); padding: 1rem 0; background: var(--bg-surface);">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted);">
-      <div>SignBridge AI &bull; Live Camera Vision Recognition Studio</div>
+  <!-- Premium Footer -->
+  <footer style="margin-top: 2.5rem; border-top: 1px solid var(--border-subtle); padding: 1.25rem 0; background: var(--bg-surface);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.65rem; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">
+      <div>SignBridge AI &bull; Real-Time Sign Language Recognition Studio</div>
       <div>60 FPS Client AI &bull; 500+ Visual Dictionary Section &bull; 2.0s Hold Gate</div>
     </div>
   </footer>
